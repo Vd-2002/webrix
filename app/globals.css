@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #F1F5F9;
+  --primary: #60A5FA;
+  --primary-foreground: #000000;
+  --accent: #818CF8;
+  --accent-foreground: #000000;
+  --secondary: #FFFFFF;
+  --border: #1E293B;
+}
+
+.light {
+  --background: #F8F9FC;
+  --foreground: #1F2937;
+  --primary: #003D99;
+  --primary-foreground: #FFFFFF;
+  --accent: #6366F1;
+  --accent-foreground: #FFFFFF;
+  --secondary: #000000;
+  --border: #E2E8F0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-secondary: var(--secondary);
+  --color-border: var(--border);
+
+  --font-sans: var(--font-plus-jakarta), sans-serif;
+  --font-display: var(--font-bricolage), sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), monospace;
+
+  --radius-xs: 5px;
+  --radius-sm: 5px;
+  --radius-md: 5px;
+  --radius-lg: 5px;
+  --radius-xl: 5px;
+  --radius-2xl: 5px;
+  --radius-3xl: 5px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta), sans-serif;
+}
+
+h1 {
+  font-family: var(--font-bricolage), sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-family: var(--font-bricolage), sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: -0.01em;
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font-bricolage), sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+button {
+  font-family: var(--font-bricolage), sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+input, textarea, select, pre {
+  border-radius: 5px;
+}
+
+code, pre, kbd, samp {
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
