@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { 
   Mail, 
@@ -70,16 +71,17 @@ export default function Footer() {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Services", href: "/#services" },
-    { name: "Industries", href: "/#industries" },
-    { name: "Our Work", href: "/#projects" },
+    { name: "Services", href: "/services" },
+    { name: "Industries", href: "/industries" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const servicesLinks = [
-    { name: "Website Development", href: "/#services" },
-    { name: "Custom Software", href: "/#services" },
-    { name: "AI Automation", href: "/#services" },
-    { name: "Digital Marketing", href: "/#services" },
+    { name: "Website Development", href: "/services/website-development" },
+    { name: "Custom Software", href: "/services/custom-software-development" },
+    { name: "AI Automation", href: "/services/ai-automation" },
+    { name: "Digital Marketing", href: "/services/digital-marketing" },
   ];
 
   return (
@@ -128,12 +130,12 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a 
+                  <Link 
                     href={link.href} 
                     className="text-sm text-white/50 hover:text-[#60A5FA] transition-colors duration-200 font-sans block"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -147,12 +149,12 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {servicesLinks.map((link) => (
                 <li key={link.name}>
-                  <a 
+                  <Link 
                     href={link.href} 
                     className="text-sm text-white/50 hover:text-[#A78BFA] transition-colors duration-200 font-sans block"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

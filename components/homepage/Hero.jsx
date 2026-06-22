@@ -752,7 +752,7 @@ export default function Hero() {
           </div>
 
           {/* Right Visualizer Panel (5 columns) - Borderless Floating SVGs */}
-          <div className="lg:col-span-5 w-full flex items-center justify-center min-h-[440px] relative">
+          <div className="lg:col-span-5 w-full flex items-center justify-center min-h-[300px] lg:min-h-[440px] relative">
             {/* Soft circular backdrop glow directly behind the active SVG */}
             <div 
               className="absolute w-[300px] h-[300px] rounded-full opacity-35 blur-[80px] transition-all duration-700 pointer-events-none z-0"

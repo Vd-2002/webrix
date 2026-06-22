@@ -69,7 +69,7 @@ function TestimonialCard({ client }) {
   const ClientIcon = client.icon;
   return (
     <div
-      className="group relative border border-white/10 bg-[#070712]/40 backdrop-blur-md hover:border-white/20 hover:bg-[#070712]/60 transition-all duration-500 rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[280px] w-[360px] md:w-[400px] shrink-0"
+      className="group relative border border-white/10 bg-[#070712]/40 backdrop-blur-md hover:border-white/20 hover:bg-[#070712]/60 transition-all duration-500 rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[280px] w-[290px] sm:w-[360px] md:w-[400px] shrink-0"
       style={{
         boxShadow: `0 4px 30px rgba(0, 0, 0, 0.4)`
       }}

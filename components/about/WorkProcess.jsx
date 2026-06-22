@@ -74,7 +74,7 @@ export default function WorkProcess() {
               >
                 
                 {/* Left/Right Card column */}
-                <div className="w-full sm:w-[45%]">
+                <div className="w-full sm:w-[45%] pl-16 sm:pl-0">
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ export default function WorkProcess() {
                 </div>
 
                 {/* Central Circle Spine Node */}
-                <div className="absolute left-[20px] sm:left-1/2 top-4 sm:top-auto sm:left-1/2 shrink-0 w-10 h-10 rounded-full bg-[#030308] border border-white/15 hover:border-white/30 transition-all flex items-center justify-center z-20 transform -translate-x-[20px] sm:-translate-x-1/2 text-white shadow-xl shadow-black">
+                <div className="absolute left-[39px] sm:left-1/2 top-4 sm:top-auto shrink-0 w-10 h-10 rounded-full bg-[#030308] border border-white/15 hover:border-white/30 transition-all flex items-center justify-center z-20 transform -translate-x-1/2 sm:-translate-x-1/2 text-white shadow-xl shadow-black">
                   <Icon className="w-4 h-4" style={{ color: step.color }} />
                 </div>
 

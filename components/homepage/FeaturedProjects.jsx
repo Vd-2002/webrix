@@ -101,7 +101,7 @@ function StickyProjectCard({ project, idx }) {
               alt={project.name}
               fill
               className="object-cover transition-transform duration-700 hover:scale-102"
-              sizes="(max-w-768px) 100vw, 50vw"
+              sizes="(max-w: 768px) 100vw, 50vw"
             />
           </div>
         </div>

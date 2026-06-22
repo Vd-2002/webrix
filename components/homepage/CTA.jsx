@@ -166,12 +166,6 @@ function DashboardHub() {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="absolute -top-4 -left-6 z-20 bg-[#070712]/95 border border-emerald-500/25 backdrop-blur-xl p-3 px-4 rounded-xl shadow-[0_12px_32px_-8px_rgba(16,185,129,0.22)] flex flex-col gap-1 w-[145px]"
       >
-        <defs>
-          <linearGradient id="sparklineGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#10B981" stopOpacity="0.25" />
-            <stop offset="100%" stopColor="#10B981" stopOpacity="0" />
-          </linearGradient>
-        </defs>
         <div className="flex items-center justify-between text-[8px] font-bold text-white/40 tracking-wider uppercase font-mono">
           <span>MRR Growth</span>
           <span className="text-emerald-400 font-sans flex items-center font-extrabold">+12.4%</span>
@@ -181,6 +175,12 @@ function DashboardHub() {
         {/* Sparkline curve */}
         <div className="h-6 mt-1 flex items-end">
           <svg className="w-full h-full text-emerald-400" viewBox="0 0 60 20" fill="none">
+            <defs>
+              <linearGradient id="sparklineGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#10B981" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#10B981" stopOpacity="0" />
+              </linearGradient>
+            </defs>
             <path d="M2 15 Q 15 13, 25 8 T 45 6 T 58 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
             <path d="M2 15 Q 15 13, 25 8 T 45 6 T 58 2 L 58 20 L 2 20 Z" fill="url(#sparklineGrad)" />
           </svg>

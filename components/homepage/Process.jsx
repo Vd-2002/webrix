@@ -120,7 +120,7 @@ export default function Process() {
         <div 
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="border border-white/10 bg-[#070712]/40 backdrop-blur-md rounded-3xl p-8 lg:p-12 relative overflow-hidden min-h-[440px] w-full flex flex-col md:flex-row items-center gap-12 transition-colors duration-500 hover:border-white/15"
+          className="border border-white/10 bg-[#070712]/40 backdrop-blur-md rounded-3xl p-5 sm:p-8 lg:p-12 relative overflow-hidden min-h-[440px] w-full flex flex-col md:flex-row items-center gap-12 transition-colors duration-500 hover:border-white/15"
         >
           
           {/* Spotlight aura */}
@@ -197,7 +197,7 @@ export default function Process() {
           </div>
 
           {/* Mobile Dial (Hidden on Desktop) */}
-          <div className="md:hidden relative w-[320px] h-[100px] shrink-0 mt-4">
+          <div className="md:hidden relative w-[320px] h-[100px] shrink-0 mt-4 origin-center max-[350px]:scale-[0.8] max-[375px]:scale-[0.9] transition-transform">
             {/* SVG Track */}
             <svg className="absolute inset-0 w-full h-full" viewBox="0 0 320 100">
               {/* Static Background Path */}

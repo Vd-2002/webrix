@@ -110,7 +110,7 @@ export default function TechStack() {
           {TECHS.map((tech) => (
             <div
               key={tech.id}
-              className="relative group rounded-3xl border border-white/5 bg-[#070712]/30 backdrop-blur-sm p-6 flex flex-col items-center justify-center gap-4 transition-all duration-500 hover:-translate-y-1 hover:bg-[#070712]/60 overflow-hidden cursor-pointer aspect-square"
+              className="relative group rounded-3xl border border-white/5 bg-[#070712]/30 backdrop-blur-sm p-4 sm:p-6 flex flex-col items-center justify-center gap-4 transition-all duration-500 hover:-translate-y-1 hover:bg-[#070712]/60 overflow-hidden cursor-pointer aspect-square"
             >
               {/* Decorative blueprint grid lines inside card */}
               <div 

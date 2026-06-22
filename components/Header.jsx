@@ -3,7 +3,9 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { Monitor, Cpu, Sparkles, Megaphone } from "lucide-react";
 import Button from "./ui/Button";
 
 export default function Header() {
@@ -23,7 +25,6 @@ export default function Header() {
 
   useEffect(() => {
     if (pathname !== "/") {
-      setActiveHash("");
       return;
     }
 
@@ -55,7 +56,10 @@ export default function Header() {
 
     // Check initial hash on load
     if (window.location.hash) {
-      setActiveHash(window.location.hash);
+      const hash = window.location.hash;
+      setTimeout(() => {
+        setActiveHash(hash);
+      }, 0);
     } else {
       handleScrollDetect();
     }
@@ -67,14 +71,50 @@ export default function Header() {
   const menuItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Services", href: "/#services" },
-    { name: "Industries", href: "/#industries" },
-    { name: "Our Work", href: "/#projects" },
+    { name: "Services", href: "/services" },
+    { name: "Industries", href: "/industries" },
+    { name: "Portfolio", href: "/portfolio" },
+  ];
+
+  const submenuItems = [
+    {
+      name: "Website Development",
+      desc: "Fast Next.js interfaces",
+      href: "/services/website-development",
+      icon: Monitor
+    },
+    {
+      name: "Custom Software",
+      desc: "Secure ERP & SaaS portals",
+      href: "/services/custom-software-development",
+      icon: Cpu
+    },
+    {
+      name: "AI & Automation",
+      desc: "Serverless LLM pipelines",
+      href: "/services/ai-automation",
+      icon: Sparkles
+    },
+    {
+      name: "Digital Marketing",
+      desc: "Analytics & sitemaps audit",
+      href: "/services/digital-marketing",
+      icon: Megaphone
+    }
   ];
 
   const isItemActive = (item) => {
-    if (pathname === "/about") {
+    if (pathname.startsWith("/services")) {
+      return item.href === "/services";
+    }
+    if (pathname.startsWith("/about")) {
       return item.href === "/about";
+    }
+    if (pathname.startsWith("/industries")) {
+      return item.href === "/industries";
+    }
+    if (pathname.startsWith("/portfolio")) {
+      return item.href === "/portfolio";
     }
     if (pathname === "/") {
       if (item.href === "/") {
@@ -104,7 +144,7 @@ export default function Header() {
       <div className="max-w-[1200px] mx-auto px-6 w-full flex items-center justify-between">
         {/* Logo with interactive spring scale */}
         <div className="flex items-center">
-          <a href="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <motion.div
               animate={{
                 scale: scrolled ? 0.95 : 1.2,
@@ -125,7 +165,7 @@ export default function Header() {
                 priority
               />
             </motion.div>
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation with sliding background pill */}
@@ -135,8 +175,64 @@ export default function Header() {
         >
           {menuItems.map((item, index) => {
             const isActive = isItemActive(item);
+            const isServices = item.name === "Services";
+            
+            if (isServices) {
+              return (
+                <div key={item.name} className="relative group py-2">
+                  <Link
+                    href={item.href}
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    className={`relative px-4 py-2 transition-colors duration-300 rounded-md ${
+                      isActive ? "text-[#60A5FA] font-semibold" : "text-foreground/75 hover:text-foreground"
+                    }`}
+                  >
+                    <span className="relative z-10">{item.name}</span>
+                    {hoveredIndex === index && (
+                      <motion.span
+                        layoutId="navHover"
+                        className="absolute inset-0 bg-foreground/8 rounded-md z-0"
+                        transition={{ type: "spring", stiffness: 380, damping: 28 }}
+                      />
+                    )}
+                    {isActive && (
+                      <motion.span
+                        layoutId="navActiveDot"
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#60A5FA] shadow-sm shadow-[#60A5FA]/80 z-20"
+                        transition={{ type: "spring", stiffness: 380, damping: 28 }}
+                      />
+                    )}
+                  </Link>
+
+                  {/* Submenu Dropdown Container */}
+                  <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[280px] opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50">
+                    <div className="border border-white/10 bg-[#070712]/95 backdrop-blur-xl rounded-2xl p-3 shadow-2xl space-y-1">
+                      {submenuItems.map((sub) => {
+                        const SubIcon = sub.icon;
+                        return (
+                          <Link
+                            key={sub.name}
+                            href={sub.href}
+                            className="flex items-center gap-3 px-3.5 py-3 rounded-xl hover:bg-white/[0.04] transition-colors group/sub text-left text-xs text-white/60 hover:text-white"
+                          >
+                            <div className="w-8 h-8 rounded-lg flex items-center justify-center border border-white/5 bg-white/[0.01] group-hover/sub:border-white/10 group-hover/sub:bg-white/[0.03] transition-colors shrink-0 text-white/60 group-hover/sub:text-[#60A5FA]">
+                              <SubIcon className="w-4 h-4" />
+                            </div>
+                            <div className="space-y-0.5">
+                              <div className="font-semibold text-white tracking-tight leading-tight">{sub.name}</div>
+                              <div className="text-[9px] text-white/40 leading-none">{sub.desc}</div>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
             return (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 onMouseEnter={() => setHoveredIndex(index)}
@@ -159,23 +255,25 @@ export default function Header() {
                     transition={{ type: "spring", stiffness: 380, damping: 28 }}
                   />
                 )}
-              </a>
+              </Link>
             );
           })}
         </nav>
 
         {/* Desktop CTA with premium shine sweep and glow hover, no scale */}
         <div className="hidden md:flex items-center">
-          <Button
-            variant="primary"
-            className="px-6 py-2.5 text-xs tracking-wider relative overflow-hidden group shadow-md shadow-primary/20 hover:shadow-primary/40 transition-all duration-300 rounded-md"
-          >
-            <span className="relative z-10">Contact</span>
-            {/* Hover gradient glow */}
-            <span className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
-            {/* Shine sweep animation */}
-            <span className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-25 group-hover:left-[100%] transition-all duration-1000 ease-out z-0" />
-          </Button>
+          <Link href="/contact">
+            <Button
+              variant="primary"
+              className="px-6 py-2.5 text-xs tracking-wider relative overflow-hidden group shadow-md shadow-primary/20 hover:shadow-primary/40 transition-all duration-300 rounded-md"
+            >
+              <span className="relative z-10">Contact</span>
+              {/* Hover gradient glow */}
+              <span className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
+              {/* Shine sweep animation */}
+              <span className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-25 group-hover:left-[100%] transition-all duration-1000 ease-out z-0" />
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile menu button */}
@@ -212,8 +310,44 @@ export default function Header() {
             <nav className="flex flex-col px-6 py-6 space-y-4">
               {menuItems.map((item) => {
                 const isActive = isItemActive(item);
+                const isServices = item.name === "Services";
+                
+                if (isServices) {
+                  return (
+                    <div key={item.name} className="flex flex-col gap-2">
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`font-sans text-base font-medium py-1 transition-colors duration-150 ${
+                          isActive ? "text-[#60A5FA] font-semibold border-l-2 border-[#60A5FA] pl-3" : "text-foreground/80 hover:text-foreground pl-3"
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                      
+                      {/* Mobile Submenu Items */}
+                      <div className="flex flex-col gap-3 pl-6 border-l border-white/5 mt-1.5">
+                        {submenuItems.map((sub) => {
+                          const SubIcon = sub.icon;
+                          return (
+                            <Link
+                              key={sub.name}
+                              href={sub.href}
+                              onClick={() => setIsOpen(false)}
+                              className="flex items-center gap-3 py-1 text-sm text-white/50 hover:text-white transition-colors"
+                            >
+                              <SubIcon className="w-4 h-4 text-[#60A5FA]" />
+                              <span>{sub.name}</span>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                }
+
                 return (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
@@ -222,17 +356,18 @@ export default function Header() {
                     }`}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 );
               })}
               <div className="pt-4 border-t border-border/40">
-                <Button
-                  variant="primary"
-                  onClick={() => setIsOpen(false)}
-                  className="w-full py-3 text-sm tracking-wider"
-                >
-                  Contact
-                </Button>
+                <Link href="/contact" onClick={() => setIsOpen(false)} className="w-full block">
+                  <Button
+                    variant="primary"
+                    className="w-full py-3 text-sm tracking-wider"
+                  >
+                    Contact
+                  </Button>
+                </Link>
               </div>
             </nav>
           </motion.div>

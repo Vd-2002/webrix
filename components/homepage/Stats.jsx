@@ -92,7 +92,7 @@ export default function Stats() {
   return (
     <section id="stats" className="relative z-10 scroll-mt-24">
       {/* Grid Container matching standard max-w layout */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto">
         {STATS_DATA.map((item, idx) => (
           <motion.div
             key={item.id}
