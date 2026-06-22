@@ -101,7 +101,7 @@ export default function Process() {
   }, [isHovered]);
 
   return (
-    <section id="process" className="relative z-10 space-y-12 py-20 scroll-mt-24">
+    <section id="process" className="relative z-10 space-y-12 py-0 scroll-mt-24">
       {/* Header aligned with Homepage layout */}
       <div className="space-y-4 text-center max-w-2xl mx-auto px-6">
         <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white font-display">

@@ -20,7 +20,7 @@ const TECHS = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-choose-us" className="relative z-10 space-y-16 py-20 scroll-mt-24">
+    <section id="why-choose-us" className="relative z-10 space-y-16 py-0 scroll-mt-24">
       {/* Header Aligned with Homepage Styling */}
       <div className="space-y-4 text-center max-w-2xl mx-auto">
         <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white font-display">
@@ -39,10 +39,10 @@ export default function WhyChooseUs() {
         
         {/* Card 1: Experienced Team (Spans 2 columns on desktop) */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3 }}
           whileHover={{ y: -6 }}
           className="group relative md:col-span-2 border border-white/10 bg-[#070712]/40 backdrop-blur-md hover:border-white/20 transition-all duration-500 rounded-3xl p-8 overflow-hidden flex flex-col justify-between"
         >
@@ -96,10 +96,10 @@ export default function WhyChooseUs() {
 
         {/* Card 2: Fast Delivery (Spans 1 column) */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3 }}
           whileHover={{ y: -6 }}
           className="group relative border border-white/10 bg-[#070712]/40 backdrop-blur-md hover:border-white/20 transition-all duration-500 rounded-3xl p-8 overflow-hidden flex flex-col justify-between"
         >
@@ -131,10 +131,10 @@ export default function WhyChooseUs() {
 
         {/* Card 3: Scalable Solutions */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3 }}
           whileHover={{ y: -6 }}
           className="group relative border border-white/10 bg-[#070712]/40 backdrop-blur-md hover:border-white/20 transition-all duration-500 rounded-3xl p-8 overflow-hidden flex flex-col justify-between"
         >
@@ -171,10 +171,10 @@ export default function WhyChooseUs() {
 
         {/* Card 4: Affordable Pricing */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3 }}
           whileHover={{ y: -6 }}
           className="group relative border border-white/10 bg-[#070712]/40 backdrop-blur-md hover:border-white/20 transition-all duration-500 rounded-3xl p-8 overflow-hidden flex flex-col justify-between"
         >
@@ -210,10 +210,10 @@ export default function WhyChooseUs() {
 
         {/* Card 5: Ongoing Support */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3 }}
           whileHover={{ y: -6 }}
           className="group relative border border-white/10 bg-[#070712]/40 backdrop-blur-md hover:border-white/20 transition-all duration-500 rounded-3xl p-8 overflow-hidden flex flex-col justify-between"
         >
@@ -243,10 +243,10 @@ export default function WhyChooseUs() {
 
         {/* Card 6: Latest Technologies (Spans all 3 columns on desktop) */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3 }}
           whileHover={{ y: -6 }}
           className="group relative md:col-span-3 border border-white/10 bg-[#070712]/40 backdrop-blur-md hover:border-white/20 transition-all duration-500 rounded-3xl p-8 overflow-hidden flex flex-col justify-between"
         >

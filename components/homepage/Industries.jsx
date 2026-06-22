@@ -84,7 +84,7 @@ export default function Industries() {
   const [activeMobileIndex, setActiveMobileIndex] = useState(0);
 
   return (
-    <section id="industries" className="relative z-10 space-y-16 py-20 scroll-mt-24">
+    <section id="industries" className="relative z-10 space-y-16 py-0 scroll-mt-24">
       {/* Header aligned with Homepage layout */}
       <div className="space-y-4 text-center max-w-2xl mx-auto">
         <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white font-display">
@@ -113,7 +113,7 @@ export default function Industries() {
                 layout
                 onHoverStart={() => setHoveredIndex(index)}
                 onHoverEnd={() => setHoveredIndex(null)}
-                className={`relative overflow-hidden rounded-[24px] border border-white/10 bg-[#070712]/40 backdrop-blur-md transition-all duration-500 flex flex-col justify-between p-6 cursor-pointer select-none ${
+                className={`relative overflow-hidden rounded-2xl border border-white/10 bg-[#070712]/40 backdrop-blur-md transition-all duration-500 flex flex-col justify-between p-6 cursor-pointer select-none ${
                   isHovered 
                     ? "flex-[4] border-white/20 bg-[#070712]/60" 
                     : hoveredIndex !== null 
@@ -146,19 +146,19 @@ export default function Industries() {
                     >
                       {/* Icon */}
                       <div className="w-10 h-10 rounded-lg flex items-center justify-center border border-white/5 bg-white/[0.02]">
-                        <Icon className="w-4.5 h-4.5 text-white/50" />
+                        <Icon className="w-4.5 h-4.5 text-white/80" />
                       </div>
                       
                       {/* Vertical Rotated Title */}
                       <span 
-                        className="text-white/40 font-display text-base font-bold tracking-wide uppercase select-none whitespace-nowrap"
+                        className="text-white font-display text-base font-bold tracking-wide uppercase select-none whitespace-nowrap"
                         style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
                       >
                         {ind.title}
                       </span>
                       
                       {/* Numeral */}
-                      <span className="font-mono text-[10px] font-bold text-white/10">
+                      <span className="font-mono text-[10px] font-bold text-white/30">
                         {ind.num}
                       </span>
                     </motion.div>

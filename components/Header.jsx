@@ -2,13 +2,16 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "./ui/Button";
 
 export default function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [activeHash, setActiveHash] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,13 +21,69 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (pathname !== "/") {
+      setActiveHash("");
+      return;
+    }
+
+    const handleScrollDetect = () => {
+      const scrollPosition = window.scrollY;
+      
+      // If close to top, active is Home (empty hash)
+      if (scrollPosition < 100) {
+        setActiveHash("");
+        return;
+      }
+
+      const sections = ["services", "industries", "projects"];
+      let currentSection = "";
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 180 && rect.bottom >= 180) {
+            currentSection = `#${sectionId}`;
+            break;
+          }
+        }
+      }
+
+      setActiveHash(currentSection);
+    };
+
+    // Check initial hash on load
+    if (window.location.hash) {
+      setActiveHash(window.location.hash);
+    } else {
+      handleScrollDetect();
+    }
+
+    window.addEventListener("scroll", handleScrollDetect, { passive: true });
+    return () => window.removeEventListener("scroll", handleScrollDetect);
+  }, [pathname]);
+
   const menuItems = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#" },
-    { name: "Services", href: "#" },
-    { name: "Industries", href: "#" },
-    { name: "Our Work", href: "#" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/#services" },
+    { name: "Industries", href: "/#industries" },
+    { name: "Our Work", href: "/#projects" },
   ];
+
+  const isItemActive = (item) => {
+    if (pathname === "/about") {
+      return item.href === "/about";
+    }
+    if (pathname === "/") {
+      if (item.href === "/") {
+        return activeHash === "";
+      }
+      return item.href === `/${activeHash}`;
+    }
+    return false;
+  };
 
   return (
     <motion.header
@@ -45,7 +104,7 @@ export default function Header() {
       <div className="max-w-[1200px] mx-auto px-6 w-full flex items-center justify-between">
         {/* Logo with interactive spring scale */}
         <div className="flex items-center">
-          <a href="#" className="flex items-center">
+          <a href="/" className="flex items-center">
             <motion.div
               animate={{
                 scale: scrolled ? 0.95 : 1.2,
@@ -58,7 +117,7 @@ export default function Header() {
               className="origin-left cursor-pointer"
             >
               <Image
-                src="/logo.png"
+                src="/logo2.png"
                 alt="Webrix Logo"
                 width={130}
                 height={38}
@@ -74,23 +133,35 @@ export default function Header() {
           className="hidden md:flex items-center gap-1.5 text-[14px] font-sans font-medium tracking-wide"
           onMouseLeave={() => setHoveredIndex(null)}
         >
-          {menuItems.map((item, index) => (
-            <a
-              key={item.name}
-              href={item.href}
-              onMouseEnter={() => setHoveredIndex(index)}
-              className="relative px-4 py-2 text-foreground/80 hover:text-foreground transition-colors duration-300 rounded-[5px]"
-            >
-              <span className="relative z-10">{item.name}</span>
-              {hoveredIndex === index && (
-                <motion.span
-                  layoutId="navHover"
-                  className="absolute inset-0 bg-foreground/8 rounded-[5px] z-0"
-                  transition={{ type: "spring", stiffness: 380, damping: 28 }}
-                />
-              )}
-            </a>
-          ))}
+          {menuItems.map((item, index) => {
+            const isActive = isItemActive(item);
+            return (
+              <a
+                key={item.name}
+                href={item.href}
+                onMouseEnter={() => setHoveredIndex(index)}
+                className={`relative px-4 py-2 transition-colors duration-300 rounded-md ${
+                  isActive ? "text-[#60A5FA] font-semibold" : "text-foreground/75 hover:text-foreground"
+                }`}
+              >
+                <span className="relative z-10">{item.name}</span>
+                {hoveredIndex === index && (
+                  <motion.span
+                    layoutId="navHover"
+                    className="absolute inset-0 bg-foreground/8 rounded-md z-0"
+                    transition={{ type: "spring", stiffness: 380, damping: 28 }}
+                  />
+                )}
+                {isActive && (
+                  <motion.span
+                    layoutId="navActiveDot"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#60A5FA] shadow-sm shadow-[#60A5FA]/80 z-20"
+                    transition={{ type: "spring", stiffness: 380, damping: 28 }}
+                  />
+                )}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Desktop CTA with premium shine sweep and glow hover, no scale */}
@@ -139,16 +210,21 @@ export default function Header() {
             className="absolute top-full left-0 w-full border-b border-border/40 bg-background/95 backdrop-blur-lg md:hidden overflow-hidden"
           >
             <nav className="flex flex-col px-6 py-6 space-y-4">
-              {menuItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-foreground/80 hover:text-foreground font-sans text-base font-medium py-1 transition-colors duration-150"
-                >
-                  {item.name}
-                </a>
-              ))}
+              {menuItems.map((item) => {
+                const isActive = isItemActive(item);
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`font-sans text-base font-medium py-1 transition-colors duration-150 ${
+                      isActive ? "text-[#60A5FA] font-semibold border-l-2 border-[#60A5FA] pl-3" : "text-foreground/80 hover:text-foreground pl-3"
+                    }`}
+                  >
+                    {item.name}
+                  </a>
+                );
+              })}
               <div className="pt-4 border-t border-border/40">
                 <Button
                   variant="primary"

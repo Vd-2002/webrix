@@ -41,7 +41,7 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative z-10 space-y-16 py-20 scroll-mt-24">
+    <section id="services" className="relative z-10 space-y-16 py-0 scroll-mt-24">
       {/* Header aligned with Hero section font styling */}
       <div className="space-y-4 text-center max-w-2xl mx-auto">
         <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white font-display">
@@ -62,10 +62,10 @@ export default function Services() {
           return (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100, damping: 20 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3 }}
               whileHover={{ y: -8 }}
               className="group relative border border-white/10 bg-[#070712]/40 backdrop-blur-md hover:border-white/20 transition-all duration-500 rounded-3xl p-8 lg:p-10 overflow-hidden flex flex-col justify-between"
               style={{
