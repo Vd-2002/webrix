@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Monitor, Cpu, Sparkles, Megaphone, Smartphone, ArrowUpRight } from "lucide-react";
 import Button from "@/components/ui/Button";
@@ -160,13 +161,15 @@ export default function Services() {
 
       {/* View All Services Button */}
       <div className="flex justify-center pt-8">
-        <Button
-          variant="outline"
-          className="px-10 py-4 text-xs tracking-wider rounded-md border-white/20 text-white hover:bg-white/5 transition-all duration-300 flex items-center gap-2.5 group"
-        >
-          View All Services
-          <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-        </Button>
+        <Link href="/services">
+          <Button
+            variant="outline"
+            className="px-10 py-4 text-xs tracking-wider rounded-md border-white/20 text-white hover:bg-white/5 transition-all duration-300 flex items-center gap-2.5 group"
+          >
+            View All Services
+            <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+          </Button>
+        </Link>
       </div>
     </section>
   );
