@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Monitor, Cpu, Sparkles, Megaphone, Terminal, CheckCircle2 } from "lucide-react";
+import { Monitor, Cpu, Sparkles, Megaphone, Smartphone, Terminal, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 
@@ -70,11 +70,41 @@ CREATE TABLE IF NOT EXISTS users (
   role VARCHAR(64) DEFAULT 'read-only'
 );`
     },
+    "mobile-app": {
+      id: "mobile-app-development",
+      title: "Mobile App Development",
+      icon: Smartphone,
+      color: "#34D399",
+      subHeading: "Premium Cross-Platform Native Mobile Applications Built with React Native",
+      desc: "We engineer lightweight, fully responsive cross-platform native iOS & Android applications. We optimize native bridges, bundle compile assets, and design smooth gesture-driven UI components to ensure premium speed and response on any mobile device.",
+      features: [
+        "Native React Native & Expo SDK Engineering",
+        "Sub-millisecond Device Geolocation & Map Tracking",
+        "Push Notifications Sync (Firebase Cloud Messaging)",
+        "Local Database Caching (SQLite & WatermelonDB)",
+        "Biometric Authentication Integration (FaceID / TouchID)"
+      ],
+      mockupType: "code",
+      mockupTitle: "App-native-navigation.tsx",
+      mockupContent: `// React Native Navigation Bridge Routing
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
+
+export default function NativeAppNavigator() {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Dashboard" component={DashboardScreen} />
+      <Stack.Screen name="MapTracking" component={MapTrackingScreen} />
+    </Stack.Navigator>
+  );
+}`
+    },
     "ai-automation": {
       id: "ai-automation",
       title: "AI & Workflow Automation",
       icon: Sparkles,
-      color: "#34D399",
+      color: "#F59E0B",
       subHeading: "Serverless Intelligent Bot Chains & LLM Context Synchronizers",
       desc: "Our automation grids handle the heavy operational lifting. We integrate OpenAI, Claude, or local LLMs into serverless pipelines, sync customer actions directly into vector databases, and trigger automatic messaging alerts across Slack, Email, and WhatsApp.",
       features: [
@@ -136,6 +166,7 @@ Organic Visibility:  +140% YoY`
   const tabs = [
     { id: "web-dev", label: "Website Dev", icon: Monitor },
     { id: "custom-software", label: "Custom Software", icon: Cpu },
+    { id: "mobile-app", label: "Mobile Apps", icon: Smartphone },
     { id: "ai-automation", label: "AI & Automation", icon: Sparkles },
     { id: "marketing", label: "Digital Marketing", icon: Megaphone }
   ];

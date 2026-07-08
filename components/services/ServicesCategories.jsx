@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Monitor, Cpu, Sparkles, Megaphone, ArrowRight } from "lucide-react";
+import { Monitor, Cpu, Sparkles, Megaphone, Smartphone, ArrowRight } from "lucide-react";
 
 export default function ServicesCategories() {
   const categories = [
@@ -23,11 +23,19 @@ export default function ServicesCategories() {
       tag: "ENTERPRISE SYSTEMS"
     },
     {
+      id: "mobile-app-development",
+      title: "Mobile App Development",
+      desc: "Engineering high-performance native iOS & Android applications using cross-platform tools like React Native.",
+      icon: Smartphone,
+      color: "#34D399",
+      tag: "MOBILE SOLUTIONS"
+    },
+    {
       id: "ai-automation",
       title: "AI & Workflow Automation",
       desc: "Configuring serverless automated agents, WhatsApp communication chains, and LLM embedding sync arrays.",
       icon: Sparkles,
-      color: "#34D399",
+      color: "#F59E0B",
       tag: "AI PIPELINES & BOTS"
     },
     {
@@ -51,12 +59,12 @@ export default function ServicesCategories() {
           </span>
         </h2>
         <p className="text-sm text-white/50 font-sans max-w-xl mx-auto">
-          We operate across four core pillars, providing dedicated resources and modern toolchains for each domain.
+          We operate across five core pillars, providing dedicated resources and modern toolchains for each domain.
         </p>
       </div>
 
       {/* Categories Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1200px] mx-auto items-stretch">
         {categories.map((cat, idx) => {
           const Icon = cat.icon;
           return (

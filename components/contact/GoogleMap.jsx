@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Globe, Compass, RefreshCw } from "lucide-react";
+import { Compass, RefreshCw, MapPin, Globe } from "lucide-react";
 
 export default function GoogleMap() {
   return (
@@ -9,103 +9,99 @@ export default function GoogleMap() {
       
       {/* Container aligned to page limits */}
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="border border-white/10 bg-[#070712]/60 backdrop-blur-md rounded-3xl overflow-hidden relative shadow-2xl min-h-[400px] flex flex-col justify-between">
+        <div className="border border-white/10 bg-[#070712]/60 backdrop-blur-md rounded-3xl overflow-hidden relative shadow-2xl flex flex-col justify-between">
           
           {/* Header toolbar */}
-          <div className="flex items-center justify-between border-b border-white/10 px-5 py-3.5 bg-black/40 z-10 relative">
+          <div className="flex items-center justify-between border-b border-white/10 px-5 py-4 bg-black/40 z-10 relative">
             <div className="flex items-center gap-2">
               <Compass className="w-4 h-4 text-[#60A5FA]" />
               <span className="text-xs font-mono font-bold text-white/60 tracking-wider">
-                global-office-network-map.vector
+                hq-location-telemetry.vector
               </span>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-[9px] font-mono text-white/30 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                Live Sync
+                <span className="w-1.5 h-1.5 rounded-full bg-[#60A5FA] animate-pulse" />
+                GPS Connected
               </span>
               <RefreshCw className="w-3 h-3 text-white/40 hover:text-white transition-colors cursor-pointer" />
             </div>
           </div>
 
-          {/* Interactive World Grid SVG Map */}
-          <div className="flex-1 w-full relative flex items-center justify-center min-h-[300px] overflow-hidden p-6">
+          {/* Map Frame Casing */}
+          <div className="w-full relative flex flex-col lg:flex-row items-stretch min-h-[450px]">
             
-            {/* World background map visual blueprint */}
-            <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
+            {/* Left Column: Coordinates & Geographic Telemetry Readouts */}
+            <div className="lg:w-1/4 border-r border-white/5 bg-black/20 p-6 flex flex-col justify-between font-mono text-[10px] text-white/50 space-y-6">
+              <div className="space-y-4">
+                <div className="space-y-1">
+                  <span className="text-[8px] font-bold text-[#60A5FA] tracking-widest uppercase">GEOGRAPHIC COORDS</span>
+                  <div className="text-xs font-semibold text-white">23.062385° N, 72.676806° E</div>
+                </div>
 
-            {/* Glowing connecting arc between SF and London */}
-            <svg className="w-full max-w-[800px] aspect-[2/1] text-white/5 relative z-10" viewBox="0 0 800 400" fill="none">
-              {/* World outline skeleton vectors (stylized curves) */}
-              <path d="M 50 150 Q 150 120, 250 160 T 450 140 T 650 160 T 750 150" stroke="white" strokeWidth="0.5" strokeDasharray="3 3" />
-              <path d="M 80 280 Q 200 240, 320 270 T 520 250 T 680 270" stroke="white" strokeWidth="0.5" strokeDasharray="3 3" />
+                <div className="space-y-1">
+                  <span className="text-[8px] font-bold text-[#A78BFA] tracking-widest uppercase">LOCATION ADDRESS</span>
+                  <div className="text-white/70 leading-relaxed font-sans">
+                    Solitaire Superb, Opposite Somnath Party Plot, Sardar Patel Ring Road, New Nikol, Ahmedabad, Gujarat - 382350
+                  </div>
+                </div>
+
+                <div className="space-y-1">
+                  <span className="text-[8px] font-bold text-[#34D399] tracking-widest uppercase">SYS ROUTE META</span>
+                  <div className="grid grid-cols-2 gap-2 text-[9px]">
+                    <div>COUNTRY: <strong className="text-white">IND</strong></div>
+                    <div>CITY: <strong className="text-white">AMD</strong></div>
+                    <div>STATE: <strong className="text-white">GUJ</strong></div>
+                    <div>STATUS: <strong className="text-[#34D399] font-bold">ONLINE</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Decorative Tech Blueprint */}
+              <div className="hidden lg:block border border-white/5 bg-white/[0.01] p-3.5 rounded-xl space-y-2">
+                <div className="flex items-center gap-1.5 text-[8px] font-bold text-white/30 tracking-widest uppercase">
+                  <Globe className="w-3 h-3 text-[#60A5FA]" />
+                  <span>GIS Datastream</span>
+                </div>
+                <div className="h-10 bg-white/[0.01] border border-dashed border-white/10 rounded flex items-center justify-center text-[8px] text-white/20 select-none">
+                  [SATELLITE SYNC OK]
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Custom Styled Google Map Iframe */}
+            <div className="lg:w-3/4 w-full h-[450px] relative overflow-hidden bg-black/40">
               
-              {/* Transatlantic Fiber Line Connection */}
-              <motion.path 
-                d="M 180 140 Q 320 60, 460 110" 
-                stroke="#60A5FA" 
-                strokeWidth="1.5" 
-                strokeLinecap="round"
-                strokeDasharray="6 4"
-                initial={{ strokeDashoffset: 0 }}
-                animate={{ strokeDashoffset: -50 }}
-                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+              {/* Overlay styling for custom map glow effect */}
+              <div className="absolute inset-0 z-10 pointer-events-none border border-inset border-white/5" />
+              
+              {/* Premium dark mode filter mapped over standard Google Maps */}
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.3119942768!2d72.67680617509305!3d23.062385479145824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e87e4bce6d27f%3A0x6332af5bfc80b579!2sSolitaire%20Superb!5e1!3m2!1sen!2sin!4v1783489437909!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ 
+                  border: 0,
+                  filter: "invert(90%) hue-rotate(180deg) brightness(85%) contrast(95%) grayscale(20%)"
+                }} 
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="strict-origin-when-cross-origin"
+                className="w-full h-full relative z-0"
               />
 
-              {/* San Francisco Node coordinate (180, 140) */}
-              <g transform="translate(180, 140)">
-                <circle cx="0" cy="0" r="14" fill="#60A5FA" fillOpacity="0.1" />
-                <circle cx="0" cy="0" r="6" fill="#60A5FA" fillOpacity="0.3" />
-                <motion.circle 
-                  cx="0" cy="0" r="4" fill="#60A5FA"
-                  animate={{ scale: [1, 1.4, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-                
-                {/* Floating tooltip */}
-                <foreignObject x="-70" y="-45" width="140" height="35">
-                  <div className="bg-[#050510] border border-[#60A5FA]/30 rounded-lg p-1.5 px-2 text-center shadow-lg pointer-events-none">
-                    <div className="text-[8px] font-mono font-bold text-white leading-none">San Francisco HQ</div>
-                    <div className="text-[7px] font-mono text-white/40 leading-none mt-0.5">sf@webrix.co</div>
-                  </div>
-                </foreignObject>
-              </g>
-
-              {/* London Node coordinate (460, 110) */}
-              <g transform="translate(460, 110)">
-                <circle cx="0" cy="0" r="14" fill="#34D399" fillOpacity="0.1" />
-                <circle cx="0" cy="0" r="6" fill="#34D399" fillOpacity="0.3" />
-                <motion.circle 
-                  cx="0" cy="0" r="4" fill="#34D399"
-                  animate={{ scale: [1, 1.4, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                />
-                
-                {/* Floating tooltip */}
-                <foreignObject x="-60" y="-45" width="120" height="35">
-                  <div className="bg-[#050510] border border-[#34D399]/30 rounded-lg p-1.5 px-2 text-center shadow-lg pointer-events-none">
-                    <div className="text-[8px] font-mono font-bold text-white leading-none">London Tech Hub</div>
-                    <div className="text-[7px] font-mono text-white/40 leading-none mt-0.5">lon@webrix.co</div>
-                  </div>
-                </foreignObject>
-              </g>
-
-              {/* Coordinates grid marker labels */}
-              <text x="30" y="380" fill="white" fillOpacity="0.2" fontSize="8" fontFamily="monospace">GRID COORDINATE INDEX: SF-37.7749/LN-51.5074</text>
-              <text x="770" y="380" fill="white" fillOpacity="0.2" fontSize="8" fontFamily="monospace" textAnchor="end">SYS_STATUS: COMPLIANT</text>
-            </svg>
-
+            </div>
           </div>
 
           {/* Footer details bar */}
           <div className="border-t border-white/10 px-5 py-3.5 bg-black/20 flex flex-col sm:flex-row items-center justify-between text-[10px] font-mono text-white/40 gap-3">
             <span className="flex items-center gap-1.5">
-              <Globe className="w-3.5 h-3.5 text-[#60A5FA]" />
-              <span>Multi-node low-latency synchronization server active</span>
+              <MapPin className="w-3.5 h-3.5 text-[#60A5FA]" />
+              <span>Webrix Solitaire Superb Hub &bull; Ahmedabad, India</span>
             </span>
             <div className="flex gap-4">
-              <span>Ping (SF - LON): <strong className="text-white">68ms</strong></span>
-              <span>Jitter: <strong className="text-white">0.4ms</strong></span>
+              <span>Ping (Main Node): <strong className="text-white">12ms</strong></span>
+              <span>Jitter: <strong className="text-white">0.2ms</strong></span>
             </div>
           </div>
 

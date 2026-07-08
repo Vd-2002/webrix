@@ -72,7 +72,7 @@ const SERVICES_DETAILS = {
   "ai-automation": {
     title: "AI & Workflow Automation",
     tagline: "Serverless LLM agents and automatic webhook pipelines that handle tasks 24/7.",
-    themeColor: "#34D399",
+    themeColor: "#F59E0B",
     stats: [
       { label: "Uptime Sync Rate", value: "99.9%" },
       { label: "Task Processing Speed", value: "3.2x" },
@@ -99,6 +99,38 @@ const SERVICES_DETAILS = {
     faqs: [
       { q: "Will our data be used to train public LLM models?", a: "No. We routing all data through private enterprise APIs (OpenAI/Anthropic APIs) that guarantee your data is never used for model training under strict SLAs." },
       { q: "How do you prevent loops and runaway webhook charges?", a: "We build circuit-breaker loops and payload validation layers into our webhook triggers, ensuring workflows stop immediately if anomalies are flagged." }
+    ]
+  },
+  "mobile-app-development": {
+    title: "Mobile App Development",
+    tagline: "Premium cross-platform native mobile applications built with React Native.",
+    themeColor: "#34D399",
+    stats: [
+      { label: "App Load Time", value: "0.8s" },
+      { label: "Crash-free Rate", value: "99.9%" },
+      { label: "Cross-code Share", value: "90%" }
+    ],
+    overview: "We engineer fluid, cross-platform mobile apps using React Native and Expo. By managing the rendering threads, caching database queries, and wrapping native SDKs cleanly, we ensure your app performs identically on both iOS and Android platforms.",
+    features: [
+      "Cross-Platform Native Builds (React Native & Expo SDK)",
+      "Low-Latency Geolocation Syncing & Real-Time Tracking APIs",
+      "Push Notifications Hub Integration (Firebase Cloud Messaging)",
+      "Local Storage Sync Pipelines (SQLite, WatermelonDB)",
+      "Secure Biometric Keychains (FaceID, TouchID, Cryptographic storage)",
+      "Automated Deployment & Testing (Fastlane CI/CD)"
+    ],
+    architecture: {
+      title: "Cross-Platform Mobile Sync Architecture Blueprint",
+      steps: [
+        { title: "Native Bridge Gateway", desc: "User gestures prompt cross-platform messages routed to native UI layouts." },
+        { title: "Local Cache Lookup", desc: "App checks local SQLite DB instantly before dispatching network inquiries." },
+        { title: "Secure Keychain Sign", desc: "Validates local sessions using system biometric API keys." },
+        { title: "REST / WebSocket Sync", desc: "Fires back-and-forth mutations updates with cloud database gateways." }
+      ]
+    },
+    faqs: [
+      { q: "Why choose React Native over writing pure native swift/kotlin code?", a: "React Native allows sharing over 90% of the codebase between iOS and Android. This dramatically reduces development costs and ensures features launch concurrently on both store markets without compromising native speed." },
+      { q: "How are notifications handled when the mobile app is closed?", a: "We configure background service loops and link Firebase/APNs listeners so users get high-priority alerts even if the app is closed." }
     ]
   },
   "digital-marketing": {
@@ -139,6 +171,7 @@ export async function generateStaticParams() {
   return [
     { id: "website-development" },
     { id: "custom-software-development" },
+    { id: "mobile-app-development" },
     { id: "ai-automation" },
     { id: "digital-marketing" }
   ];

@@ -80,6 +80,7 @@ export default function Footer() {
   const servicesLinks = [
     { name: "Website Development", href: "/services/website-development" },
     { name: "Custom Software", href: "/services/custom-software-development" },
+    { name: "Mobile App Development", href: "/services/mobile-app-development" },
     { name: "AI Automation", href: "/services/ai-automation" },
     { name: "Digital Marketing", href: "/services/digital-marketing" },
   ];
@@ -168,19 +169,19 @@ export default function Footer() {
             <ul className="space-y-3.5">
               <li className="flex items-start gap-2.5 text-sm text-white/50 font-sans">
                 <Mail className="w-4 h-4 text-[#34D399] mt-0.5 flex-shrink-0" />
-                <a href="mailto:hello@webrix.co" className="hover:text-white transition-colors break-all">
-                  hello@webrix.co
+                <a href="mailto:heywebrix@gmail.com" className="hover:text-white transition-colors break-all">
+                  heywebrix@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2.5 text-sm text-white/50 font-sans">
                 <Phone className="w-4 h-4 text-[#60A5FA] mt-0.5 flex-shrink-0" />
-                <a href="tel:+15550192834" className="hover:text-white transition-colors">
-                  +1 (555) 019-2834
+                <a href="tel:+919998342593" className="hover:text-white transition-colors">
+                  +91 99983 42593
                 </a>
               </li>
               <li className="flex items-start gap-2.5 text-sm text-white/50 font-sans">
                 <MapPin className="w-4 h-4 text-[#A78BFA] mt-0.5 flex-shrink-0" />
-                <span>100 Pine Street,<br />San Francisco, CA 94111</span>
+                <span>New Nikol, SP Ring Road,<br />Ahmedabad, Gujarat - 382350,<br />India</span>
               </li>
             </ul>
           </div>

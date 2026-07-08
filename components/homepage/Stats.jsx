@@ -30,10 +30,10 @@ function CountUp({ end, suffix = "", duration = 1200 }) {
 const STATS_DATA = [
   {
     id: "projects",
-    endValue: 50,
+    endValue: 30,
     suffix: "+",
     label: "Projects Delivered",
-    description: "SaaS platforms, web architectures, and brands built.",
+    description: "Headless storefronts, custom ERP portals, and mobile apps.",
     accentColor: "#60A5FA", // Blue
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -46,8 +46,8 @@ const STATS_DATA = [
     id: "clients",
     endValue: 20,
     suffix: "+",
-    label: "Global Clients",
-    description: "Partnerships with startups and enterprises.",
+    label: "Happy Clients",
+    description: "Partnerships with growing startups and local business brands.",
     accentColor: "#818CF8", // Indigo
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -59,11 +59,11 @@ const STATS_DATA = [
     )
   },
   {
-    id: "industries",
+    id: "services",
     endValue: 5,
-    suffix: "+",
-    label: "Industries Served",
-    description: "Retail, manufacturing, healthcare, and finance expertise.",
+    suffix: "",
+    label: "Core Services",
+    description: "Bespoke specialization in web, software, mobile, marketing, and AI.",
     accentColor: "#34D399", // Emerald
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -78,7 +78,7 @@ const STATS_DATA = [
     endValue: 99,
     suffix: "%",
     label: "Satisfaction Rate",
-    description: "Unmatched code quality and delivery guarantees.",
+    description: "Driven by clean code commits, strict SLAs, and prompt updates.",
     accentColor: "#A78BFA", // Violet
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">

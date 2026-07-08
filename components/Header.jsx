@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Monitor, Cpu, Sparkles, Megaphone } from "lucide-react";
+import { Monitor, Cpu, Sparkles, Megaphone, Smartphone } from "lucide-react";
 import Button from "./ui/Button";
 
 export default function Header() {
@@ -88,6 +88,12 @@ export default function Header() {
       desc: "Secure ERP & SaaS portals",
       href: "/services/custom-software-development",
       icon: Cpu
+    },
+    {
+      name: "Mobile App Development",
+      desc: "Cross-platform mobile apps",
+      href: "/services/mobile-app-development",
+      icon: Smartphone
     },
     {
       name: "AI & Automation",

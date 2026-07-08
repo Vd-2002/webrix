@@ -6,10 +6,10 @@ const TESTIMONIALS = [
   {
     id: 1,
     name: "Dr. Evelyn Chen",
-    role: "CTO",
-    company: "Aegis Health",
-    quote: "Webrix delivered a HIPAA-compliant patient portal that completely modernized our clinical workflows. The speed and quality of their engineering is unparalleled.",
-    metric: "100% HIPAA Secure",
+    role: "Founder",
+    company: "Aegis Storefronts",
+    quote: "Webrix delivered a headless Next.js eCommerce store that completely modernized our user journey. The load speeds are under 0.4s and page conversions skyrocketed.",
+    metric: "+45% Conversion Lift",
     accentColor: "#EF4444", // Red
     icon: ShieldCheck
   },
@@ -17,9 +17,9 @@ const TESTIMONIALS = [
     id: 2,
     name: "Marcus Vance",
     role: "VP of Operations",
-    company: "Apex Industries",
-    quote: "Our manufacturing floor automation has achieved 99.9% uptime since migrating to the IoT dashboard built by Webrix. Highly recommended for complex integrations.",
-    metric: "99.9% Uptime SLA",
+    company: "Apex Logistics",
+    quote: "The custom delivery driver tracking mobile app and CRM dashboard built by Webrix has freed up dozens of manual fleet dispatch hours every week.",
+    metric: "40+ Hours Saved/Wk",
     accentColor: "#F59E0B", // Amber
     icon: Zap
   },
@@ -28,28 +28,28 @@ const TESTIMONIALS = [
     name: "Elena Rostova",
     role: "CEO",
     company: "Oakridge Realty",
-    quote: "The custom PropTech listings database and CRM engine they built for us has increased lead conversions by 35%. Excellent design paired with exceptional backend speed.",
-    metric: "+35% Lead Conversion",
+    quote: "Our local real estate listings portal and custom database has increased lead conversions by 35%. Outstanding design combined with exceptional speed.",
+    metric: "+35% Conversion Rate",
     accentColor: "#3B82F6", // Blue
     icon: MessageSquare
   },
   {
     id: 4,
     name: "Sarah Jenkins",
-    role: "VP of Clinical Tech",
-    company: "Chronos Care",
-    quote: "Their AI triage scheduling tool has reduced patient wait times by 40%. The backend is robust, compliant, and integrates cleanly with standard medical systems.",
-    metric: "-40% Patient Wait Time",
+    role: "Tech Director",
+    company: "Zenith Care",
+    quote: "Their WhatsApp API bot helper handles 80% of our daily customer triage questions. The AI automation is accurate, fast, and secure.",
+    metric: "80% Automations Rate",
     accentColor: "#EF4444", // Red
     icon: ShieldCheck
   },
   {
     id: 5,
     name: "Donald Sterling",
-    role: "Director of Fleet",
-    company: "Titan Logistics",
-    quote: "Webrix designed our automated transport routing model. Warehouse dispatch times have cut down by half. Their developers are exceptionally skilled in high-concurrency systems.",
-    metric: "50% Faster Dispatch",
+    role: "Director of Supply",
+    company: "Titan Cargo",
+    quote: "Webrix designed our internal SaaS logistics ERP console. Fleet sync times have cut down by half. Their developer team is highly capable in relational databases.",
+    metric: "50% Faster Workflows",
     accentColor: "#F59E0B", // Amber
     icon: Zap
   },
@@ -57,9 +57,9 @@ const TESTIMONIALS = [
     id: 6,
     name: "Renée Dupuis",
     role: "VP of Growth",
-    company: "Stellar Listings",
-    quote: "Their custom MLS integration and fast database lookup allowed us to handle 10,000 queries per minute without any latency drops. Brilliant engineering team.",
-    metric: "10K req/min Capacity",
+    company: "Stellar Agency",
+    quote: "Their digital marketing SEO audit and landing pages speed-tuning increased our organic search impressions by 120% YoY. Brilliant engineering.",
+    metric: "+120% Traffic Growth",
     accentColor: "#3B82F6", // Blue
     icon: MessageSquare
   }

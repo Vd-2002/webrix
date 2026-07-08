@@ -1,53 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
-
-const PROJECTS = [
-  {
-    num: "01",
-    name: "Aegis Health Portal",
-    industry: "Healthcare",
-    tag: "EHR & Telehealth Platform",
-    image: "/project_healthcare.png",
-    desc: "A HIPAA-compliant clinical dashboard enabling real-time vitals monitoring, secure doctor-patient teleconsultation slots, and automated EHR integration pipelines.",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "GraphQL"],
-    accentColor: "#EF4444" // Red
-  },
-  {
-    num: "02",
-    name: "Apex IoT Operations",
-    industry: "Manufacturing",
-    tag: "IoT & Supply Chain Console",
-    image: "/project_manufacturing.png",
-    desc: "A high-performance operations terminal for factory assembly floors, integrating real-time IoT sensors to calculate OEE rates and log supply chain logs.",
-    technologies: ["React", "Node.js", "WebSockets", "InfluxDB"],
-    accentColor: "#F59E0B" // Amber
-  },
-  {
-    num: "03",
-    name: "Oakridge Listings CRM",
-    industry: "Real Estate",
-    tag: "PropTech Database & Search",
-    image: "/project_realestate.png",
-    desc: "A fast MLS listing database engine with interactive Mapbox coordinate lookup, custom agent CRM boards, and high-conversion client search pipelines.",
-    technologies: ["Next.js", "PostgreSQL", "Prisma", "Mapbox"],
-    accentColor: "#3B82F6" // Blue
-  },
-  {
-    num: "04",
-    name: "Vanguard Headless Store",
-    industry: "Retail",
-    tag: "E-Commerce Checkout Engine",
-    image: "/project_retail.png",
-    desc: "A blazing fast headless retail POS store built with Next.js, linking Stripe processing APIs and real-time automated inventory synchronization.",
-    technologies: ["React", "Shopify API", "Stripe", "Serverless"],
-    accentColor: "#EC4899" // Pink
-  }
-];
 
 function StickyProjectCard({ project, idx }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -68,7 +25,7 @@ function StickyProjectCard({ project, idx }) {
       <div 
         className="absolute -right-24 -top-24 w-80 h-80 rounded-full opacity-[0.08] blur-[90px] transition-all duration-700 pointer-events-none"
         style={{
-          background: `radial-gradient(circle, ${project.accentColor} 0%, transparent 70%)`
+          background: `radial-gradient(circle, ${project.accentColor || project.color || "#60A5FA"} 0%, transparent 70%)`
         }}
       />
 
@@ -77,8 +34,8 @@ function StickyProjectCard({ project, idx }) {
         <div 
           className="w-full border rounded-2xl overflow-hidden bg-black/60 shadow-xl transition-all duration-500"
           style={{
-            borderColor: isHovered ? `${project.accentColor}30` : "rgba(255,255,255,0.06)",
-            boxShadow: isHovered ? `0 12px 30px -10px ${project.accentColor}20` : "none"
+            borderColor: isHovered ? `${project.color || "#60A5FA"}30` : "rgba(255,255,255,0.06)",
+            boxShadow: isHovered ? `0 12px 30px -10px ${project.color || "#60A5FA"}20` : "none"
           }}
         >
           {/* Browser Bar */}
@@ -97,7 +54,7 @@ function StickyProjectCard({ project, idx }) {
           {/* Browser Viewport with Portfolio Mockup */}
           <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/40">
             <Image 
-              src={project.image} 
+              src={project.image || "/project_healthcare.png"} 
               alt={project.name}
               fill
               className="object-cover transition-transform duration-700 hover:scale-102"
@@ -115,11 +72,11 @@ function StickyProjectCard({ project, idx }) {
           <div className="flex items-center gap-2">
             <span 
               className="w-1.5 h-1.5 rounded-full animate-pulse"
-              style={{ backgroundColor: project.accentColor }}
+              style={{ backgroundColor: project.color || "#60A5FA" }}
             />
             <span 
               className="text-xs font-mono font-bold tracking-widest uppercase transition-colors duration-300"
-              style={{ color: isHovered ? project.accentColor : "rgba(255,255,255,0.4)" }}
+              style={{ color: isHovered ? (project.color || "#60A5FA") : "rgba(255,255,255,0.4)" }}
             >
               {project.industry} &bull; {project.tag}
             </span>
@@ -142,7 +99,7 @@ function StickyProjectCard({ project, idx }) {
             Core Technologies
           </span>
           <div className="flex flex-wrap gap-1.5">
-            {project.technologies.map((tag, tagIdx) => (
+            {project.technologies?.map((tag, tagIdx) => (
               <span 
                 key={tagIdx}
                 className="text-[10px] font-mono font-medium px-2.5 py-1 rounded-lg bg-white/[0.02] border border-white/5 text-white/60 hover:text-white transition-colors duration-200"
@@ -154,21 +111,21 @@ function StickyProjectCard({ project, idx }) {
         </div>
 
         {/* Interactive CTA Link */}
-        <div className="flex items-center gap-2 pt-2 select-none">
+        <a href={`/portfolio/${project.id}`} className="flex items-center gap-2 pt-2 select-none">
           <span 
             className="text-xs font-mono font-bold uppercase tracking-wider transition-colors duration-300"
-            style={{ color: isHovered ? project.accentColor : "rgba(255,255,255,0.6)" }}
+            style={{ color: isHovered ? (project.color || "#60A5FA") : "rgba(255,255,255,0.6)" }}
           >
             Explore Case Study
           </span>
           <ArrowRight 
             className="w-4 h-4 transition-transform duration-300"
             style={{ 
-              color: isHovered ? project.accentColor : "rgba(255,255,255,0.4)",
+              color: isHovered ? (project.color || "#60A5FA") : "rgba(255,255,255,0.4)",
               transform: isHovered ? "translateX(4px) rotate(-45deg)" : "none"
             }}
           />
-        </div>
+        </a>
 
       </div>
 
@@ -177,6 +134,25 @@ function StickyProjectCard({ project, idx }) {
 }
 
 export default function FeaturedProjects() {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/projects")
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          // slice first 3 projects for homepage showcase
+          setProjects(data.projects.slice(0, 3));
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <section id="projects" className="relative z-10 space-y-16 py-0 scroll-mt-24">
       
@@ -195,7 +171,7 @@ export default function FeaturedProjects() {
 
       {/* Stacked Sticky Cards Container */}
       <div className="max-w-[1200px] mx-auto px-6 relative space-y-16">
-        {PROJECTS.map((proj, idx) => (
+        {projects.map((proj, idx) => (
           <StickyProjectCard 
             key={idx} 
             project={proj} 

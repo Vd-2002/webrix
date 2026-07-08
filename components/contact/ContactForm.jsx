@@ -12,7 +12,7 @@ export default function ContactForm() {
     name: "",
     email: "",
     company: "",
-    category: "Websites",
+    category: "Website Development",
     message: ""
   });
 
@@ -33,25 +33,42 @@ export default function ContactForm() {
     return Object.keys(tempErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
 
     setStatus("submitting");
 
-    // Simulate database write
-    setTimeout(() => {
-      setStatus("success");
-      setQueueId(Math.floor(Math.random() * 90000) + 10000);
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        category: "Websites",
-        message: ""
+    try {
+      const response = await fetch("/api/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
       });
-      setTimeout(() => setStatus("idle"), 6000);
-    }, 2000);
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("success");
+        // Extract a clean string ID part from ObjectId or fallback
+        const cleanId = data.messageId ? data.messageId.substring(data.messageId.length - 6).toUpperCase() : (Math.floor(Math.random() * 90000) + 10000).toString();
+        setQueueId(cleanId);
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          category: "Website Development",
+          message: ""
+        });
+        setTimeout(() => setStatus("idle"), 6000);
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error("Scoping submit error:", err);
+      setStatus("error");
+    }
   };
 
   const handleInputChange = (e) => {
@@ -62,7 +79,13 @@ export default function ContactForm() {
     }
   };
 
-  const categories = ["Websites", "Software", "AI", "Marketing"];
+  const categories = [
+    "Website Development",
+    "Custom Software Development",
+    "Mobile App Development",
+    "Digital Marketing",
+    "AI Automation"
+  ];
 
   return (
     <section id="contact-form-section" className="relative z-10 scroll-mt-24 w-full">
@@ -180,6 +203,7 @@ export default function ContactForm() {
                       label="Email Address"
                       type="email"
                       name="email"
+                      suppressHydrationWarning
                       value={formData.email}
                       onChange={handleInputChange}
                       error={errors.email}

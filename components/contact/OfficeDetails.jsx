@@ -5,24 +5,14 @@ import { MapPin, Phone, Mail, Clock, Shield, Globe } from "lucide-react";
 
 const OFFICES = [
   {
-    city: "San Francisco",
-    role: "Global Headquarters",
-    address: "100 Pine Street, Suite 2400, San Francisco, CA 94111",
-    phone: "+1 (555) 019-2834",
-    email: "sf@webrix.co",
-    hours: "09:00 - 18:00 PST",
-    timezone: "UTC-8",
+    city: "Ahmedabad",
+    role: "Webrix Headquarters",
+    address: "Solitaire Superb, Behind Ganesh Vihar Flats, Opposite Somnath Party Plot, Sardar Patel Ring Road, New Nikol, Ahmedabad, Gujarat - 382350, India",
+    phone: "+91 99983 42593",
+    email: "heywebrix@gmail.com",
+    hours: "09:00 - 18:00 IST",
+    timezone: "UTC+5:30",
     color: "#60A5FA"
-  },
-  {
-    city: "London",
-    role: "European Engineering Hub",
-    address: "30 St Mary Axe, Floor 18, London, EC3A 8BF",
-    phone: "+44 20 7946 0958",
-    email: "lon@webrix.co",
-    hours: "09:00 - 18:00 GMT",
-    timezone: "UTC+0",
-    color: "#34D399"
   }
 ];
 
@@ -35,16 +25,16 @@ export default function OfficeDetails() {
         <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white font-display">
           Our{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#60A5FA] via-[#A78BFA] to-[#34D399]">
-            Locations
+            Headquarters
           </span>
         </h2>
         <p className="text-sm sm:text-base text-white/60 font-sans max-w-xl mx-auto">
-          Visit or connect with our physical engineering hubs in critical tech centers.
+          Visit or connect with our physical engineering and design hub.
         </p>
       </div>
 
       {/* Offices Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1200px] mx-auto">
+      <div className="grid grid-cols-1 max-w-[800px] mx-auto px-6">
         {OFFICES.map((office, idx) => (
           <motion.div
             key={idx}
