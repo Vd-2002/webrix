@@ -19,10 +19,8 @@ async function sendEmails(newMessage) {
     return;
   }
 
-  const transporter = nodemailer.createTransport({
-    host,
-    port,
-    secure,
+  // Smart routing: Gmail behaves much better on cloud servers when using service: "gmail"
+  const transporterOptions = {
     auth: {
       user,
       pass,
@@ -30,13 +28,24 @@ async function sendEmails(newMessage) {
     tls: {
       rejectUnauthorized: false
     }
-  });
+  };
+
+  if (host.toLowerCase().includes("gmail")) {
+    transporterOptions.service = "gmail";
+  } else {
+    transporterOptions.host = host;
+    transporterOptions.port = port;
+    transporterOptions.secure = secure;
+  }
+
+  const transporter = nodemailer.createTransport(transporterOptions);
 
   // Admin Notification Email
   const adminMailOptions = {
     from: `"Webrix System" <${user}>`,
     to: "heywebrix@gmail.com",
     subject: `New Project Scoping Form Submission - ${name}`,
+    text: `New Project Scoping Form Submission - ${name}\n\nLead Name: ${name}\nEmail: ${email}\nCategory: ${category}\nCompany: ${company || "Not Specified"}\nMessage: ${message}`,
     html: `
       <div style="background-color: #030308; padding: 40px 20px; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, Arial, sans-serif; color: #ffffff; text-align: center;">
         <div style="max-width: 600px; margin: 0 auto; background: #070712; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 40px; text-align: left; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
@@ -110,6 +119,7 @@ async function sendEmails(newMessage) {
     from: `"Webrix Team" <${user}>`,
     to: email,
     subject: "Thank you for contacting Webrix!",
+    text: `Hi ${name},\n\nThank you for reaching out! We have successfully received your project scoping request. Our system engineering team will review the details and get back to you within 24 hours.\n\nSummary of details:\nCategory: ${category}\nCompany: ${company || "Not Specified"}\nMessage: "${message}"\n\nBest regards,\nWebrix Engineering Team\nhttps://webrix.co.in`,
     html: `
       <div style="background-color: #030308; padding: 40px 20px; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, Arial, sans-serif; color: #ffffff; text-align: center;">
         <div style="max-width: 600px; margin: 0 auto; background: #070712; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 40px; text-align: left; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
