@@ -14,7 +14,7 @@ export default function ServiceDetailLayout({ data }) {
   };
 
   return (
-    <div className="space-y-[100px] w-full">
+    <div className="space-y-16 sm:space-y-24 w-full">
       
       {/* 1. Track Hero */}
       <section className="relative z-10 w-full pt-8 pb-12 text-left">
@@ -40,10 +40,10 @@ export default function ServiceDetailLayout({ data }) {
               <span className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] bg-white/5 border border-white/10 px-3 py-1.5 rounded-full select-none inline-block" style={{ color: data.themeColor }}>
                 SERVICE PROFILE
               </span>
-              <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white font-display">
+              <h1 className="text-xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white font-display">
                 {data.title}
               </h1>
-              <p className="text-base sm:text-lg text-white/70 leading-relaxed font-sans max-w-2xl">
+              <p className="text-sm sm:text-base lg:text-lg text-white/70 leading-relaxed font-sans max-w-2xl">
                 {data.tagline}
               </p>
             </div>
@@ -89,7 +89,7 @@ export default function ServiceDetailLayout({ data }) {
             <span className="text-[10px] font-mono font-bold tracking-widest uppercase block" style={{ color: data.themeColor }}>
               CAPABILITIES OVERVIEW
             </span>
-            <h3 className="text-2xl font-bold font-display text-white tracking-tight">
+            <h3 className="text-xl sm:text-2xl font-bold font-display text-white tracking-tight">
               Modular Deliverables
             </h3>
             <p className="text-xs sm:text-sm text-white/60 leading-relaxed font-sans font-light">
@@ -120,7 +120,7 @@ export default function ServiceDetailLayout({ data }) {
       {/* 3. Architecture Blueprint */}
       <section className="relative z-10 w-full space-y-12">
         <div className="space-y-4 text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl font-extrabold tracking-tight text-white font-display">
+          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white font-display">
             Architecture{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#60A5FA] via-[#A78BFA] to-[#34D399]">
               Blueprint
@@ -175,7 +175,7 @@ export default function ServiceDetailLayout({ data }) {
       {/* 4. Track FAQs */}
       <section className="relative z-10 w-full space-y-12">
         <div className="space-y-4 text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl font-extrabold tracking-tight text-white font-display">
+          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white font-display">
             Target{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#60A5FA] via-[#A78BFA] to-[#34D399]">
               FAQs

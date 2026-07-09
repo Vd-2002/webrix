@@ -5,7 +5,7 @@ import { FolderGit2, Sparkles, Layers } from "lucide-react";
 
 export default function PortfolioHero() {
   return (
-    <section className="relative z-10 w-full min-h-[40vh] flex flex-col justify-center items-center text-center py-16 scroll-mt-24">
+    <section className="relative z-10 w-full min-h-0 sm:min-h-[40vh] flex flex-col justify-center items-center text-center pt-4 pb-10 sm:py-16 scroll-mt-24">
       {/* Glow spots */}
       <div className="absolute w-[300px] h-[300px] rounded-full bg-blue-500/5 blur-[120px] top-10 left-1/4 pointer-events-none -z-10" />
       <div className="absolute w-[300px] h-[300px] rounded-full bg-purple-500/5 blur-[120px] bottom-10 right-1/4 pointer-events-none -z-10" />
@@ -23,7 +23,7 @@ export default function PortfolioHero() {
           <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-[#60A5FA] bg-blue-500/10 border border-blue-500/20 px-3 py-1.5 rounded-full select-none inline-block">
             Our Portfolio
           </span>
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white font-display leading-[1.1]">
+          <h1 className="text-xl sm:text-6xl font-extrabold tracking-tight text-white font-display leading-[1.15]">
             Engineering Proof in{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#60A5FA] via-[#A78BFA] to-[#34D399]">
               Every Build

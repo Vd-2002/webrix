@@ -625,6 +625,18 @@ export default function Hero() {
 
   const currentSlide = SLIDES[current];
 
+  const handleNext = () => {
+    setIsAutoplay(false);
+    setDirection(1);
+    setCurrent((prev) => (prev + 1) % SLIDES.length);
+  };
+
+  const handlePrev = () => {
+    setIsAutoplay(false);
+    setDirection(-1);
+    setCurrent((prev) => (prev - 1 + SLIDES.length) % SLIDES.length);
+  };
+
   // Motion variants for slide text contents (elegant vertical crossfade)
   const textVariants = {
     enter: {
@@ -677,7 +689,20 @@ export default function Hero() {
       <div className="max-w-[1200px] mx-auto px-6 sm:px-16 w-full flex-1 flex flex-col justify-center relative z-10 py-16">
         
         {/* Center Split Screen Details */}
-        <div className="grid lg:grid-cols-12 gap-12 items-center w-full">
+        <motion.div 
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={(event, info) => {
+            const swipeThreshold = 50; // pixels
+            if (info.offset.x < -swipeThreshold) {
+              handleNext();
+            } else if (info.offset.x > swipeThreshold) {
+              handlePrev();
+            }
+          }}
+          className="grid lg:grid-cols-12 gap-12 items-center w-full cursor-grab active:cursor-grabbing select-none"
+        >
           
           {/* Left Details (7 columns) - Crossfades vertically */}
           <div className="lg:col-span-7 space-y-6 text-left overflow-hidden">
@@ -692,7 +717,7 @@ export default function Hero() {
               >
 
                 {/* Heading with word-by-word highlight */}
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-white font-display">
+                <h1 className="text-xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white font-display">
                   {currentSlide.title.split(" ").map((word, i, arr) => {
                     const isHighlight = i >= arr.length - 2;
                     if (isHighlight) {
@@ -781,7 +806,7 @@ export default function Hero() {
             </AnimatePresence>
           </div>
 
-        </div>
+        </motion.div>
 
 
         {/* Bottom Progress indicators */}

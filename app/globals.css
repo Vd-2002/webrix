@@ -139,3 +139,11 @@ code, pre, kbd, samp {
   }
 }
 
+/* Responsive adjustments for mobile screens */
+@media (max-width: 639.98px) {
+  .px-6 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+

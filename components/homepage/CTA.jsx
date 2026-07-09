@@ -281,7 +281,7 @@ export default function CTA() {
             </div>
 
             {/* Main Action Heading with neon gradient */}
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white font-display leading-[1.1]">
+            <h2 className="text-2xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white font-display leading-[1.1]">
               Ready To{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#60A5FA] via-[#A78BFA] to-[#34D399] drop-shadow-[0_2px_10px_rgba(96,165,250,0.18)] block sm:inline">
                 Grow Your Business?

@@ -23,7 +23,7 @@ export default function WhyChooseUs() {
     <section id="why-choose-us" className="relative z-10 space-y-16 py-0 scroll-mt-24">
       {/* Header Aligned with Homepage Styling */}
       <div className="space-y-4 text-center max-w-2xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white font-display">
+        <h2 className="text-2xl sm:text-5xl font-extrabold tracking-tight text-white font-display">
           Why Choose{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#A78BFA] via-[#60A5FA] to-[#34D399]">
             Webrix

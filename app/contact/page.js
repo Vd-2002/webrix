@@ -1,5 +1,3 @@
-"use client";
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactHero from "@/components/contact/ContactHero";
@@ -9,13 +7,51 @@ import GoogleMap from "@/components/contact/GoogleMap";
 import ContactFAQ from "@/components/contact/ContactFAQ";
 import CTA from "@/components/homepage/CTA";
 
+export const metadata = {
+  title: "Contact Our Engineering Team",
+  description: "Get in touch with Webrix. Scope your custom software project, ask compliance questions, or request an audit of your Core Web Vitals.",
+  alternates: {
+    canonical: "https://webrix.co.in/contact",
+  },
+};
+
 export default function ContactPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Webrix",
+    "description": "Contact our software engineering and design teams for custom project scoping, tech consulting, or digital architecture builds.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Webrix",
+      "url": "https://webrix.co.in",
+      "logo": "https://webrix.co.in/logo.png"
+    },
+    "mainEntity": {
+      "@type": "ProfessionalService",
+      "name": "Webrix",
+      "image": "https://webrix.co.in/logo.png",
+      "url": "https://webrix.co.in",
+      "email": "heywebrix@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New York City",
+        "addressRegion": "NY",
+        "addressCountry": "US"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans transition-colors duration-300 flex flex-col justify-between">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header component */}
       <Header />
 
-      <main className="max-w-[1200px] mx-auto px-6 pt-[100px] pb-[100px] space-y-[100px] flex-1 w-full">
+      <main className="max-w-[1200px] mx-auto px-6 pt-8 pb-16 sm:pt-24 sm:pb-24 space-y-16 sm:space-y-24 flex-1 w-full">
         {/* Contact Hero */}
         <ContactHero />
 

@@ -22,6 +22,20 @@ async function getProject(id) {
   }
 }
 
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const project = await getProject(id);
+  if (!project) return {};
+
+  return {
+    title: `${project.title} Case Study`,
+    description: project.description || `Case study detailing our engineering work for ${project.title}.`,
+    alternates: {
+      canonical: `https://webrix.co.in/portfolio/${id}`,
+    },
+  };
+}
+
 export default async function ProjectDetailPage({ params }) {
   const { id } = await params;
   const project = await getProject(id);
@@ -32,12 +46,28 @@ export default async function ProjectDetailPage({ params }) {
 
   const themeColor = project.color || "#60A5FA";
 
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": project.title,
+    "description": project.description,
+    "creator": {
+      "@type": "Organization",
+      "name": "Webrix",
+      "url": "https://webrix.co.in"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans transition-colors duration-300 flex flex-col justify-between">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
+      />
       {/* Header component */}
       <Header />
 
-      <main className="max-w-[1200px] mx-auto px-6 pt-[60px] pb-[100px] space-y-[60px] flex-1 w-full relative z-10">
+      <main className="max-w-[1200px] mx-auto px-6 pt-12 pb-16 sm:pt-[60px] sm:pb-24 space-y-12 sm:space-y-[60px] flex-1 w-full relative z-10">
         
         {/* Back Link */}
         <div>

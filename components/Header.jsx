@@ -5,15 +5,22 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Monitor, Cpu, Sparkles, Megaphone, Smartphone } from "lucide-react";
+import { Monitor, Cpu, Sparkles, Megaphone, Smartphone, ChevronDown } from "lucide-react";
 import Button from "./ui/Button";
 
 export default function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [activeHash, setActiveHash] = useState("");
+
+  useEffect(() => {
+    if (!isOpen) {
+      setMobileServicesOpen(false);
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -133,6 +140,7 @@ export default function Header() {
 
   return (
     <motion.header
+      initial={false}
       className={`sticky top-0 z-50 w-full border-b flex items-center transition-colors duration-300 ${
         scrolled
           ? "bg-background/80 backdrop-blur-md border-border/40 shadow-lg shadow-black/20"
@@ -303,14 +311,14 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay with AnimatePresence for smooth transitions */}
+      {/* Mobile Menu Overlay - animated */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="absolute top-full left-0 w-full border-b border-border/40 bg-background/95 backdrop-blur-lg md:hidden overflow-hidden"
           >
             <nav className="flex flex-col px-6 py-6 space-y-4">
@@ -321,33 +329,49 @@ export default function Header() {
                 if (isServices) {
                   return (
                     <div key={item.name} className="flex flex-col gap-2">
-                      <Link
-                        href={item.href}
-                        onClick={() => setIsOpen(false)}
-                        className={`font-sans text-base font-medium py-1 transition-colors duration-150 ${
-                          isActive ? "text-[#60A5FA] font-semibold border-l-2 border-[#60A5FA] pl-3" : "text-foreground/80 hover:text-foreground pl-3"
+                      <button
+                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                        className={`w-full text-left font-sans text-base font-medium py-1 transition-colors duration-150 flex items-center justify-between cursor-pointer ${
+                          isActive 
+                            ? "text-[#60A5FA] font-semibold border-l-2 border-[#60A5FA] pl-3 pr-2" 
+                            : "text-foreground/80 hover:text-foreground pl-3 pr-2"
                         }`}
                       >
-                        {item.name}
-                      </Link>
+                        <span>{item.name}</span>
+                        <ChevronDown 
+                          className={`w-4 h-4 transition-transform duration-300 ${
+                            mobileServicesOpen ? "rotate-180 text-[#60A5FA]" : "text-foreground/50"
+                          }`}
+                        />
+                      </button>
                       
-                      {/* Mobile Submenu Items */}
-                      <div className="flex flex-col gap-3 pl-6 border-l border-white/5 mt-1.5">
-                        {submenuItems.map((sub) => {
-                          const SubIcon = sub.icon;
-                          return (
-                            <Link
-                              key={sub.name}
-                              href={sub.href}
-                              onClick={() => setIsOpen(false)}
-                              className="flex items-center gap-3 py-1 text-sm text-white/50 hover:text-white transition-colors"
-                            >
-                              <SubIcon className="w-4 h-4 text-[#60A5FA]" />
-                              <span>{sub.name}</span>
-                            </Link>
-                          );
-                        })}
-                      </div>
+                      {/* Mobile Submenu Items - animated */}
+                      <AnimatePresence>
+                        {mobileServicesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                            className="flex flex-col gap-3 pl-6 border-l border-white/5 mt-1.5 overflow-hidden"
+                          >
+                            {submenuItems.map((sub) => {
+                              const SubIcon = sub.icon;
+                              return (
+                                <Link
+                                  key={sub.name}
+                                  href={sub.href}
+                                  onClick={() => setIsOpen(false)}
+                                  className="flex items-center gap-3 py-1 text-sm text-white/50 hover:text-white transition-colors"
+                                >
+                                  <SubIcon className="w-4 h-4 text-[#60A5FA]" />
+                                  <span>{sub.name}</span>
+                                </Link>
+                              );
+                            })}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   );
                 }
@@ -379,6 +403,7 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
+
     </motion.header>
   );
 }

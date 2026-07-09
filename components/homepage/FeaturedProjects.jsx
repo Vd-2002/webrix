@@ -158,7 +158,7 @@ export default function FeaturedProjects() {
       
       {/* Header aligned with Homepage layout */}
       <div className="space-y-4 text-center max-w-2xl mx-auto px-6">
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white font-display">
+        <h2 className="text-2xl sm:text-5xl font-extrabold tracking-tight text-white font-display">
           Featured{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#60A5FA] via-[#A78BFA] to-[#34D399]">
             Projects

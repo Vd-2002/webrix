@@ -177,6 +177,23 @@ export async function generateStaticParams() {
   ];
 }
 
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const service = SERVICES_DETAILS[id];
+
+  if (!service) {
+    return {};
+  }
+
+  return {
+    title: `${service.title} Services`,
+    description: service.tagline || service.overview,
+    alternates: {
+      canonical: `https://webrix.co.in/services/${id}`,
+    },
+  };
+}
+
 export default async function ServiceDetailPage({ params }) {
   const { id } = await params;
   const service = SERVICES_DETAILS[id];
@@ -185,12 +202,45 @@ export default async function ServiceDetailPage({ params }) {
     notFound();
   }
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.tagline || service.overview,
+    "provider": {
+      "@type": "Organization",
+      "name": "Webrix",
+      "url": "https://webrix.co.in"
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": service.faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans transition-colors duration-300 flex flex-col justify-between">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Header component */}
       <Header />
 
-      <main className="max-w-[1200px] mx-auto px-6 pt-[100px] pb-[100px] space-y-[100px] flex-1 w-full">
+      <main className="max-w-[1200px] mx-auto px-6 pt-8 pb-16 sm:pt-24 sm:pb-24 space-y-16 sm:space-y-24 flex-1 w-full">
         {/* Dynamic layout for current service */}
         <ServiceDetailLayout data={service} />
 
