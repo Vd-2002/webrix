@@ -157,25 +157,20 @@ export default function ContactForm() {
                   <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-3 max-w-md">
                     <h3 className="text-xl sm:text-2xl font-extrabold text-white font-display">
-                      Scoping Payload Received
+                      Message Sent Successfully
                     </h3>
-                    <p className="text-xs sm:text-sm text-white/50 font-sans max-w-sm">
-                      Connection established. Your parameters have been written to our engineering queue. We will check it in 12 hours.
+                    <p className="text-sm text-white/70 font-sans leading-relaxed">
+                      Thank you for reaching out! We have successfully received your project scoping specifications. Our system engineering team will review the details and get back to you within 24 hours.
                     </p>
-                  </div>
-                  <div className="bg-white/[0.02] border border-white/5 p-4 rounded-xl font-mono text-[10px] text-white/40 text-left max-w-xs w-full">
-                    <div>$ curl -X GET &quot;/scoping-log&quot;</div>
-                    <div className="text-emerald-400">&gt; Status: 200 OK</div>
-                    <div className="text-emerald-400">&gt; Queue ID: WBX-{queueId}</div>
                   </div>
                   <Button 
                     variant="outline" 
                     onClick={() => setStatus("idle")}
                     className="px-6 py-2.5 text-xs font-mono font-semibold uppercase tracking-wider rounded-xl border border-white/10 hover:bg-white/5"
                   >
-                    Send Another Request
+                    Send Another Message
                   </Button>
                 </motion.div>
               ) : (
