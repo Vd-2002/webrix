@@ -6,14 +6,16 @@ import nodemailer from "nodemailer";
 async function sendEmails(newMessage) {
   const { name, email, company, category, message } = newMessage;
   
-  const host = process.env.SMTP_HOST;
+  const host = process.env.SMTP_HOST ? process.env.SMTP_HOST.replace(/["']/g, "").trim() : "";
   const port = parseInt(process.env.SMTP_PORT || "587", 10);
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
+  const user = process.env.SMTP_USER ? process.env.SMTP_USER.replace(/["']/g, "").trim() : "";
+  const rawPass = process.env.SMTP_PASS || "";
+  // Sanitize the password: remove any quotes and spaces (Gmail App Passwords are 16-character keys without spaces)
+  const pass = rawPass.replace(/["']/g, "").replace(/\s+/g, "");
   const secure = process.env.SMTP_SECURE === "true";
 
   if (!host || !user || !pass) {
-    console.warn("SMTP credentials not fully configured. Skipping email delivery.");
+    console.warn("SMTP credentials not fully configured. Skipping email delivery. Details:", { host, user, hasPass: !!pass });
     return;
   }
 
@@ -25,6 +27,9 @@ async function sendEmails(newMessage) {
       user,
       pass,
     },
+    tls: {
+      rejectUnauthorized: false
+    }
   });
 
   // Admin Notification Email
