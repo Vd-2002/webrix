@@ -262,11 +262,11 @@ export default function ContactForm() {
                       {status === "submitting" ? (
                         <>
                           <Cpu className="w-4 h-4 animate-spin text-primary-foreground" />
-                          <span>Streaming Scoping Payload...</span>
+                          <span>Sending...</span>
                         </>
                       ) : (
                         <>
-                          <span>Transmit Scoping Request</span>
+                          <span>Send Message</span>
                           <Send className="w-3.5 h-3.5 text-primary-foreground" />
                         </>
                       )}
