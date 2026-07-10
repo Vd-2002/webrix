@@ -10,19 +10,19 @@ export default function ServicesFAQs() {
   const faqs = [
     {
       q: "Does Webrix construct projects on default templates?",
-      a: "No. We write all codebases from scratch (Next.js, Node.js, Rust). By avoiding heavy generic templates and visual page builder plugins, we prevent code bloat, reduce server computing costs, and achieve sub-millisecond execution speeds."
+      a: "No, we build everything custom. By avoiding heavy templates and website builders, we keep your site light, fast, and easy to run."
     },
     {
       q: "How are compliance guidelines like HIPAA/GDPR managed?",
-      a: "During the blueprint stage, we identify the exact legal and security requirements of your operations. We then construct dedicated relational models with field-level encryption, isolated database instances, secure JWT authentication patterns, and audited logs."
+      a: "We review your security needs early on. Then, we build private databases, secure user accounts, and activity logs to keep your data safe and private."
     },
     {
       q: "What is the average latency for a custom database API?",
-      a: "Our core API endpoints average a latency of 12ms under typical loads. We achieve this by optimizing PostgreSQL indexes, structuring Redis cache layers, and deploying server container nodes within proximity of the edge network."
+      a: "Our database setups are built to load instantly. We achieve this by structuring database indexes, storing data in fast caches, and using global servers."
     },
     {
       q: "How is post-launch operational support managed?",
-      a: "We offer dedicated operational SLAs (Service Level Agreements) that include priority bug fixes, server metrics monitoring, and regular backups. You will have direct access to our core systems engineers via a dedicated Slack workspace."
+      a: "We offer dedicated support plans that include regular updates, server checks, and daily backups. You can message our developers directly whenever you need help."
     }
   ];
 
@@ -41,7 +41,7 @@ export default function ServicesFAQs() {
           </span>
         </h2>
         <p className="text-sm text-white/50 font-sans max-w-xl mx-auto">
-          Clear answers to common questions regarding our deliverables, tech choices, and SLAs.
+          Common questions about our work, hosting, and support.
         </p>
       </div>
 

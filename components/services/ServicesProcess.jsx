@@ -8,38 +8,38 @@ export default function ServicesProcess() {
     {
       num: "01",
       phase: "Week 1",
-      title: "Discovery & Blueprint",
-      desc: "Analyzing target metrics, compiling system requirements, and creating data mockups.",
+      title: "Discovery & Planning",
+      desc: "Analyzing your business targets, setting requirements, and planning software features.",
       icon: Search,
       color: "#60A5FA",
-      checks: ["Requirement Mapping", "System Dependency Sheet", "SLA Spec Document"]
+      checks: ["Feature Roadmap", "Security Strategy", "Project Budget"]
     },
     {
       num: "02",
       phase: "Week 2-3",
-      title: "Architecture & Setup",
-      desc: "Configuring container clusters, designing relational schemas, and defining API routing.",
+      title: "Design & Cloud Setup",
+      desc: "Setting up secure cloud servers, organizing databases, and defining user routing.",
       icon: Compass,
       color: "#818CF8",
-      checks: ["AWS ECS Cluster Spec", "Postgres Entity Maps", "API Schema Models"]
+      checks: ["Cloud Server Setup", "Database Setup", "API Route Mapping"]
     },
     {
       num: "03",
       phase: "Week 4-6",
-      title: "Custom Engineering",
-      desc: "Writing modular source code under sprint tracking with continuous automated checks.",
+      title: "Custom Development",
+      desc: "Writing clean custom code in regular steps with continuous automated testing.",
       icon: ShieldCheck,
       color: "#F472B6",
-      checks: ["Clean Git Commits", "Unit/Integration Logs", "Staging Environment Build"]
+      checks: ["GitHub Codebase", "Automated Testing", "Staging Site Deploy"]
     },
     {
       num: "04",
       phase: "Week 7",
-      title: "Launch & Reroute",
-      desc: "Transitioning DNS routes, activating CDNs, and executing final load speed tests.",
+      title: "Launch & Support",
+      desc: "Setting up domain routes, activating global hosting, and running speed checks.",
       icon: Rocket,
       color: "#34D399",
-      checks: ["Zero-Downtime Pipeline", "Edge Cache Warmup", "Speed Latency Audit"]
+      checks: ["Zero-Downtime Launch", "Global Server Hosting", "Page Speed Report"]
     }
   ];
 
@@ -54,7 +54,7 @@ export default function ServicesProcess() {
           </span>
         </h2>
         <p className="text-sm text-white/50 font-sans max-w-xl mx-auto">
-          We maintain an structured, time-bounded delivery timeline to ensure zero scope creep and clear progress logs.
+          We follow a simple step-by-step timeline to keep the project on track and launch on time.
         </p>
       </div>
 

@@ -7,22 +7,22 @@ import { ChevronDown, HelpCircle, FileText, Calendar, Zap, MessageSquare } from 
 const FAQS = [
   {
     question: "How quickly can we start a new project?",
-    answer: "Typically, we schedule a technical scoping sync within 24 to 48 hours of receiving your form payload. Real-world architecture drafts are delivered within a week, and physical building starts within 10-14 days.",
+    answer: "We will reply to your message in 24 to 48 hours. We can share a project plan in a week and start building your website or app in about two weeks.",
     icon: Calendar
   },
   {
     question: "Do you sign NDAs before reviewing project requirements?",
-    answer: "Yes. We respect security protocols. We sign standard corporate NDAs or encrypt requirements before inspecting active databases, legacy repos, or proprietary design specs.",
+    answer: "Yes, we sign NDAs to protect your details, code, and project files.",
     icon: FileText
   },
   {
     question: "How do you scope pricing milestones?",
-    answer: "We offer clear, fixed-price budgets based on engineering complexity: endpoints, latency performance goals, database configurations, third-party hooks, and security compliance metrics. No hourly surprise bills.",
+    answer: "We offer clear, fixed-price budgets based on the work needed for your project. You will know the price upfront with no surprise costs.",
     icon: Zap
   },
   {
     question: "Can we run a code audit on our current system first?",
-    answer: "Absolutely. We run detailed performance diagnostic audits. We inspect server latency, bundle loading sizes, Framer Motion jerks, database index queries, and outline exact recommendations.",
+    answer: "Yes, we can check your current website for speed, security, and bugs, and give you a report on how to improve it.",
     icon: MessageSquare
   }
 ];
@@ -87,7 +87,7 @@ export default function ContactFAQ() {
           </span>
         </h2>
         <p className="text-sm sm:text-base text-white/60 font-sans max-w-xl mx-auto">
-          Quick details on how our scheduling, NDAs, audits, and budgeting stages coordinate.
+          Quick answers to common questions about starting a project with us.
         </p>
       </div>
 

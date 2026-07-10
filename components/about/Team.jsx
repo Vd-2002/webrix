@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { Cpu, ShieldAlert, Award } from "lucide-react";
 
 export default function Team() {
-  const members = [
+const members = [
     {
       name: "Arthur Pendelton",
       role: "Founder & CTO",
-      desc: "Former database kernel engineer. Arthur leads Webrix core frameworks development and maps application architecture patterns.",
-      badge: "Architecture Core",
+      desc: "Former systems developer. Arthur leads Webrix project development and code quality.",
+      badge: "Core Developer",
       color: "#60A5FA",
       icon: Cpu,
       skills: ["Database Kernels", "Systems Scaling", "Rust", "Next.js"],
@@ -19,8 +19,8 @@ export default function Team() {
     {
       name: "Clara Sterling",
       role: "Principal Solutions Architect",
-      desc: "Specializes in secure backend clouds, multi-region database routing, and HIPAA/GDPR enterprise compliance architectures.",
-      badge: "Cloud Compliance",
+      desc: "Specializes in secure cloud hosting, databases, and security compliance.",
+      badge: "Cloud Security",
       color: "#34D399",
       icon: ShieldAlert,
       skills: ["AWS / GCP", "compliance Engines", "Kubernetes", "PostgreSQL"],
@@ -30,7 +30,7 @@ export default function Team() {
     {
       name: "Marcus Wu",
       role: "Senior Automation Engineer",
-      desc: "AI automation specialist. Focuses on custom LLM models integration, vector search models, and intelligent serverless agent nodes.",
+      desc: "AI automation specialist. Focuses on smart AI workflows, databases, and custom chat bots.",
       badge: "AI Automation",
       color: "#A78BFA",
       icon: Award,
@@ -51,7 +51,7 @@ export default function Team() {
           </span>
         </h2>
         <p className="text-base text-white/60 font-sans max-w-xl mx-auto">
-          Our core squad of elite developers and database systems architects.
+          Our team of custom software developers and designers.
         </p>
       </div>
 

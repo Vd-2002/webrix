@@ -5,31 +5,31 @@ import { ShieldCheck, Zap, Key, ArrowRight, Gauge, Layers, RefreshCw } from "luc
 
 const SOLUTIONS = [
   {
-    title: "Secure Access Telehealth Audits",
+    title: "Secure Telehealth Systems",
     for: "Healthcare Compliance",
-    solution: "We build secure data-layer controllers, segregating client credentials from telemetry records. The system utilizes AES-256 database encryption at rest, token validation keys, and auto-generated security auditing reports.",
-    metric: "100% HIPAA Standard Pass",
+    solution: "We build secure databases that separate user details from medical files, use data encryption, and provide security reports.",
+    metric: "100% HIPAA Compliant",
     accent: "#EF4444"
   },
   {
-    title: "High-Throughput WebSocket Hubs",
+    title: "Live Machine Sensors",
     for: "Manufacturing IoT",
-    solution: "We set up InfluxDB time-series index arrays and node pipelines handling 100hz stream updates. Sensor handshakes reconnect automatically via resilient edge nodes, preventing data outages.",
-    metric: "1.2ms Telemetry Database Write",
+    solution: "We set up fast database pipelines that handle live updates from factory machines. The connections reconnect automatically to prevent data loss.",
+    metric: "Fast Data Synchronization",
     accent: "#F59E0B"
   },
   {
-    title: "PostGIS Spatial Search Arrays",
+    title: "Fast Real Estate Map Search",
     for: "Real Estate Spatial Indexing",
-    solution: "We optimize PostgreSQL query planners with PostGIS geometry indexing, isolating geo-searches to sub-100m zones. Results stream through Mapbox caching coordinates instantly.",
-    metric: "0.04s Spatial Coordinates Query",
+    solution: "We optimize databases to load property listings on maps instantly. Nearby search results load in a fraction of a second.",
+    metric: "Instant Map Loading",
     accent: "#3B82F6"
   },
   {
-    title: "Decoupled Headless Stripe Checkouts",
+    title: "Fast Online Store Checkout",
     for: "Retail & E-Commerce",
-    solution: "We build headless Next.js frontends connected to Shopify API endpoints, streaming cart checkouts to edge caches. Transactions route securely via Stripe, bypassing server threads.",
-    metric: "+42% Conversion Rates Lift",
+    solution: "We build fast online stores with custom layouts, secure Stripe checkout payments, and instant cart updates.",
+    metric: "+42% More Sales",
     accent: "#EC4899"
   }
 ];
@@ -50,7 +50,7 @@ export default function SolutionsByIndustry() {
           </span>
         </h2>
         <p className="text-sm sm:text-base text-white/60 font-sans max-w-xl mx-auto">
-          How we bypass performance boundaries to deliver compliant, fast, and scalable architectures.
+          How we build custom websites and software to help your business grow.
         </p>
       </div>
 

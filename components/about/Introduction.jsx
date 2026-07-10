@@ -5,9 +5,9 @@ import { Cpu, ShieldCheck, Activity, Terminal } from "lucide-react";
 
 export default function Introduction() {
   const introStats = [
-    { label: "Average API Latency", value: "12ms", icon: Cpu, color: "#60A5FA" },
-    { label: "Core Infrastructure Uptime", value: "99.99%", icon: ShieldCheck, color: "#34D399" },
-    { label: "Workflow Processing Speed", value: "3.2x", icon: Activity, color: "#A78BFA" },
+    { label: "Page Load Speed", value: "0.4s", icon: Cpu, color: "#60A5FA" },
+    { label: "Guaranteed Uptime", value: "99.99%", icon: ShieldCheck, color: "#34D399" },
+    { label: "Efficiency Gain", value: "3.2x", icon: Activity, color: "#A78BFA" },
   ];
 
   return (
@@ -23,14 +23,14 @@ export default function Introduction() {
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white font-display leading-[1.15]">
               Engineering the Future of{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#60A5FA] via-[#A78BFA] to-[#34D399]">
-                High-Performance Software
+                Fast & Modern Software
               </span>
             </h2>
             <p className="text-sm sm:text-base text-white/60 leading-relaxed font-sans max-w-2xl">
-              Webrix is a premium digital engineering agency. We partner with forward-thinking businesses and startups to design, build, and scale high-performance web systems, custom cloud architectures, and intelligent workflows.
+              Webrix is a custom web agency. We partner with businesses and startups to design, build, and grow fast websites, custom software, and smart automations.
             </p>
             <p className="text-sm sm:text-base text-white/50 leading-relaxed font-sans max-w-2xl">
-              Our philosophy centers on precision engineering. We skip the bulk templates and bloated frameworks, delivering clean, custom-tailored code bases optimized for sub-millisecond execution, maximum security, and infinite horizontal scalability.
+              Our goal is to build reliable code. We skip standard website templates, delivering clean, custom-tailored code that loads fast, keeps data secure, and handles many users easily.
             </p>
           </div>
 

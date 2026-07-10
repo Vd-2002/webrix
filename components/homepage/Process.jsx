@@ -9,7 +9,7 @@ const STEPS = [
     num: "01",
     phase: "Discovery",
     title: "Discovery & Alignment",
-    desc: "We align on stakeholder vision, run business requirement analysis, map project constraints, and draft the initial product strategy roadmap.",
+    desc: "We meet to understand your goals, look at what you need, and plan the first version of your product.",
     deliverables: ["Product Roadmap", "Stakeholder Brief", "Feature Checklist"],
     accentColor: "#60A5FA", // Blue
     icon: Search,
@@ -18,7 +18,7 @@ const STEPS = [
     num: "02",
     phase: "Planning",
     title: "Planning & Architecture",
-    desc: "Defining application schemas, microservice API integrations, tech stack selections, database models, and target sprint schedules.",
+    desc: "Choosing the right tools, planning how the database will work, and setting a project schedule.",
     deliverables: ["API Documentation", "Data Schema Models", "Sprint Schedule"],
     accentColor: "#818CF8", // Indigo
     icon: GitFork,
@@ -27,7 +27,7 @@ const STEPS = [
     num: "03",
     phase: "Design",
     title: "UI/UX & Prototyping",
-    desc: "Creating wireframes, crafting a high-fidelity modern design system, and building interactive screen prototypes for stakeholder review.",
+    desc: "Creating visual layouts, designing a custom style, and building interactive mockups for you to review.",
     deliverables: ["Figma Prototypes", "Design System Kit", "Interactive Mockups"],
     accentColor: "#F472B6", // Pink
     icon: Palette,
@@ -36,7 +36,7 @@ const STEPS = [
     num: "04",
     phase: "Development",
     title: "Engineering & Integration",
-    desc: "Writing clean, optimized, and scalable code. Developing frontends with Next.js and linking backend business APIs and services.",
+    desc: "Writing clean, fast code. Developing your website or app front end and connecting it to secure back-end systems.",
     deliverables: ["Modular Codebase", "API Integration", "Staging Server Deploy"],
     accentColor: "#34D399", // Green
     icon: Code,
@@ -45,7 +45,7 @@ const STEPS = [
     num: "05",
     phase: "Testing",
     title: "QA & Performance Auditing",
-    desc: "Executing automated unit tests, security penetration screening, usability checks, and rigorous performance lighthouse auditing.",
+    desc: "Testing the software for security, check if it's easy to use, and making sure it loads extremely fast.",
     deliverables: ["Lighthouse Audit Report", "QA Pass Logs", "Security Certificate"],
     accentColor: "#F59E0B", // Amber
     icon: ShieldCheck,
@@ -54,7 +54,7 @@ const STEPS = [
     num: "06",
     phase: "Launch",
     title: "Production Deployment",
-    desc: "Configuring CDN edge routing, launching production server instances, mapping SSL endpoints, and running live verification passes.",
+    desc: "Setting up secure server hosting, routing your website domains, and making your product live for everyone.",
     deliverables: ["Production Live URL", "CDN Edge Routing", "Zero-Downtime CI/CD"],
     accentColor: "#06B6D4", // Cyan
     icon: Rocket,
@@ -63,7 +63,7 @@ const STEPS = [
     num: "07",
     phase: "Support",
     title: "Support & Optimization",
-    desc: "24/7 uptime monitoring, server updates, regular database backups, monthly performance checks, and continuous sprint iteration releases.",
+    desc: "Monitoring your servers, applying updates, backing up data, and making improvements when you need them.",
     deliverables: ["Uptime Status Logs", "Maintenance Retainer", "Sprint Backlog"],
     accentColor: "#F43F5E", // Rose
     icon: LifeBuoy,

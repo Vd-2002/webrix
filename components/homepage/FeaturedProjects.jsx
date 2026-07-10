@@ -165,7 +165,7 @@ export default function FeaturedProjects() {
           </span>
         </h2>
         <p className="text-base text-white/60 font-sans max-w-xl mx-auto">
-          Explore our recent digital products, engineered with clean code and high-fidelity interfaces.
+          Explore our recent projects, built with clean code and beautiful designs.
         </p>
       </div>
 

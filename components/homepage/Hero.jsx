@@ -566,9 +566,9 @@ function AIVisualizer() {
 const SLIDES = [
   {
     badge: "Software Engineering",
-    title: "Engineering Scalable Enterprise Software",
-    desc: "We design, build, and deploy high-concurrency web and mobile platforms with optimized Next.js, Node.js, and Python backend microservices.",
-    bullets: ["Dedicated Scrum Teams", "Clean API Architectures", "Rigorous Penetration Testing"],
+    title: "Building Custom Websites & Software",
+    desc: "We design and build fast websites and mobile apps using modern technology.",
+    bullets: ["Dedicated Teams", "Modern & Secure Code", "Tested for Safety"],
     bg: "/software_engineering_bg.png",
     accentColor: "#60A5FA",
     visualizer: SoftwareVisualizer,
@@ -580,9 +580,9 @@ const SLIDES = [
   },
   {
     badge: "Cloud & DevOps",
-    title: "Modernizing Global Cloud Infrastructure",
-    desc: "Transition your legacy environments to secure, containerized architectures on AWS, GCP, or Azure with auto-scaling and CI/CD pipelines.",
-    bullets: ["Infrastructure as Code", "99.99% High Availability SLA", "Zero-Downtime Live Migration"],
+    title: "Hosting & Cloud Infrastructure",
+    desc: "Move your existing systems to secure and reliable cloud servers like AWS, Google Cloud, or Microsoft Azure.",
+    bullets: ["Easy Server Setups", "99.99% Uptime Guarantee", "Safe and Smooth Migration"],
     bg: "/cloud_systems_bg.png",
     accentColor: "#A78BFA",
     visualizer: CloudVisualizer,
@@ -594,9 +594,9 @@ const SLIDES = [
   },
   {
     badge: "AI & Automation",
-    title: "Architecting the Future with Intelligent AI",
-    desc: "Optimize business performance and automate core operations by integrating custom LLMs, intelligence agents, and data modeling pipelines.",
-    bullets: ["Custom LLM Agent Training", "Automated Business Analytics", "Natural Language Workflows"],
+    title: "Smart AI & Automations",
+    desc: "Make your business faster and automate daily tasks using smart AI and workflows.",
+    bullets: ["Custom AI Solutions", "Automated Reporting", "Smart Workflow Integrations"],
     bg: "/ai_automation_bg.png",
     accentColor: "#34D399",
     visualizer: AIVisualizer,

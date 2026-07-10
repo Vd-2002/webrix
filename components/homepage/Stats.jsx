@@ -33,7 +33,7 @@ const STATS_DATA = [
     endValue: 30,
     suffix: "+",
     label: "Projects Delivered",
-    description: "Headless storefronts, custom ERP portals, and mobile apps.",
+    description: "Online shops, custom business software, and mobile apps.",
     accentColor: "#60A5FA", // Blue
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -47,7 +47,7 @@ const STATS_DATA = [
     endValue: 20,
     suffix: "+",
     label: "Happy Clients",
-    description: "Partnerships with growing startups and local business brands.",
+    description: "Working with startups and local businesses.",
     accentColor: "#818CF8", // Indigo
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -63,7 +63,7 @@ const STATS_DATA = [
     endValue: 5,
     suffix: "",
     label: "Core Services",
-    description: "Bespoke specialization in web, software, mobile, marketing, and AI.",
+    description: "Custom work in websites, apps, marketing, and AI.",
     accentColor: "#34D399", // Emerald
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -78,7 +78,7 @@ const STATS_DATA = [
     endValue: 99,
     suffix: "%",
     label: "Satisfaction Rate",
-    description: "Driven by clean code commits, strict SLAs, and prompt updates.",
+    description: "Driven by clean code, quick updates, and high quality.",
     accentColor: "#A78BFA", // Violet
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">

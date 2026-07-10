@@ -7,29 +7,29 @@ const CHALLENGES = [
   {
     icon: Activity,
     title: "Healthcare Compliance Hurdles",
-    challenge: "Telehealth interfaces and clinical databases struggle with legacy integration. Monolithic backends fail security audits (HIPAA, ISO), leak vital telemetry records, or lag patient synchronization.",
-    impact: "Audits Failures & Access Leaks",
+    challenge: "Telehealth platforms and medical databases often struggle with old integrations. Slow backend systems can fail security audits, expose data, or delay patient updates.",
+    impact: "Security Failures & Data Leaks",
     accent: "#EF4444"
   },
   {
     icon: Database,
     title: "High-Frequency IoT Outages",
-    challenge: "Factory floor machinery dashboards fail under massive write loads. Low-frequency sockets drop sensor connections, causing delays, data gaps, and inaccurate OEE metrics calculations.",
-    impact: "Connection Drops & Data Gaps",
+    challenge: "Factory machine dashboards can crash under heavy data loads. Slow connections drop sensor signals, causing delays and inaccurate efficiency calculations.",
+    impact: "Lost Connections & Lost Data",
     accent: "#F59E0B"
   },
   {
     icon: Ban,
     title: "Spatial Search Index Bloat",
-    challenge: "PropTech search tools lag when query coordinates cross massive boundaries. Bulky databases block server threads, slowing down Mapbox loading indices and listing queries.",
-    impact: "Coordinate Search Lag & Locking",
+    challenge: "Real estate map searches can slow down when loading large areas. Heavy database queries block server responses and delay property map updates.",
+    impact: "Slow Map Loading",
     accent: "#3B82F6"
   },
   {
     icon: ShoppingCart,
     title: "Monolith Checkout Drop-Offs",
-    challenge: "E-Commerce sites run heavy JS layouts, rigid shopping cards, and standard SQL lookup queries. Bloated liquid templates increase checkout speeds, causing cart drops.",
-    impact: "Abandonment & Loading Speeds",
+    challenge: "Many online stores use heavy templates and slow checkout systems. Slow loading times cause customers to leave before purchasing.",
+    impact: "Lost Sales & Slow Checkouts",
     accent: "#EC4899"
   }
 ];
@@ -41,7 +41,7 @@ export default function IndustryChallenges() {
       {/* Header section */}
       <div className="space-y-4 text-center max-w-2xl mx-auto px-6">
         <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#EF4444] bg-red-500/10 border border-red-500/20 px-3 py-1.5 rounded-full select-none inline-block">
-          Technical Friction
+          Technical Challenges
         </span>
         <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white font-display">
           Industry{" "}
@@ -50,7 +50,7 @@ export default function IndustryChallenges() {
           </span>
         </h2>
         <p className="text-sm sm:text-base text-white/60 font-sans max-w-xl mx-auto">
-          The structural software bottlenecks and constraints that hold back standard template configurations.
+          Common software issues and bottlenecks that slow down standard websites.
         </p>
       </div>
 

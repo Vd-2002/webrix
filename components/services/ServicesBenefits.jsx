@@ -6,26 +6,26 @@ import { Gauge, ShieldAlert, Layers, HeartHandshake } from "lucide-react";
 export default function ServicesBenefits() {
   const benefits = [
     {
-      title: "Microsecond Execution",
-      desc: "By removing boilerplate layouts and template structures, our assets load within milliseconds, boosting conversion rates and user engagement scores.",
+      title: "Fast Loading Speeds",
+      desc: "By removing heavy templates and code, your website loads instantly, increasing user engagement and sales.",
       icon: Gauge,
       color: "#60A5FA"
     },
     {
-      title: "Compliance & Security",
-      desc: "Every API pathway, server instance, and database relational schema we construct is built with active SSL routes and audited compliance rules.",
+      title: "Security & Compliance",
+      desc: "Every page, database, and backend system we build is highly secure and follows data protection standards.",
       icon: ShieldAlert,
       color: "#34D399"
     },
     {
-      title: "Infinite Scalability",
-      desc: "Our AWS ECS and Docker container templates are mapped to automatically scale horizontally to handle traffic surges with zero database lockouts.",
+      title: "Built to Grow",
+      desc: "Our servers are configured to automatically handle large surges in traffic, keeping your site online at all times.",
       icon: Layers,
       color: "#A78BFA"
     },
     {
-      title: "Active Dev Support",
-      desc: "We assign dedicated systems architects and senior developers directly to your operations Slack workspace for continuous deployment cycles.",
+      title: "Dedicated Support",
+      desc: "We assign dedicated developers directly to your team so you can get help and updates when you need them.",
       icon: HeartHandshake,
       color: "#F472B6"
     }
@@ -42,7 +42,7 @@ export default function ServicesBenefits() {
           </span>
         </h2>
         <p className="text-sm text-white/50 font-sans max-w-xl mx-auto">
-          How our precision engineering model directly upgrades your digital performance and operational safety.
+          How our custom code improves your website performance and keeps your data secure.
         </p>
       </div>
 
@@ -94,7 +94,7 @@ export default function ServicesBenefits() {
 
               {/* Bottom footer status */}
               <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[9px] font-mono text-white/20">
-                <span>BENEFIT VERIFICATION SECURE</span>
+                <span>BENEFIT METRIC</span>
                 <span style={{ color: benefit.color }}>ACTIVE</span>
               </div>
             </motion.div>

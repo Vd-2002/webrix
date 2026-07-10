@@ -86,31 +86,31 @@ export default function Header() {
   const submenuItems = [
     {
       name: "Website Development",
-      desc: "Fast Next.js interfaces",
+      desc: "Fast and modern websites",
       href: "/services/website-development",
       icon: Monitor
     },
     {
       name: "Custom Software",
-      desc: "Secure ERP & SaaS portals",
+      desc: "Secure custom software",
       href: "/services/custom-software-development",
       icon: Cpu
     },
     {
       name: "Mobile App Development",
-      desc: "Cross-platform mobile apps",
+      desc: "Apps for iOS and Android",
       href: "/services/mobile-app-development",
       icon: Smartphone
     },
     {
       name: "AI & Automation",
-      desc: "Serverless LLM pipelines",
+      desc: "Smart AI & automations",
       href: "/services/ai-automation",
       icon: Sparkles
     },
     {
       name: "Digital Marketing",
-      desc: "Analytics & sitemaps audit",
+      desc: "SEO & digital marketing",
       href: "/services/digital-marketing",
       icon: Megaphone
     }

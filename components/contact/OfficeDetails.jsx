@@ -29,7 +29,7 @@ export default function OfficeDetails() {
           </span>
         </h2>
         <p className="text-sm sm:text-base text-white/60 font-sans max-w-xl mx-auto">
-          Visit or connect with our physical engineering and design hub.
+          Visit or connect with our main office.
         </p>
       </div>
 
@@ -107,11 +107,10 @@ export default function OfficeDetails() {
                 </div>
               </div>
 
-              {/* Small blueprint network parameters status */}
               <div className="pt-4 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-white/30">
                 <span className="flex items-center gap-1">
                   <Globe className="w-3.5 h-3.5 text-[#34D399]" />
-                  <span>Sub-millisecond route status</span>
+                  <span>Online status</span>
                 </span>
                 <span className="text-[#34D399] font-bold">ACTIVE</span>
               </div>

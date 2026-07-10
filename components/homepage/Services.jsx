@@ -9,40 +9,40 @@ const SERVICES = [
   {
     num: "01",
     title: "Website Development",
-    desc: "Bespoke marketing sites, headless storefronts, and performant corporate platforms.",
-    details: ["Next.js & SSR", "Headless Commerce", "SEO Optimization"],
+    desc: "Custom business websites, online shops, and landing pages.",
+    details: ["Fast Loading Pages", "Online Store Setup", "Google Search SEO"],
     accentColor: "#60A5FA",
     icon: Monitor,
   },
   {
     num: "02",
     title: "Custom Software Development",
-    desc: "Robust database architectures, secure multi-tenant CRM/ERP engines, and business tools.",
-    details: ["Relational Database", "Secure Auth API", "ERP/CRM Integrations"],
+    desc: "Secure database systems, custom business software, and admin tools.",
+    details: ["Data Storage", "Secure User Logins", "Business Tool Sync"],
     accentColor: "#A78BFA",
     icon: Cpu,
   },
   {
     num: "03",
     title: "Mobile App Development",
-    desc: "Fast, responsive cross-platform native iOS and Android mobile solutions built to scale.",
-    details: ["React Native", "Expo SDK", "Live Map Tracking"],
+    desc: "Fast mobile apps for both iPhone and Android devices.",
+    details: ["Cross-Platform Apps", "Fast Development", "Interactive Maps"],
     accentColor: "#34D399",
     icon: Smartphone,
   },
   {
     num: "04",
     title: "Digital Marketing & SEO",
-    desc: "Data-driven SEO auditing, performance optimization, and custom event attribution tracking.",
-    details: ["Speed Audits", "Attribution Systems", "Organic Growth"],
+    desc: "Website speed checks, SEO audits, and tracking of customer clicks.",
+    details: ["Speed Checks", "Visitor Analytics", "More Traffic"],
     accentColor: "#F472B6",
     icon: Megaphone,
   },
   {
     num: "05",
     title: "AI & Workflow Automation",
-    desc: "Serverless LLM agent pipelines, automated lead qualifiers, and WhatsApp messaging bots.",
-    details: ["WhatsApp API", "LLM Embeddings", "Automated Webhooks"],
+    desc: "Smart AI workflows, automated lead replies, and WhatsApp chat bots.",
+    details: ["WhatsApp Chat Bots", "Smart AI Agents", "Automatic Notifications"],
     accentColor: "#F59E0B",
     icon: Sparkles,
   }
@@ -60,7 +60,7 @@ export default function Services() {
           </span>
         </h2>
         <p className="text-base text-white/60 font-sans max-w-xl mx-auto">
-          Delivering premium web assets, database-driven enterprise systems, native mobile apps, and custom AI automations.
+          Building custom websites, secure business software, mobile apps, and smart AI solutions.
         </p>
       </div>
 

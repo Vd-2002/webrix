@@ -103,7 +103,7 @@ export default function Footer() {
               About Webrix
             </span>
             <p className="text-sm text-white/50 leading-relaxed font-sans max-w-sm">
-              We design and engineer high-performance web systems, custom automation pipelines, and intelligence tools built to scale your business operations.
+              We design and build custom websites, secure software databases, mobile apps, and smart AI solutions for your business.
             </p>
             {/* Social Handles with custom hover glow */}
             <div className="flex items-center gap-3">

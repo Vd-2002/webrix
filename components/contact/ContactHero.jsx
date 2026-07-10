@@ -24,13 +24,13 @@ export default function ContactHero() {
             Contact Us
           </span>
           <h1 className="text-xl sm:text-6xl font-extrabold tracking-tight text-white font-display leading-[1.15]">
-            Let&apos;s Build the{" "}
+            Let&apos;s Build Something{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#60A5FA] via-[#A78BFA] to-[#34D399]">
-              Next Blueprint
+              Great
             </span>
           </h1>
           <p className="text-base sm:text-lg text-white/60 leading-relaxed font-sans max-w-2xl mx-auto pt-2">
-            Have a system architecture problem, enterprise automation project, or custom software spec? Get in touch with our engineering team directly.
+            Have a question, a project idea, or need help building your website? Get in touch with our team.
           </p>
         </motion.div>
 
@@ -64,8 +64,8 @@ export default function ContactHero() {
               <MessageSquare className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-sm font-extrabold text-white font-display">1-on-1 Sync</div>
-              <div className="text-[9px] font-mono text-white/30 tracking-wider uppercase font-semibold">With Core Engineers</div>
+              <div className="text-sm font-extrabold text-white font-display">Talk with Us</div>
+              <div className="text-[9px] font-mono text-white/30 tracking-wider uppercase font-semibold">Direct and friendly help</div>
             </div>
           </div>
         </motion.div>

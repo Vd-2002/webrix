@@ -9,23 +9,23 @@ export default function ServicesCategories() {
     {
       id: "website-development",
       title: "Website Development",
-      desc: "Architecting modular, edge-rendered marketing and eCommerce sites optimized for near-perfect Lighthouse scores.",
+      desc: "Designing custom business websites, fast online shops, and high-performance landing pages.",
       icon: Monitor,
       color: "#60A5FA",
-      tag: "FRONTEND & ECOMMERCE"
+      tag: "WEBSITES & ONLINE STORES"
     },
     {
       id: "custom-software-development",
       title: "Custom Software",
-      desc: "Building database-driven ERPs, secure custom CRMs, and complex internal business administration portals.",
+      desc: "Building secure databases, custom admin tools, and dashboard portals for your business.",
       icon: Cpu,
       color: "#A78BFA",
-      tag: "ENTERPRISE SYSTEMS"
+      tag: "BUSINESS SOFTWARE"
     },
     {
       id: "mobile-app-development",
       title: "Mobile App Development",
-      desc: "Engineering high-performance native iOS & Android applications using cross-platform tools like React Native.",
+      desc: "Building fast mobile apps for iPhone and Android devices.",
       icon: Smartphone,
       color: "#34D399",
       tag: "MOBILE SOLUTIONS"
@@ -33,18 +33,18 @@ export default function ServicesCategories() {
     {
       id: "ai-automation",
       title: "AI & Workflow Automation",
-      desc: "Configuring serverless automated agents, WhatsApp communication chains, and LLM embedding sync arrays.",
+      desc: "Setting up smart AI workflows, WhatsApp chat bots, and automated customer replies.",
       icon: Sparkles,
       color: "#F59E0B",
-      tag: "AI PIPELINES & BOTS"
+      tag: "AI WORKFLOWS & BOTS"
     },
     {
       id: "digital-marketing",
       title: "Digital Marketing",
-      desc: "Data-focused search optimization, precision campaign management, and content metrics performance audit.",
+      desc: "Helping your business grow with SEO audits, traffic tracking, and custom campaigns.",
       icon: Megaphone,
       color: "#F472B6",
-      tag: "GROWTH & AUDIT"
+      tag: "SEO & GROWTH"
     }
   ];
 
@@ -59,7 +59,7 @@ export default function ServicesCategories() {
           </span>
         </h2>
         <p className="text-sm text-white/50 font-sans max-w-xl mx-auto">
-          We operate across five core pillars, providing dedicated resources and modern toolchains for each domain.
+          We offer five core services, bringing years of custom development experience to each project.
         </p>
       </div>
 
@@ -118,7 +118,7 @@ export default function ServicesCategories() {
 
                 {/* Bottom anchor link bar */}
                 <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-white/30 group-hover:text-white/60 transition-colors">
-                  <span>VIEW SPECIFICATIONS</span>
+                  <span>VIEW DETAILS</span>
                   <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                 </div>
               </motion.div>

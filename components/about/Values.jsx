@@ -4,28 +4,28 @@ import { motion } from "framer-motion";
 import { Hammer, Eye, Zap, ShieldCheck } from "lucide-react";
 
 export default function Values() {
-  const values = [
+const values = [
     {
       title: "Precision Engineering",
-      desc: "We write clean, optimized code architectures designed to execute within sub-milliseconds. No templates, no bulk dependencies.",
+      desc: "We write clean, fast code designed to load quickly. We skip templates and unnecessary packages.",
       icon: Hammer,
       color: "#60A5FA"
     },
     {
       title: "High Transparency",
-      desc: "Clients maintain absolute visibility over active sprints, code commit updates, server metrics, and pipeline logs.",
+      desc: "You get clear updates on active tasks, project progress, and server status.",
       icon: Eye,
       color: "#818CF8"
     },
     {
       title: "Rapid Acceleration",
-      desc: "Engineered prototype modules and agile sprint structures ensure target features launch to market without delays.",
+      desc: "Our development process ensures your features are built and launched on time without delays.",
       icon: Zap,
       color: "#F472B6"
     },
     {
       title: "Ironclad Compliance",
-      desc: "Building database models and security layouts that fully adhere to HIPAA, GDPR, and custom uptime SLAs.",
+      desc: "Building databases and security systems that protect patient data and keep your site running.",
       icon: ShieldCheck,
       color: "#34D399"
     }
@@ -90,7 +90,7 @@ export default function Values() {
 
               {/* Bottom tag indicator */}
               <div className="mt-8 pt-5 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-white/20 group-hover:text-white/40 transition-colors">
-                <span>CONFORMS TO FRAMEWORK V2</span>
+                <span>QUALITY CHECK</span>
                 <span className="font-bold" style={{ color: val.color }}>OK</span>
               </div>
             </motion.div>

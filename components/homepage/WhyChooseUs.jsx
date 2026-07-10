@@ -30,7 +30,7 @@ export default function WhyChooseUs() {
           </span>
         </h2>
         <p className="text-base text-white/60 font-sans max-w-xl mx-auto">
-          We combine engineering excellence, agile delivery, and business alignment to build high-performance products that scale.
+          We combine great design, fast work, and your business goals to build websites and software that grow with you.
         </p>
       </div>
 
@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
                 Experienced Team
               </h3>
               <p className="text-sm text-white/50 leading-relaxed font-sans">
-                Our engineers, designers, and automation experts bring years of enterprise product experience to your projects.
+                Our team of designers, developers, and AI experts have years of experience building real-world products.
               </p>
             </div>
 
@@ -116,7 +116,7 @@ export default function WhyChooseUs() {
               Fast Delivery
             </h3>
             <p className="text-sm text-white/50 leading-relaxed font-sans">
-              Rapid prototyping and agile sprint cycles ensure software launches on schedule without delays.
+              We create fast prototypes and work in quick steps to launch your software on time without delays.
             </p>
           </div>
 
@@ -151,7 +151,7 @@ export default function WhyChooseUs() {
               Scalable Solutions
             </h3>
             <p className="text-sm text-white/50 leading-relaxed font-sans">
-              Dynamic servers and optimal codebase structures designed to scale gracefully.
+              Websites and apps designed to handle many visitors smoothly without slowing down.
             </p>
           </div>
 
@@ -191,7 +191,7 @@ export default function WhyChooseUs() {
               Affordable Pricing
             </h3>
             <p className="text-sm text-white/50 leading-relaxed font-sans">
-              High-value enterprise execution styled with flexible options tailored for your budget.
+              Top-quality software development with flexible options that fit your budget.
             </p>
           </div>
 
@@ -230,7 +230,7 @@ export default function WhyChooseUs() {
               Ongoing Support
             </h3>
             <p className="text-sm text-white/50 leading-relaxed font-sans">
-              Dedicated post-launch monitoring, security patches, and regular optimization updates.
+              Ongoing support, security updates, and performance checks after launch.
             </p>
           </div>
 
@@ -263,7 +263,7 @@ export default function WhyChooseUs() {
               Latest Technologies
             </h3>
             <p className="text-sm text-white/50 leading-relaxed font-sans max-w-2xl">
-              We leverage modern frameworks and compute architectures to ensure your platform remains maintainable, lightning-fast, and secure.
+              We use the latest tools and tech to make sure your website is easy to manage, fast, and secure.
             </p>
           </div>
 

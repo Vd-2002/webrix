@@ -95,27 +95,27 @@ export default function ContactForm() {
         <div className="lg:col-span-5 space-y-8 text-left">
           <div className="space-y-4">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white font-display">
-              Initiate Project{" "}
+              Start Your{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#60A5FA] to-[#A78BFA]">
-                Scoping
+                Project
               </span>
             </h2>
             <p className="text-sm sm:text-base text-white/50 leading-relaxed font-sans">
-              Provide your details and custom software criteria. Our engineering leaders will analyze your specification constraints and layout a technical design roadmap.
+              Send us your project details. Our team will review them and create a custom plan for you.
             </p>
           </div>
 
           {/* Technical Specifications checklist */}
           <div className="space-y-4 pt-6 border-t border-white/5">
             <span className="text-[10px] font-mono uppercase tracking-widest font-bold text-white/30 block">
-              Consultation Deliverables
+              What to Expect
             </span>
             <ul className="space-y-3.5">
               {[
-                "Architecture mapping detailing latency and nodes optimization.",
-                "Custom horizontal scale blueprint proposals (Next.js, Serverless).",
-                "Compliance scoping parameters (HIPAA, GDPR, secure database keys).",
-                "Fixed pricing quotes and milestone timelines audited in 48 hours."
+                "A clear map showing how we will build your system for speed and growth.",
+                "Proposed plans for growing your site (using Next.js and serverless technology).",
+                "Security checks for standards like HIPAA, GDPR, and data protection.",
+                "A clear price and project timeline sent to you within 48 hours."
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-white/70 font-sans">
                   <ShieldCheck className="w-4 h-4 text-[#34D399] shrink-0 mt-0.5" />
@@ -123,22 +123,6 @@ export default function ContactForm() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Core system status widget */}
-          <div className="border border-white/5 bg-[#050510]/60 rounded-2xl p-5 space-y-3">
-            <div className="flex items-center gap-2 border-b border-white/5 pb-2 text-[10px] font-mono text-white/40 uppercase tracking-wider font-semibold">
-              <Terminal className="w-3.5 h-3.5 text-[#60A5FA]" />
-              <span>Scoping Endpoint Monitor</span>
-            </div>
-            <div className="flex justify-between items-center text-xs font-mono">
-              <span className="text-white/50">HTTPS Route</span>
-              <span className="text-white/80">/api/v2/scoping-requests</span>
-            </div>
-            <div className="flex justify-between items-center text-xs font-mono">
-              <span className="text-white/50">Encryption Status</span>
-              <span className="text-emerald-400 font-bold">AES-256 Enabled</span>
-            </div>
           </div>
         </div>
 
@@ -162,7 +146,7 @@ export default function ContactForm() {
                       Message Sent Successfully
                     </h3>
                     <p className="text-sm text-white/70 font-sans leading-relaxed">
-                      Thank you for reaching out! We have successfully received your project scoping specifications. Our system engineering team will review the details and get back to you within 24 hours.
+                      Thank you for reaching out! We have received your message. Our team will review the details and get back to you within 24 hours.
                     </p>
                   </div>
                   <Button 
@@ -231,14 +215,14 @@ export default function ContactForm() {
                   {/* Message */}
                   <div className="space-y-2">
                     <label className="text-[10px] font-mono uppercase tracking-wider font-bold text-white/40 block">
-                      Project Requirements Spec
+                      Project Requirements
                     </label>
                     <textarea
                       name="message"
                       rows={5}
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Outline your tech stack needs, target execution speeds, scalability requirements, or timeline goals..."
+                      placeholder="Tell us about your project, what you want to build, and any timeline or feature goals..."
                       className={`w-full p-4 rounded-xl border bg-white/[0.02] text-xs text-white placeholder-white/30 focus:outline-none transition-all font-sans resize-none ${
                         errors.message ? "border-red-500/50 focus:border-red-500 bg-red-500/[0.01]" : "border-white/10 focus:border-white/20 focus:bg-white/[0.04]"
                       }`}

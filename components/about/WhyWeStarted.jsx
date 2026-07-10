@@ -7,29 +7,29 @@ export default function WhyWeStarted() {
   const milestones = [
     {
       num: "01",
-      title: "The Bloat Crisis",
-      desc: "We observed enterprise systems drowning in bloated framework templates, leading to high latency and heavy cloud maintenance costs.",
+      title: "The Slow Web",
+      desc: "We saw websites using bloated templates that loaded slowly and cost too much to maintain.",
       icon: ShieldAlert,
       color: "#EF4444"
     },
     {
       num: "02",
-      title: "Core Blueprint",
-      desc: "We designed a lightweight custom rendering engine concept: custom modules built at the metal, skipping templates for pure performance.",
+      title: "Clean Custom Code",
+      desc: "We decided to skip heavy templates and write clean, custom code that loads instantly.",
       icon: Network,
       color: "#60A5FA"
     },
     {
       num: "03",
-      title: "First Scaling Launches",
-      desc: "Delivered our first 10 production systems to early-stage partners, reducing API latency to 12ms and scaling traffic 5x with zero lag.",
+      title: "First Client Launches",
+      desc: "We launched our first 10 custom systems, improving website loading speeds and handling growing traffic easily.",
       icon: Zap,
       color: "#F59E0B"
     },
     {
       num: "04",
-      title: "Scaling Horizons",
-      desc: "Webrix officially scales to full-scale digital engineering, incorporating custom AI automation and secure enterprise SLAs.",
+      title: "Full Custom Agency",
+      desc: "Webrix now builds high-performance custom websites, mobile apps, and smart AI workflows.",
       icon: Rocket,
       color: "#34D399"
     }
@@ -46,7 +46,7 @@ export default function WhyWeStarted() {
           </span>
         </h2>
         <p className="text-base text-white/60 font-sans max-w-xl mx-auto">
-          Built out of frustration with sluggish web architectures and bloated server dependencies.
+          Built to fix slow websites and heavy page load times.
         </p>
       </div>
 
@@ -100,7 +100,7 @@ export default function WhyWeStarted() {
               {/* Dot marker bottom */}
               <div className="mt-8 pt-4 border-t border-white/5 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: milestone.color }} />
-                <span className="text-[10px] font-mono text-white/30 font-semibold tracking-widest uppercase">Verified Node</span>
+                <span className="text-[10px] font-mono text-white/30 font-semibold tracking-widest uppercase">Phase Completed</span>
               </div>
             </motion.div>
           );

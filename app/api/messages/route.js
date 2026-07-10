@@ -47,17 +47,18 @@ async function sendEmails(newMessage) {
   const adminMailOptions = {
     from: `"Webrix System" <${user}>`,
     to: "heywebrix@gmail.com",
-    subject: `New Scoping Form Submission: ${name}`,
-    text: `New Project Scoping Form Submission - ${name}\n\nLead Name: ${name}\nEmail: ${email}\nCategory: ${category}\nCompany: ${company || "Not Specified"}\nMessage: ${message}`,
+    replyTo: email,
+    subject: `New Inquiry: ${name}`,
+    text: `New Project Inquiry - ${name}\n\nLead Name: ${name}\nEmail: ${email}\nService Needed: ${category}\nCompany: ${company || "Not Specified"}\nMessage: ${message}`,
     html: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; color: #222222; max-width: 550px; line-height: 1.6; margin: 0 auto; padding: 20px;">
-        <h2 style="font-size: 18px; font-weight: 700; color: #111111; border-bottom: 1px solid #eeeeee; padding-bottom: 8px; margin-top: 0;">New Project Scoping Submission</h2>
+        <h2 style="font-size: 18px; font-weight: 700; color: #111111; border-bottom: 1px solid #eeeeee; padding-bottom: 8px; margin-top: 0;">New Webrix Inquiry</h2>
         <p>Hello Webrix Team,</p>
-        <p>A new visitor has submitted scoping specifications on the website:</p>
+        <p>A new visitor has sent a message on the website:</p>
         <ul style="padding-left: 20px; color: #333333;">
           <li><strong>Lead Name:</strong> ${name}</li>
           <li><strong>Email Address:</strong> <a href="mailto:${email}" style="color: #2563eb; text-decoration: none;">${email}</a></li>
-          <li><strong>Project Category:</strong> ${category}</li>
+          <li><strong>Service Needed:</strong> ${category}</li>
           ${company ? `<li><strong>Company:</strong> ${company}</li>` : ""}
         </ul>
         <p><strong>Message details:</strong></p>
@@ -67,32 +68,48 @@ async function sendEmails(newMessage) {
         </p>
       </div>
     `,
+    headers: {
+      "X-Priority": "3",
+      "X-MSMail-Priority": "Normal",
+      "Importance": "Normal"
+    }
   };
 
   // User Acknowledgment Email
   const userMailOptions = {
     from: `"Webrix Team" <${user}>`,
     to: email,
-    subject: "Thank you for contacting Webrix!",
-    text: `Hi ${name},\n\nThank you for reaching out! We have successfully received your project scoping request. Our system engineering team will review the details and get back to you within 24 hours.\n\nSummary of details:\nCategory: ${category}\nCompany: ${company || "Not Specified"}\nMessage: "${message}"\n\nBest regards,\nWebrix Engineering Team\nhttps://webrix.co.in`,
+    replyTo: user,
+    subject: `We received your message - Webrix`,
+    text: `Hi ${name},\n\nThank you for reaching out to Webrix! We have received your inquiry.\n\nHere is a summary of the details you sent:\nService Needed: ${category}\nCompany: ${company || "Not Specified"}\nMessage: "${message}"\n\nOur team will review your message and reply to you at this email address within 24 hours.\n\nBest regards,\nThe Webrix Team\nhttps://webrix.co.in\n\n---\nWebrix Headquarters: Solitaire Superb, Behind Ganesh Vihar Flats, Opposite Somnath Party Plot, Sardar Patel Ring Road, New Nikol, Ahmedabad, Gujarat - 382350, India\nThis email was sent in response to your contact request on our website.`,
     html: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; color: #222222; max-width: 550px; line-height: 1.6; margin: 0 auto; padding: 20px;">
         <p>Hi ${name},</p>
         <p>Thank you for reaching out to Webrix!</p>
-        <p>We have successfully received your project scoping parameters for the <strong>${category}</strong> category.</p>
+        <p>We have successfully received your inquiry for the <strong>${category}</strong> service.</p>
         
-        <p>Here is a summary of the details you submitted:</p>
+        <p>Here is a summary of the details you sent:</p>
         <div style="margin: 15px 0; padding: 15px; background-color: #f9fafb; border-left: 3px solid #2563eb; border-radius: 4px; color: #444444; font-style: italic; white-space: pre-wrap;">"${message}"</div>
         
-        <p>Our system engineering team is currently reviewing your specifications and will follow up with you at this email address within 24 hours to align on next steps.</p>
+        <p>Our team is currently reviewing your message and will reply to you at this email address within 24 hours.</p>
         
-        <p style="margin-top: 24px;">
+        <p style="margin-top: 24px; padding-bottom: 20px; border-bottom: 1px solid #eeeeee;">
           Best regards,<br/>
-          <strong>Webrix Engineering</strong><br/>
+          <strong>The Webrix Team</strong><br/>
           <a href="https://webrix.co.in" style="color: #2563eb; text-decoration: none;">webrix.co.in</a>
+        </p>
+
+        <p style="font-size: 11px; color: #888888; margin-top: 20px; line-height: 1.4; text-align: center;">
+          Webrix Headquarters: Solitaire Superb, Behind Ganesh Vihar Flats, Opposite Somnath Party Plot, Sardar Patel Ring Road, New Nikol, Ahmedabad, Gujarat - 382350, India<br/>
+          This email was sent in response to your contact request on our website.
         </p>
       </div>
     `,
+    headers: {
+      "X-Priority": "3",
+      "X-MSMail-Priority": "Normal",
+      "Importance": "Normal"
+    }
   };
 
   try {

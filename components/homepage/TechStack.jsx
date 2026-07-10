@@ -99,7 +99,7 @@ export default function TechStack() {
           </span>
         </h2>
         <p className="text-base text-white/50 font-sans max-w-xl mx-auto">
-          Powering dynamic digital products with a lightweight, industry-standard, and highly optimized technology suite.
+          Building modern, fast, and reliable digital products with the best technology tools.
         </p>
       </div>
 

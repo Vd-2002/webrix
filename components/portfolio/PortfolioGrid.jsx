@@ -349,9 +349,9 @@ export default function PortfolioGrid() {
                 +
               </div>
               <div className="space-y-1">
-                <h3 className="text-lg font-bold font-display text-white/80">CMS Projects Coming Soon</h3>
+                <h3 className="text-lg font-bold font-display text-white/80">New Projects Coming Soon</h3>
                 <p className="text-xs text-white/40 max-w-[260px] mx-auto leading-relaxed font-sans font-light">
-                  New projects are added live via the CMS. Check back shortly for more detailed case studies.
+                  New projects are added regularly. Check back soon to see more case studies.
                 </p>
               </div>
             </motion.div>

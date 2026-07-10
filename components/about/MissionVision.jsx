@@ -39,16 +39,16 @@ export default function MissionVision() {
                 Our Mission
               </h3>
               <p className="text-sm text-white/60 leading-relaxed font-sans">
-                To build high-performance software architectures that eliminate processing waste, empower operations, and enable businesses to launch scalable products with absolute engineering confidence.
+                To build fast, secure, and reliable software that helps businesses grow and run smoothly.
               </p>
               <p className="text-sm text-white/50 leading-relaxed font-sans">
-                We believe that software should be fast, transparent, and optimized at the metal. Our mission is to make high-fidelity developer practices accessible to organizations of all scales.
+                We believe that software should be fast, easy to manage, and cost-effective. Our mission is to bring top-quality development to companies of all sizes.
               </p>
             </div>
           </div>
 
           <div className="mt-8 pt-5 border-t border-white/5 flex items-center justify-between text-xs text-white/30 group-hover:text-white/50 transition-colors">
-            <span>Engineering Excellence</span>
+            <span>Top Quality Code</span>
             <Compass className="w-4 h-4 text-[#60A5FA]" />
           </div>
         </motion.div>
@@ -84,16 +84,16 @@ export default function MissionVision() {
                 Our Vision
               </h3>
               <p className="text-sm text-white/60 leading-relaxed font-sans">
-                To establish a global standard for clean-code development, where applications run with sub-millisecond lag, operations scale automatically via custom agent models, and software builds remain resilient.
+                To set the standard for clean-code web development, where websites load instantly, workflows are automated, and systems never crash.
               </p>
               <p className="text-sm text-white/50 leading-relaxed font-sans">
-                We envision a future where digital infrastructure operates without bloated frameworks, allowing businesses to minimize server costs, optimize load speeds, and scale sustainably.
+                We envision a future where websites and apps are lightweight, helping businesses lower server costs and keep pages loading fast.
               </p>
             </div>
           </div>
 
           <div className="mt-8 pt-5 border-t border-white/5 flex items-center justify-between text-xs text-white/30 group-hover:text-white/50 transition-colors">
-            <span>Global Tech Integration</span>
+            <span>Modern Technology</span>
             <ArrowUpRight className="w-4 h-4 text-[#34D399]" />
           </div>
         </motion.div>

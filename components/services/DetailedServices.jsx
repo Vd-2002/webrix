@@ -15,14 +15,14 @@ export default function DetailedServices() {
       title: "Website Development",
       icon: Monitor,
       color: "#60A5FA",
-      subHeading: "Bespoke Frontend Engineering & High-Performance eCommerce Systems",
-      desc: "We construct lightweight React/Next.js interfaces from scratch. No heavy page builders or bloated templates. Every stylesheet, components block, and asset compiler is structured to minimize load latency, maximize conversion funnels, and guarantee responsiveness.",
+      subHeading: "Custom Website Development & Fast E-Commerce Systems",
+      desc: "We build fast, custom websites from scratch. We skip website builders and heavy templates. Every page is built to load instantly, work on any mobile device, and help you get more customers.",
       features: [
-        "Headless Architecture & Next.js SSR Integration",
-        "Vapor-speed Tailwind CSS & Clean CSS Structures",
-        "Fast-loading Headless eCommerce (Shopify Custom Stacks)",
-        "Automated Multi-lingual Translation Routing",
-        "Fully Instrumented Edge Rendering & Static Compiles"
+        "Fast Loading Custom Websites",
+        "Clean Styles & Layouts",
+        "Fast E-Commerce Shop Setups",
+        "Multi-language Website Support",
+        "Global Hosting & Server Tuning"
       ],
       mockupType: "code",
       mockupTitle: "next-edge-routing.config.js",
@@ -44,14 +44,14 @@ export default async function middleware(req) {
       title: "Custom Software Development",
       icon: Cpu,
       color: "#A78BFA",
-      subHeading: "Compliant Database Frameworks, Tailored ERPs, & Internal Tools",
-      desc: "We build systems tailored strictly to your operations. From multi-role employee HRMS dashboards to full-scale logistics ERP pipelines. We prioritize connection pooling, database indices, and compliant cryptography frameworks to ensure safety and scale.",
+      subHeading: "Secure Databases, Custom Business Software, & Admin Tools",
+      desc: "We build systems tailored to your exact business needs, from employee portals to client dashboards. We focus on database speeds, data protection, and secure logins.",
       features: [
-        "Enterprise Relational & Non-relational Database Design",
-        "GDPR/HIPAA Compliant Client Authentication Systems",
-        "Secure REST & GraphQL Multi-Node API Gateways",
-        "Automated Business Invoicing & Payment Webhooks",
-        "Scalable Multi-Tenant SaaS Portal Architecture"
+        "Secure Custom Databases",
+        "GDPR & HIPAA Compliant Data",
+        "Secure API Connections",
+        "Automated Invoicing & Payments",
+        "Scalable Customer Portals"
       ],
       mockupType: "schema",
       mockupTitle: "postgres-schema-pooling.sql",
@@ -75,22 +75,22 @@ CREATE TABLE IF NOT EXISTS users (
       title: "Mobile App Development",
       icon: Smartphone,
       color: "#34D399",
-      subHeading: "Premium Cross-Platform Native Mobile Applications Built with React Native",
-      desc: "We engineer lightweight, fully responsive cross-platform native iOS & Android applications. We optimize native bridges, bundle compile assets, and design smooth gesture-driven UI components to ensure premium speed and response on any mobile device.",
+      subHeading: "Custom Mobile Applications for iOS & Android",
+      desc: "We build fast mobile apps for iPhone and Android. We package app code, secure local data, and design smooth interfaces to ensure great performance on any device.",
       features: [
-        "Native React Native & Expo SDK Engineering",
-        "Sub-millisecond Device Geolocation & Map Tracking",
-        "Push Notifications Sync (Firebase Cloud Messaging)",
-        "Local Database Caching (SQLite & WatermelonDB)",
-        "Biometric Authentication Integration (FaceID / TouchID)"
+        "iOS & Android App Store Ready",
+        "Live Maps & Location Tracking",
+        "Push Notification Setups",
+        "Offline Storage & Cache",
+        "Face ID & Touch ID Logins"
       ],
       mockupType: "code",
       mockupTitle: "App-native-navigation.tsx",
       mockupContent: `// React Native Navigation Bridge Routing
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+ 
 const Stack = createNativeStackNavigator();
-
+ 
 export default function NativeAppNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -105,14 +105,14 @@ export default function NativeAppNavigator() {
       title: "AI & Workflow Automation",
       icon: Sparkles,
       color: "#F59E0B",
-      subHeading: "Serverless Intelligent Bot Chains & LLM Context Synchronizers",
-      desc: "Our automation grids handle the heavy operational lifting. We integrate OpenAI, Claude, or local LLMs into serverless pipelines, sync customer actions directly into vector databases, and trigger automatic messaging alerts across Slack, Email, and WhatsApp.",
+      subHeading: "Smart AI Automations & Custom Chat Bots",
+      desc: "Our automations handle the heavy daily tasks. We connect smart AI models, store customer queries securely, and trigger automatic messages across Slack, email, and WhatsApp.",
       features: [
-        "LLM Context Embedding & Vector Search (Pinecone/pgvector)",
-        "Automated Lead Ingestion & Qualification Agent Nodes",
-        "Custom WhatsApp Business API Messaging Integrations",
-        "Secure Webhook Pipeline Orchestration & Loop Checks",
-        "Automatic PDF Content Parsing & Data Entry Sheets"
+        "Smart AI Search Tools",
+        "Automated Customer Qualification",
+        "Custom WhatsApp Bots",
+        "Automatic Event Alerts",
+        "Automated PDF Reading & Data Entry"
       ],
       mockupType: "json",
       mockupTitle: "agent-webhook-qualify.json",
@@ -139,14 +139,14 @@ export default function NativeAppNavigator() {
       title: "Digital Marketing & SEO Audit",
       icon: Megaphone,
       color: "#F472B6",
-      subHeading: "Organic Search Optimization, Campaigns Audit & Performance Tuning",
-      desc: "We approach marketing from an engineering angle. We optimize index headers, clean up redirects, structure sitemaps, and design low-latency landing pages to drive down Google PPC spend while boosting search results organically.",
+      subHeading: "SEO Audits, Search Engine Visibility, & Traffic Growth",
+      desc: "We improve your marketing with clean code. We clean up website links, structure sitemaps, and build fast landing pages to lower ad costs and boost organic traffic.",
       features: [
-        "Comprehensive SEO Link & Site Core Web Vitals Auditing",
-        "Optimized Landing Pages with Instant Cache Rendering",
-        "Google Ads & Meta Precision Tracking Pipelines",
-        "Automated Content Performance Logging Boards",
-        "Structured Schema Markup for Search Engine Crawlers"
+        "Core Web Speed & Link Auditing",
+        "Fast Loading Landing Pages",
+        "Google & Facebook Ad Tracking",
+        "Automated SEO Traffic Reports",
+        "Structured Data for Search Engines"
       ],
       mockupType: "stats",
       mockupTitle: "campaign-performance-board",
@@ -184,7 +184,7 @@ Organic Visibility:  +140% YoY`
           </span>
         </h2>
         <p className="text-sm text-white/50 font-sans max-w-xl mx-auto">
-          Click through the categories below to examine our detailed deliverables, code architectures, and sub-services.
+          Click through the categories below to see our services, features, and mockups.
         </p>
       </div>
 
@@ -228,7 +228,7 @@ Organic Visibility:  +140% YoY`
                 <div className="space-y-4">
                   <div className="space-y-1">
                     <span className="text-[10px] font-mono font-bold tracking-widest uppercase" style={{ color: current.color }}>
-                      TECHNICAL SPECS
+                      SPECIFICATIONS
                     </span>
                     <h3 className="text-2xl font-bold font-display text-white tracking-tight">
                       {current.title}

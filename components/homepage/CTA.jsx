@@ -276,7 +276,7 @@ export default function CTA() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
               </span>
               <span className="font-mono text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#60A5FA]">
-                {"Let's build something extraordinary"}
+                {"Let's build something great"}
               </span>
             </div>
 
@@ -290,7 +290,7 @@ export default function CTA() {
 
             {/* Description Subtitle */}
             <p className="text-sm sm:text-base text-white/60 font-sans leading-relaxed">
-              {"Partner with Webrix to engineer high-performance web systems, automate workflows with custom AI agents, and build cloud-native software built to scale."}
+              {"Partner with Webrix to build fast websites, automate workflows with smart AI, and create secure custom software."}
             </p>
 
             {/* Features Checklist */}
@@ -299,28 +299,28 @@ export default function CTA() {
                 <div className="w-5 h-5 rounded-md flex items-center justify-center bg-blue-500/10 border border-blue-500/20 text-[#60A5FA]">
                   <Zap className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-xs text-white/80 font-medium font-sans">High-Performance Architectures</span>
+                <span className="text-xs text-white/80 font-medium font-sans">Fast & Modern Websites</span>
               </div>
               
               <div className="flex items-center gap-2.5 justify-center lg:justify-start">
                 <div className="w-5 h-5 rounded-md flex items-center justify-center bg-purple-500/10 border border-purple-500/20 text-[#A78BFA]">
                   <Sparkles className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-xs text-white/80 font-medium font-sans">Intelligent Automation Agents</span>
+                <span className="text-xs text-white/80 font-medium font-sans">Smart AI Automations</span>
               </div>
 
               <div className="flex items-center gap-2.5 justify-center lg:justify-start">
                 <div className="w-5 h-5 rounded-md flex items-center justify-center bg-emerald-500/10 border border-emerald-500/20 text-[#34D399]">
                   <ShieldCheck className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-xs text-white/80 font-medium font-sans">Enterprise-Grade Security SLA</span>
+                <span className="text-xs text-white/80 font-medium font-sans">High Security & Reliability</span>
               </div>
 
               <div className="flex items-center gap-2.5 justify-center lg:justify-start">
                 <div className="w-5 h-5 rounded-md flex items-center justify-center bg-white/5 border border-white/10 text-white/70">
                   <Calendar className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-xs text-white/80 font-medium font-sans">Free Strategic Evaluation</span>
+                <span className="text-xs text-white/80 font-medium font-sans">Free Consultation</span>
               </div>
             </div>
 
@@ -330,7 +330,7 @@ export default function CTA() {
                 variant="primary" 
                 className="w-full sm:w-auto shadow-[0_0_24px_rgba(96,165,250,0.25)] hover:shadow-[0_0_32px_rgba(96,165,250,0.45)] transition-all duration-300 rounded-xl py-3 px-6 cursor-pointer flex items-center justify-center gap-2 group"
               >
-                {"Schedule Consultation"}
+                {"Talk to Our Team"}
                 <Calendar className="w-4 h-4 text-primary-foreground group-hover:scale-110 transition-transform" />
               </Button>
               
@@ -338,7 +338,7 @@ export default function CTA() {
                 variant="outline" 
                 className="w-full sm:w-auto hover:bg-white/5 transition-all duration-200 border-white/10 hover:border-white/20 rounded-xl py-3 px-6 cursor-pointer flex items-center justify-center gap-2 group"
               >
-                {"Request Proposal"}
+                {"Get a Quote"}
                 <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>

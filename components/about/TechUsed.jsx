@@ -16,24 +16,24 @@ export default function TechUsed() {
 
   const techData = {
     frontend: [
-      { name: "Next.js 16 (App Router)", score: 98, desc: "Leveraging Server Components, edge-rendering runtimes, and static pre-rendering passes.", color: "#60A5FA" },
-      { name: "React 19 Core Engine", score: 95, desc: "Utilizing advanced hooks models, asset loading features, and concurrent rendering modes.", color: "#818CF8" },
-      { name: "Tailwind CSS v4 Engine", score: 90, desc: "Building modular CSS architectures with native lightning-fast compilation rules.", color: "#F472B6" }
+      { name: "Next.js 16 (App Router)", score: 98, desc: "Used to build fast loading pages, secure servers, and smooth transitions.", color: "#60A5FA" },
+      { name: "React 19 Core Engine", score: 95, desc: "Used to make the user interface fast, interactive, and responsive.", color: "#818CF8" },
+      { name: "Tailwind CSS v4 Engine", score: 90, desc: "Used to style the website beautifully without slowing down page loads.", color: "#F472B6" }
     ],
     backend: [
-      { name: "Node.js Core Systems", score: 94, desc: "Running high-concurrency event loops for custom backends, APIs, and real-time sockets.", color: "#34D399" },
-      { name: "Rust Compiler Systems", score: 85, desc: "Writing memory-safe custom drivers, compilation passes, and core database nodes.", color: "#60A5FA" },
-      { name: "FastAPI / Python", score: 88, desc: "Building lightning-fast custom AI endpoints, vector syncing pipelines, and logs runners.", color: "#F59E0B" }
+      { name: "Node.js Core Systems", score: 94, desc: "Used to run fast databases, connect user accounts, and update data instantly.", color: "#34D399" },
+      { name: "Rust Compiler Systems", score: 85, desc: "Used to write secure code for custom background tasks and databases.", color: "#60A5FA" },
+      { name: "FastAPI / Python", score: 88, desc: "Used to connect smart AI models, automate data tasks, and track logs.", color: "#F59E0B" }
     ],
     databases: [
-      { name: "PostgreSQL Database Engine", score: 92, desc: "Designing structured relation models, connection pools, and secure transaction instances.", color: "#A78BFA" },
-      { name: "Redis Memory Cache Node", score: 95, desc: "Setting up fast session stores, rate-limiting layers, and cache synchronization boards.", color: "#F472B6" },
-      { name: "InfluxDB Time-Series Engine", score: 82, desc: "Handling heavy time-series streams for IoT logging dashboards and server metrics.", color: "#34D399" }
+      { name: "PostgreSQL Database Engine", score: 92, desc: "Used to organize and store structured user records, payments, and accounts securely.", color: "#A78BFA" },
+      { name: "Redis Memory Cache Node", score: 95, desc: "Used to store user sessions temporarily and make website searches instant.", color: "#F472B6" },
+      { name: "InfluxDB Time-Series Engine", score: 82, desc: "Used to save live sensor signals and show logs on factory dashboards.", color: "#34D399" }
     ],
     infra: [
-      { name: "AWS Cloud Architecture", score: 90, desc: "Deploying multi-region ECS containers, Lambda serverless functions, and secure CDN edge gateways.", color: "#60A5FA" },
-      { name: "Docker Containers", score: 95, desc: "Structuring lightweight container images to guarantee identical dev/production stages.", color: "#818CF8" },
-      { name: "GitHub Actions CI/CD", score: 92, desc: "Automating validation builds, lint checks, unit tests, and zero-downtime deployment pipelines.", color: "#34D399" }
+      { name: "AWS Cloud Architecture", score: 90, desc: "Used to host files on cloud servers, secure the site, and scale up for visitors.", color: "#60A5FA" },
+      { name: "Docker Containers", score: 95, desc: "Used to package code so that it works perfectly on any server.", color: "#818CF8" },
+      { name: "GitHub Actions CI/CD", score: 92, desc: "Used to automate tests and push code updates live without taking the site offline.", color: "#34D399" }
     ]
   };
 
@@ -48,7 +48,7 @@ export default function TechUsed() {
           </span>
         </h2>
         <p className="text-base text-white/50 font-sans max-w-xl mx-auto">
-          A modular, category-wise breakdown of our enterprise engineering tools and runtime stacks.
+          A breakdown of the programming languages and hosting tools we use.
         </p>
       </div>
 
@@ -123,7 +123,7 @@ export default function TechUsed() {
                   {/* Dot status bottom */}
                   <div className="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-[9px] font-mono text-white/20">
                     <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: tech.color }} />
-                    <span>PRODUCTION VERIFIED</span>
+                    <span>STABLE VERSION</span>
                   </div>
                 </div>
               ))}

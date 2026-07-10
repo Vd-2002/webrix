@@ -7,162 +7,162 @@ import ServiceDetailLayout from "@/components/services/ServiceDetailLayout";
 const SERVICES_DETAILS = {
   "website-development": {
     title: "Website Development",
-    tagline: "Ultra-fast headless interfaces engineered for high conversion rates.",
+    tagline: "Fast custom websites built to load quickly and get more customers.",
     themeColor: "#60A5FA",
     stats: [
-      { label: "Lighthouse Score", value: "99/100" },
-      { label: "Conversion Lift", value: "+24%" },
-      { label: "Average First Load", value: "0.4s" }
+      { label: "Page Speed Score", value: "99/100" },
+      { label: "Visitor Conversion", value: "+24%" },
+      { label: "Average Load Time", value: "0.4s" }
     ],
-    overview: "We engineer custom web assets optimized for near-instant rendering. By removing bloat, visual page builders, and massive runtime scripts, we ensure your product loads instantly across any device, anywhere in the world.",
+    overview: "We build custom websites that load instantly. By avoiding heavy templates and website builders, we make sure your pages load quickly on any device, helping your business grow.",
     features: [
-      "Headless Frontend Architectures (Next.js App Router & SSR)",
-      "Native Utility Stylings (Tailwind CSS v4)",
-      "Headless eCommerce Integrations (Custom Shopify Storefronts)",
-      "Global CDN Routing, Edge Caching, & Serverless Delivery",
-      "Dynamic Multi-lingual Routing Systems & Localised Paths",
-      "Structured SEO Schema Markups & Core Web Vitals Optimization"
+      "Fast Loading Custom Websites (using Next.js)",
+      "Clean CSS Styles & Responsive Layouts",
+      "Fast Online Store Setup (using Shopify)",
+      "Global Server Hosting & Cache Settings",
+      "Multi-language Website Support",
+      "Optimized Google Search SEO Settings"
     ],
     architecture: {
-      title: "Headless Content & eCommerce Architecture Blueprint",
+      title: "How Your Website Loads Fast",
       steps: [
-        { title: "Edge CDN Gateway", desc: "User request arrives at the nearest global CDN edge server node." },
-        { title: "Edge Rendering Middleware", desc: "Serverless middleware parses headers, locale parameters, and user sessions instantly." },
-        { title: "Static Pre-rendering pass", desc: "Page loads static HTML shells + lazy imports only the required scripts." },
-        { title: "Dynamic API Hydration", desc: "React hydrates interactive sections (cart, search) via backend microservice routes." }
+        { title: "User Request", desc: "A visitor clicks on your website link." },
+        { title: "Smart Server Routing", desc: "Our hosting server loads the site files from the nearest location." },
+        { title: "Fast Page Loading", desc: "The website loads a fast HTML layout and loads heavy scripts only when needed." },
+        { title: "Interactive Features", desc: "Interactive features like search or shopping carts load instantly." }
       ]
     },
     faqs: [
-      { q: "Why choose custom headless web builds over WordPress or Webflow?", a: "Headless builds separate your content backend from your frontend presentation. This removes bloated plugins and template stylesheets, resulting in near-instant load speeds, superior security, and unlimited design flexibility." },
-      { q: "How do you handle search engine optimization (SEO)?", a: "Every page is pre-rendered statically with structured JSON-LD schemas, customized meta titles, responsive images, and semantic HTML to guarantee crawlability and perfect Lighthouse scores." }
+      { q: "Why choose custom websites over templates?", a: "Custom websites are built from scratch, meaning they have no bloated code or unnecessary plugins. This makes them load much faster and remain far more secure than template-based sites." },
+      { q: "How do you help with Google Search (SEO)?", a: "We build sitemaps, optimize loading speeds, and write clean HTML tags to make sure search engine spiders can read and index your site pages easily." }
     ]
   },
   "custom-software-development": {
     title: "Custom Software Development",
-    tagline: "Dedicated business frameworks and compliant relational database models.",
+    tagline: "Secure databases, custom business software, and admin tools.",
     themeColor: "#A78BFA",
     stats: [
-      { label: "SLA Uptime Guarantee", value: "99.99%" },
-      { label: "API Query Latency", value: "11ms" },
-      { label: "Manual Hours Freed", value: "40+/wk" }
+      { label: "Guaranteed Uptime", value: "99.99%" },
+      { label: "Database Speed", value: "11ms" },
+      { label: "Weekly Hours Saved", value: "40+" }
     ],
-    overview: "We design and develop custom database-driven applications matching your exact business workflows. Whether you need a secure CRM, a custom HRMS portal, or a multi-tenant SaaS integration, we write secure, modular backend modules that scale.",
+    overview: "We design and build custom software to fit your exact business needs. Whether you need a customer portal, an admin dashboard, or custom payment tracking, we write clean and secure code.",
     features: [
-      "Relational & Time-Series Database Schema Design (PostgreSQL, InfluxDB)",
-      "Secure Multi-Role User Cryptography & JWT Token Session Pools",
-      "GraphQL & REST API Gateways with Automatic Query Indexing",
-      "Multi-Tenant SaaS Portal Layouts with Secure Org Separation",
-      "Custom Enterprise ERP Logistics & Inventory Tracking Systems",
-      "ISO & GDPR Compliance Architectures with Active Audit Logging"
+      "Secure Custom Databases",
+      "GDPR & HIPAA Compliant Data Systems",
+      "Secure API Connection Links",
+      "Scalable Customer Dashboard Portals",
+      "Custom Business Admin Software",
+      "Automated Invoices & Payments"
     ],
     architecture: {
-      title: "Secure Relational Multi-Tenant Architecture Blueprint",
+      title: "How We Keep Your Data Secure",
       steps: [
-        { title: "API Gateway Firewall", desc: "Validates incoming JWT session tokens and filters SQL injection queries." },
-        { title: "Relational Query Router", desc: "Directs tenant requests to isolated logical schemas to prevent leakages." },
-        { title: "Connection Pool Engine", desc: "Maintains active connection loops to PostgreSQL, minimizing handshake delays." },
-        { title: "Audit Trail Logger", desc: "Automatically writes database mutational states into encrypted logs tables." }
+        { title: "Security Check", desc: "Our system checks user logins and blocks bad requests." },
+        { title: "Private Databases", desc: "User records are stored in isolated databases to prevent data leaks." },
+        { title: "Fast Query Routing", desc: "The server fetches database records instantly to avoid any lag." },
+        { title: "Activity Logs", desc: "Changes to records are written to encrypted logs tables for safety." }
       ]
     },
     faqs: [
-      { q: "How do you secure tenant data in multi-tenant portals?", a: "We implement Row-Level Security (RLS) policies at the PostgreSQL level alongside isolated tenant schemas, ensuring that no user can run queries crossing tenant boundaries." },
-      { q: "Can this system integrate with our existing database storage?", a: "Yes, we construct secure database wrapper APIs and sync scripts to connect and ingest data safely from your legacy systems." }
+      { q: "How do you secure customer data?", a: "We write strict database rules and use encryption. This ensures only authorized users can view or edit private business information." },
+      { q: "Can you connect with our existing software?", a: "Yes, we can build custom connectors to sync data between your old software and your new dashboard." }
     ]
   },
   "ai-automation": {
     title: "AI & Workflow Automation",
-    tagline: "Serverless LLM agents and automatic webhook pipelines that handle tasks 24/7.",
+    tagline: "Smart AI workflows and automated tasks that work for you 24/7.",
     themeColor: "#F59E0B",
     stats: [
       { label: "Uptime Sync Rate", value: "99.9%" },
-      { label: "Task Processing Speed", value: "3.2x" },
+      { label: "Task Speedup", value: "3.2x" },
       { label: "Data Accuracy", value: "99.8%" }
     ],
-    overview: "Our automation grids connect your business services to intelligent LLM nodes. We configure serverless workflows that qualification-check incoming forms, process raw PDFs, and sync alerts directly to Slack, WhatsApp, and email.",
+    overview: "Our automations handle your heavy daily tasks. We connect smart AI models, store customer queries securely, and trigger automatic messages across Slack, email, and WhatsApp.",
     features: [
-      "Context Embeddings Syncing & Vector Databases (pgvector, Pinecone)",
-      "Serverless Intelligent LLM Agents (OpenAI, Claude, custom models)",
-      "Automated Lead Ingestion, Parsing, & Follow-up pipelines",
-      "Dedicated WhatsApp Business & Slack Bot Integrations",
-      "Trigger-Based Multi-Service Webhook Sync Orchestration",
-      "Automatic PDF Invoice Parsing & ERP Database Insertion"
+      "Smart AI Search Tools",
+      "Automated Customer Qualification",
+      "Custom WhatsApp Bots",
+      "Automatic Event Alerts",
+      "Automated PDF Reading & Data Entry",
+      "Trigger-Based Multi-Service Webhook Sync"
     ],
     architecture: {
-      title: "AI Ingestion & Vector Ingress Architecture Blueprint",
+      title: "How Our AI Automation Works",
       steps: [
-        { title: "Webhook Ingestion Ingress", desc: "Receives raw customer actions or documents from active webhooks." },
-        { title: "Vector Embedding Pass", desc: "Transforms text into numeric vectors using OpenAI embeddings models." },
-        { title: "Similarity Match Index", desc: "Searches pgvector database to fetch context matching the user query." },
-        { title: "LLM Completion Dispatch", desc: "Sends context to Claude/OpenAI and triggers follow-up WhatsApp notifications." }
+        { title: "Trigger Event", desc: "A user submits a form or uploads a document on your website." },
+        { title: "Smart Data Reading", desc: "Our system reads the text and extracts key details instantly." },
+        { title: "AI Search Check", desc: "The system searches the database to find matching info." },
+        { title: "Automated Dispatch", desc: "The system replies to the customer or sends an alert to your team." }
       ]
     },
     faqs: [
-      { q: "Will our data be used to train public LLM models?", a: "No. We routing all data through private enterprise APIs (OpenAI/Anthropic APIs) that guarantee your data is never used for model training under strict SLAs." },
-      { q: "How do you prevent loops and runaway webhook charges?", a: "We build circuit-breaker loops and payload validation layers into our webhook triggers, ensuring workflows stop immediately if anomalies are flagged." }
+      { q: "Is our private data safe with AI?", a: "Yes. We route all queries through private business accounts, ensuring your data is never used to train public AI models." },
+      { q: "How do you prevent loops and unwanted charges?", a: "We build automatic safety shut-offs into our workflows, stopping any task instantly if it runs repeatedly." }
     ]
   },
   "mobile-app-development": {
     title: "Mobile App Development",
-    tagline: "Premium cross-platform native mobile applications built with React Native.",
+    tagline: "Fast mobile apps for both iPhone and Android devices.",
     themeColor: "#34D399",
     stats: [
       { label: "App Load Time", value: "0.8s" },
       { label: "Crash-free Rate", value: "99.9%" },
-      { label: "Cross-code Share", value: "90%" }
+      { label: "Code Shared", value: "90%" }
     ],
-    overview: "We engineer fluid, cross-platform mobile apps using React Native and Expo. By managing the rendering threads, caching database queries, and wrapping native SDKs cleanly, we ensure your app performs identically on both iOS and Android platforms.",
+    overview: "We build fast, native mobile apps for both iOS and Android. By writing clean code and optimizing database storage, we ensure your app loads instantly and works smoothly on any device.",
     features: [
-      "Cross-Platform Native Builds (React Native & Expo SDK)",
-      "Low-Latency Geolocation Syncing & Real-Time Tracking APIs",
-      "Push Notifications Hub Integration (Firebase Cloud Messaging)",
-      "Local Storage Sync Pipelines (SQLite, WatermelonDB)",
-      "Secure Biometric Keychains (FaceID, TouchID, Cryptographic storage)",
-      "Automated Deployment & Testing (Fastlane CI/CD)"
+      "iPhone & Android App Store Ready",
+      "Live Maps & Location Tracking",
+      "Push Notification Setups",
+      "Offline Storage & Cache",
+      "Face ID & Touch ID Logins",
+      "Automated App Store Publishing"
     ],
     architecture: {
-      title: "Cross-Platform Mobile Sync Architecture Blueprint",
+      title: "How Our App Syncs Data",
       steps: [
-        { title: "Native Bridge Gateway", desc: "User gestures prompt cross-platform messages routed to native UI layouts." },
-        { title: "Local Cache Lookup", desc: "App checks local SQLite DB instantly before dispatching network inquiries." },
-        { title: "Secure Keychain Sign", desc: "Validates local sessions using system biometric API keys." },
-        { title: "REST / WebSocket Sync", desc: "Fires back-and-forth mutations updates with cloud database gateways." }
+        { title: "User Action", desc: "A user taps a button or opens a page in the app." },
+        { title: "Local Cache Check", desc: "The app checks local storage first to load page details instantly." },
+        { title: "Biometric Login", desc: "Verifies the user secure session using Face ID or Touch ID." },
+        { title: "Cloud Database Sync", desc: "Sends and receives updates from our secure cloud servers." }
       ]
     },
     faqs: [
-      { q: "Why choose React Native over writing pure native swift/kotlin code?", a: "React Native allows sharing over 90% of the codebase between iOS and Android. This dramatically reduces development costs and ensures features launch concurrently on both store markets without compromising native speed." },
-      { q: "How are notifications handled when the mobile app is closed?", a: "We configure background service loops and link Firebase/APNs listeners so users get high-priority alerts even if the app is closed." }
+      { q: "Why build one app instead of two separate ones?", a: "We write one codebase that works for both iPhone and Android. This reduces development cost and lets us publish updates to both app stores at the same time." },
+      { q: "Do push notifications work when the app is closed?", a: "Yes, we integrate cloud notification services so your users receive alerts even when the app is closed." }
     ]
   },
   "digital-marketing": {
     title: "Digital Marketing & SEO Audit",
-    tagline: "Low-latency landing pages, analytics pipelines, and search engine visibility.",
+    tagline: "SEO audits, search engine visibility, and fast landing pages.",
     themeColor: "#F472B6",
     stats: [
-      { label: "Organic Search Lift", value: "+140%" },
-      { label: "Google PPC Spend Cut", value: "-30%" },
+      { label: "Google Search Lift", value: "+140%" },
+      { label: "Google Ads CPC Cut", value: "-30%" },
       { label: "Avg. Click-Through", value: "12.4%" }
     ],
-    overview: "We optimize site content, headers, and performance factors from an engineering perspective. We build campaign landing pages that load instantly, lowering Google Ads bounce rates and boosting PPC conversion scores.",
+    overview: "We check and improve your website speed and search ranking. We build fast loading landing pages that keep visitors on your site longer, lowering ad costs and boosting conversions.",
     features: [
-      "Core Web Vitals Site Performance & Layout Shift Audits",
-      "Instant-Load Static Campaign Landing Pages (Next.js)",
-      "Conversion Tracking Infrastructure (Google Tag Manager, Meta Pixel)",
-      "Automated Competitor Link & Organic Keyword Trackers",
-      "Structured SEO Markup Injection & Sitemaps Optimization",
-      "Real-Time Marketing Metrics & ROI Logging Dashboards"
+      "Core Web Speed & Link Auditing",
+      "Fast Loading Landing Pages",
+      "Google & Facebook Ad Tracking",
+      "Automated SEO Traffic Reports",
+      "Structured Data for Search Engines",
+      "Real-Time Marketing Metrics"
     ],
     architecture: {
-      title: "Marketing Data & Tracking Architecture Blueprint",
+      title: "How We Track Campaign Success",
       steps: [
-        { title: "Campaign Landing Page", desc: "Next.js statically renders pages in under 0.5s to minimize click-drop rates." },
-        { title: "Client Event Tracker", desc: "Tracks scroll depths, button triggers, and submits without blocking main render threads." },
-        { title: "Server-Side Tagging Router", desc: "Forwards event tokens directly to Google/Meta APIs, bypassing ad blockers." },
-        { title: "ROI Dashboard Collector", desc: "Gathers campaign metrics into a clean Postgres dashboard for ROI audits." }
+        { title: "Fast Landing Page", desc: "The campaign page loads in under half a second to keep visitors." },
+        { title: "Visitor Tracking", desc: "Tracks clicks and form submits without slowing down the page." },
+        { title: "Secure Data Router", desc: "Sends conversion data directly to Google and Facebook servers." },
+        { title: "Report Dashboard", desc: "Aggregates ad performance details into a simple client report." }
       ]
     },
     faqs: [
-      { q: "Why does landing page speed affect Google Ads campaign cost?", a: "Google rewards fast-loading, highly relevant landing pages with high Quality Scores. A higher Quality Score reduces your cost-per-click (CPC) and improves your ad placements." },
-      { q: "Do you configure Google Tag Manager and conversion events?", a: "Yes, we handle the full tracking integration, mapping exact custom events (submits, clicks, video watches) directly into your analytics dashboard." }
+      { q: "Why does website speed affect Google Ad costs?", a: "Google rewards fast websites with higher quality scores. A higher score reduces the amount you pay per click and improves where your ads show up." },
+      { q: "Do you set up Google Tag Manager and conversion events?", a: "Yes, we handle the full setup, mapping custom clicks and form submits directly to your dashboard." }
     ]
   }
 };

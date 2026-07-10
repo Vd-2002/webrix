@@ -145,20 +145,20 @@ export default async function ProjectDetailPage({ params }) {
                 Technical Overview
               </h2>
               <p className="text-xs sm:text-sm text-white/50 leading-relaxed font-sans">
-                This project was engineered to deliver scalable, secure execution states. Our design principles focused heavily on request optimizations, minified build payloads, database indices structuring, and low-latency API handshakes.
+                This project was built to be secure, fast, and easy to scale. We focused on clean code, fast page load speeds, database optimization, and secure user data.
               </p>
             </div>
 
             <div className="space-y-4 pt-6 border-t border-white/5">
               <span className="text-[9px] font-mono uppercase tracking-widest font-bold text-white/30 block">
-                Architectural Milestones
+                Project Milestones
               </span>
               <ul className="space-y-3.5">
                 {[
-                  "Edge Gateway Cache verification loops.",
-                  "AES-256 encrypted authentication keys handling.",
-                  "State hydration matching user sessions dynamically.",
-                  "High-concurrency data writes optimization."
+                  "Fast page caching and global server routing.",
+                  "Secure data encryption and safe user logins.",
+                  "Fast loading of user settings and profiles.",
+                  "Optimized databases designed to handle many users at once."
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-white/70 font-sans">
                     <Shield className="w-4 h-4 mt-0.5 shrink-0" style={{ color: themeColor }} />

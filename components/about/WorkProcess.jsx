@@ -7,34 +7,34 @@ export default function WorkProcess() {
   const steps = [
     {
       num: "01",
-      title: "Discovery & Blueprinting",
-      desc: "We analyze business targets, identify security and compliance requirements, map project constraints, and prepare the core strategy blueprint documents.",
+      title: "Discovery & Planning",
+      desc: "We analyze your business targets, identify security requirements, plan features, and prepare a simple project roadmap.",
       icon: Search,
-      deliverables: ["Product Roadmap Document", "Security Constraint Sheet", "Feature Backlog Spec"],
+      deliverables: ["Product Roadmap", "Security Plan", "Feature List"],
       color: "#60A5FA"
     },
     {
       num: "02",
-      title: "Database & Cloud Architecture",
-      desc: "Designing secure region database relational schemas, setting up AWS/GCP server container specifications, modeling API nodes, and structuring security certificates.",
+      title: "Database & Cloud Setup",
+      desc: "Designing secure databases, setting up cloud servers, connecting backend APIs, and setting up security certificates.",
       icon: Compass,
-      deliverables: ["GraphQL/REST API Specs", "AWS ECS Cluster Setup", "Compliance Policies"],
+      deliverables: ["API Connections", "Cloud Server Setup", "Security Rules"],
       color: "#818CF8"
     },
     {
       num: "03",
-      title: "Continuous Modular Engineering",
-      desc: "Writing system-level custom code bases in sprint pipelines. Delivering modular elements with active pull request logs, code revisions, and unit checks.",
+      title: "Development & Coding",
+      desc: "Writing clean custom code in regular steps. Delivering working software modules with active code reviews and automated tests.",
       icon: ShieldCheck,
-      deliverables: ["Clean GitHub Repository", "Verified Unit Tests logs", "Staging Server Deploy"],
+      deliverables: ["GitHub Repository", "Automated Tests", "Staging Website Deploy"],
       color: "#F472B6"
     },
     {
       num: "04",
-      title: "Zero-Downtime Launch & Sync",
-      desc: "Deploying production server nodes with container clusters, configuring Cloudflare SSL pathways, and running final latency performance verify passes.",
+      title: "Launch & Support",
+      desc: "Deploying your site to production servers, configuring domain security settings, and running speed verification checks.",
       icon: Rocket,
-      deliverables: ["Zero-Downtime CI/CD Pipe", "Global CDN Edge Reroute", "Active Latency Reports"],
+      deliverables: ["Smooth Deployment", "Global Content Routing", "Loading Speed Report"],
       color: "#34D399"
     }
   ];
@@ -50,7 +50,7 @@ export default function WorkProcess() {
           </span>
         </h2>
         <p className="text-base text-white/50 font-sans max-w-xl mx-auto">
-          A structured, vertical milestones timeline detailing how we design, build, and deploy custom software.
+          A simple step-by-step timeline of how we design, build, and launch your software.
         </p>
       </div>
 

@@ -4,53 +4,53 @@ import { motion } from "framer-motion";
 import { Monitor, Server, Database, Cloud, Terminal } from "lucide-react";
 
 export default function ServicesTechnologies() {
-  const techSegments = [
+const techSegments = [
     {
       title: "Frontend Engines",
       icon: Monitor,
       color: "#60A5FA",
-      tag: "UI & CACHE",
+      tag: "USER INTERFACE",
       items: [
-        { name: "Next.js 16 (App Router)", spec: "React Server Comps" },
-        { name: "React 19 Core Engine", spec: "Concurrent Renderer" },
-        { name: "Tailwind CSS v4", spec: "CSS Compiler native" },
-        { name: "Framer Motion 12", spec: "Spring Physics Engine" }
+        { name: "Next.js 16 (App Router)", spec: "Fast Server Loading" },
+        { name: "React 19 Core Engine", spec: "Interactive Layouts" },
+        { name: "Tailwind CSS v4", spec: "Custom Styling" },
+        { name: "Framer Motion 12", spec: "Smooth Animations" }
       ]
     },
     {
       title: "Backend & Systems",
       icon: Server,
       color: "#A78BFA",
-      tag: "API & METAL",
+      tag: "API & SERVICES",
       items: [
-        { name: "Node.js Core Engines", spec: "Non-blocking I/O" },
-        { name: "Rust Compiler Systems", spec: "Safe Memory Drivers" },
-        { name: "FastAPI / Python", spec: "AI Inference & Logging" },
-        { name: "Express / NestJS", spec: "Modular Server Routes" }
+        { name: "Node.js Core Engines", spec: "Fast Connections" },
+        { name: "Rust Compiler Systems", spec: "Secure Core Code" },
+        { name: "FastAPI / Python", spec: "Smart AI Models" },
+        { name: "Express / NestJS", spec: "Custom Server Logic" }
       ]
     },
     {
       title: "Data & Relational",
       icon: Database,
       color: "#34D399",
-      tag: "STORAGE & VECTOR",
+      tag: "DATABASE STORAGE",
       items: [
-        { name: "PostgreSQL Database", spec: "Transactional Safety" },
-        { name: "Redis Memory Nodes", spec: "Caching & Sessions" },
-        { name: "pgvector Indexing", spec: "AI Vector Embedding" },
-        { name: "InfluxDB Time-Series", spec: "Metrics Streams Logs" }
+        { name: "PostgreSQL Database", spec: "Secure Transactions" },
+        { name: "Redis Memory Nodes", spec: "Fast Cache Storage" },
+        { name: "pgvector Indexing", spec: "Smart Data Storage" },
+        { name: "InfluxDB Time-Series", spec: "Live Sensor Records" }
       ]
     },
     {
       title: "Cloud & Pipelines",
       icon: Cloud,
       color: "#F472B6",
-      tag: "INFRA & CLUSTER",
+      tag: "HOSTING & CLOUD",
       items: [
-        { name: "AWS Cloud ECS / VPC", spec: "Container Clusters" },
-        { name: "Docker Platforms", spec: "Immutable Image Builds" },
-        { name: "GitHub Actions CI/CD", spec: "Compilation Pipelines" },
-        { name: "Cloudflare CDNs", spec: "Fast DNS & Edge SSL" }
+        { name: "AWS Cloud ECS / VPC", spec: "Cloud Server Clusters" },
+        { name: "Docker Platforms", spec: "Server Package Builds" },
+        { name: "GitHub Actions CI/CD", spec: "Automated Deployments" },
+        { name: "Cloudflare CDNs", spec: "Secure SSL Certificates" }
       ]
     }
   ];
@@ -66,7 +66,7 @@ export default function ServicesTechnologies() {
           </span>
         </h2>
         <p className="text-sm text-white/50 font-sans max-w-xl mx-auto">
-          We maintain absolute specialization in industry-leading runtime environments and server libraries.
+          We are experts in using the best programming languages, databases, and hosting servers.
         </p>
       </div>
 
@@ -101,7 +101,7 @@ export default function ServicesTechnologies() {
                         color: segment.color
                       }}
                     >
-                      <Icon className="w-4 h-4" />
+                      <Icon className="w-4.5 h-4.5" />
                     </div>
                     <span className="text-[9px] font-mono font-bold tracking-widest text-white/30">{segment.tag}</span>
                   </div>
@@ -129,7 +129,7 @@ export default function ServicesTechnologies() {
               {/* Status indicator bottom */}
               <div className="mt-8 pt-4 border-t border-white/5 flex items-center gap-1.5 text-[8px] font-mono text-white/20">
                 <span className="w-1 h-1 rounded-full" style={{ backgroundColor: segment.color }} />
-                <span>COMPILER OK - REVISION 4.1</span>
+                <span>TOOLCHAIN READY</span>
               </div>
             </motion.div>
           );
