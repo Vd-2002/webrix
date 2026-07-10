@@ -27,7 +27,10 @@ async function sendEmails(newMessage) {
     },
     tls: {
       rejectUnauthorized: false
-    }
+    },
+    connectionTimeout: 5000,
+    greetingTimeout: 5000,
+    socketTimeout: 5000
   };
 
   if (host.toLowerCase().includes("gmail")) {
@@ -131,8 +134,8 @@ export async function POST(req) {
 
     const result = await db.collection("messages").insertOne(newMessage);
     
-    // Asynchronously trigger email delivery so it doesn't block client response
-    sendEmails(newMessage);
+    // Await email delivery so serverless container doesn't freeze before mail is sent
+    await sendEmails(newMessage);
 
     return NextResponse.json({ 
       success: true, 
