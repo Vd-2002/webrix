@@ -25,12 +25,13 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata = {
   metadataBase: new URL("https://webrix.co.in"),
   title: {
-    default: "Webrix | Custom Software Engineering & Premium Web Design",
+    default: "Webrix | Web Development, Custom Software & Digital Marketing Agency",
     template: "%s | Webrix",
   },
-  description: "Webrix engineers premium headless websites, custom multi-tenant software platforms, cross-platform mobile apps, and serverless AI automation workflows.",
+  description: "Webrix is a professional web development and digital marketing agency. We engineer premium headless websites, custom software, mobile apps, and execute result-oriented SEO & marketing campaigns.",
   keywords: [
     "Webrix", "Webrix agency", "Webrix software development", "Webrix web design", "Webrix services",
+    "Webrix digital marketing", "digital marketing agency", "SEO optimization", "social media marketing",
     "custom website development", "Next.js developers", "React 19 development",
     "headless eCommerce Shopify", "custom CRM software", "SaaS portal developers",
     "AI workflow automation", "LLM agent integration", "React Native developers",
@@ -59,23 +60,23 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://webrix.co.in",
-    title: "Webrix | Custom Software Engineering & Premium Web Design",
-    description: "Webrix engineers premium headless websites, custom multi-tenant software platforms, cross-platform mobile apps, and serverless AI automation workflows.",
+    title: "Webrix | Web Development, Custom Software & Digital Marketing Agency",
+    description: "Webrix is a professional web development and digital marketing agency. We engineer premium headless websites, custom software, mobile apps, and execute result-oriented SEO & marketing campaigns.",
     siteName: "Webrix",
     images: [
       {
-        url: "/favicon.ico",
-        width: 32,
-        height: 32,
-        alt: "Webrix Logo",
+        url: "/logo2.png",
+        width: 130,
+        height: 38,
+        alt: "Webrix",
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "Webrix | Custom Software Engineering & Premium Web Design",
-    description: "Webrix engineers premium headless websites, custom multi-tenant software platforms, cross-platform mobile apps, and serverless AI automation workflows.",
-    images: ["/favicon.ico"],
+    title: "Webrix | Web Development, Custom Software & Digital Marketing Agency",
+    description: "Webrix is a professional web development and digital marketing agency. We engineer premium headless websites, custom software, mobile apps, and execute result-oriented SEO & marketing campaigns.",
+    images: ["/logo2.png"],
   },
   other: {
     "geo.region": "US-NY",

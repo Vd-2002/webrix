@@ -10,8 +10,8 @@ import ServicesFAQs from "@/components/services/ServicesFAQs";
 import CTA from "@/components/homepage/CTA";
 
 export const metadata = {
-  title: "Professional Web Design & Software Services",
-  description: "Explore Webrix's tracks: website development, custom ERP/SaaS portals, native mobile apps, serverless AI pipelines, and sitemaps marketing audit.",
+  title: "Services | Web Design, Software & Digital Marketing",
+  description: "Explore Webrix's expert services: custom website development, custom ERP/SaaS portals, mobile apps, serverless AI pipelines, and digital marketing & SEO strategies.",
   alternates: {
     canonical: "https://webrix.co.in/services",
   },

@@ -8,8 +8,8 @@ import ContactFAQ from "@/components/contact/ContactFAQ";
 import CTA from "@/components/homepage/CTA";
 
 export const metadata = {
-  title: "Contact Our Engineering Team",
-  description: "Get in touch with Webrix. Scope your custom software project, ask compliance questions, or request an audit of your Core Web Vitals.",
+  title: "Contact Webrix | Web Development & Digital Marketing Agency",
+  description: "Get in touch with Webrix. Scope your web development, custom software, mobile apps, or digital marketing & SEO audit campaigns.",
   alternates: {
     canonical: "https://webrix.co.in/contact",
   },

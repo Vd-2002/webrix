@@ -52,7 +52,7 @@ export default function AdminLayout({ children }) {
           <Link href="/" className="block">
             <Image
               src="/logo2.png"
-              alt="Webrix Logo"
+              alt="Webrix"
               width={110}
               height={32}
               className="object-contain"
@@ -114,7 +114,7 @@ export default function AdminLayout({ children }) {
       <header className="lg:hidden flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#03030c]/90 backdrop-blur-md sticky top-0 z-40">
         <Image
           src="/logo2.png"
-          alt="Webrix Logo"
+          alt="Webrix"
           width={100}
           height={30}
           className="object-contain"

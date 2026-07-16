@@ -172,7 +172,7 @@ export default function Header() {
             >
               <Image
                 src="/logo2.png"
-                alt="Webrix Logo"
+                alt="Webrix"
                 width={130}
                 height={38}
                 className="object-contain max-h-[38px] w-auto"

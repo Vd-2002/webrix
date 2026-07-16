@@ -73,7 +73,7 @@ export default function AdminLoginPage() {
           <Link href="/" className="inline-block">
             <Image
               src="/logo2.png"
-              alt="Webrix Logo"
+              alt="Webrix"
               width={140}
               height={40}
               className="object-contain mx-auto"

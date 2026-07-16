@@ -12,8 +12,8 @@ import Stats from "@/components/homepage/Stats";
 import CTA from "@/components/homepage/CTA";
 
 export const metadata = {
-  title: "Premium Web Design & Custom Software Engineering",
-  description: "Webrix is a professional digital engineering firm. We build headless websites, custom database applications, native mobile apps, and serverless AI automations.",
+  title: "Web Development, Custom Software & Digital Marketing Agency",
+  description: "Webrix is a professional web development and digital marketing agency. We build headless websites, custom software, mobile apps, and deliver expert SEO & digital marketing services.",
   alternates: {
     canonical: "https://webrix.co.in",
   },
@@ -32,7 +32,7 @@ export default function Home() {
           "@type": "ImageObject",
           "@id": "https://webrix.co.in/#logo",
           "url": "https://webrix.co.in/logo.png",
-          "caption": "Webrix Logo"
+          "caption": "Webrix"
         },
         "image": {
           "@id": "https://webrix.co.in/#logo"
@@ -54,7 +54,7 @@ export default function Home() {
         "@id": "https://webrix.co.in/#website",
         "url": "https://webrix.co.in",
         "name": "Webrix",
-        "description": "Premium Headless Websites, Custom ERP/SaaS Portals, Mobile Apps, & AI Automations.",
+        "description": "Web Development, Custom Software, Mobile Apps, AI Automations, & Digital Marketing.",
         "publisher": {
           "@id": "https://webrix.co.in/#organization"
         }

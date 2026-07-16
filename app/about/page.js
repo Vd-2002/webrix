@@ -10,8 +10,8 @@ import WorkProcess from "@/components/about/WorkProcess";
 import CTA from "@/components/homepage/CTA";
 
 export const metadata = {
-  title: "About Our Firm & Philosophy",
-  description: "Learn about Webrix, our engineering standards, agile scrum workflow, and our commitment to building modular digital architectures.",
+  title: "About Webrix | Web Development & Digital Marketing Agency",
+  description: "Learn about Webrix, our team of developers and digital marketing strategists, and our commitment to building high-performance websites and ROI-focused marketing campaigns.",
   alternates: {
     canonical: "https://webrix.co.in/about",
   },
@@ -26,7 +26,7 @@ export default function AboutPage() {
       "name": "Webrix",
       "url": "https://webrix.co.in",
       "logo": "https://webrix.co.in/logo.png",
-      "description": "Webrix engineers premium headless websites, custom multi-tenant software platforms, and serverless AI workflows."
+      "description": "Webrix engineers premium headless websites, custom multi-tenant software platforms, serverless AI workflows, and digital marketing strategies."
     }
   };
 
