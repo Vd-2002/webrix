@@ -1,19 +1,20 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Zap, CheckCircle2, Globe, ExternalLink } from "lucide-react";
 import Button from "@/components/ui/Button";
+import Link from "next/link";
 
 function StickyProjectCard({ project, idx }) {
   const [isHovered, setIsHovered] = useState(false);
+  const themeColor = project.color || "#60A5FA";
 
   return (
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="sticky border border-white/10 bg-[#070712] rounded-3xl p-6 md:p-10 lg:p-12 w-full min-h-[420px] flex flex-col md:flex-row items-center gap-8 lg:gap-12 transition-all duration-500 shadow-2xl overflow-hidden hover:border-white/15"
+      className="sticky border border-white/10 bg-[#070712] rounded-3xl p-6 md:p-10 lg:p-12 w-full min-h-[400px] flex flex-col md:flex-row items-center gap-8 lg:gap-12 transition-all duration-500 shadow-2xl overflow-hidden hover:border-white/20"
       style={{
         // Staggered sticky top offsets so cards stack with top borders visible
         top: `${112 + idx * 24}px`,
@@ -25,41 +26,60 @@ function StickyProjectCard({ project, idx }) {
       <div 
         className="absolute -right-24 -top-24 w-80 h-80 rounded-full opacity-[0.08] blur-[90px] transition-all duration-700 pointer-events-none"
         style={{
-          background: `radial-gradient(circle, ${project.accentColor || project.color || "#60A5FA"} 0%, transparent 70%)`
+          background: `radial-gradient(circle, ${themeColor} 0%, transparent 70%)`
         }}
       />
 
-      {/* LEFT COLUMN: Realistic Browser Device Mockup Frame */}
+      {/* LEFT COLUMN: Clean Architecture & Metrics Dashboard Panel (No Image) */}
       <div className="w-full md:w-1/2 flex items-center justify-center">
         <div 
-          className="w-full border rounded-2xl overflow-hidden bg-black/60 shadow-xl transition-all duration-500"
+          className="w-full border rounded-2xl overflow-hidden bg-gradient-to-b from-[#0b0b18] to-[#05050e] shadow-xl transition-all duration-500 p-6 sm:p-8 space-y-6"
           style={{
-            borderColor: isHovered ? `${project.color || "#60A5FA"}30` : "rgba(255,255,255,0.06)",
-            boxShadow: isHovered ? `0 12px 30px -10px ${project.color || "#60A5FA"}20` : "none"
+            borderColor: isHovered ? `${themeColor}40` : "rgba(255,255,255,0.08)",
+            boxShadow: isHovered ? `0 16px 36px -12px ${themeColor}20` : "none"
           }}
         >
-          {/* Browser Bar */}
-          <div className="flex items-center gap-2 px-4 py-2 border-b border-white/5 bg-white/[0.01]">
-            <div className="flex gap-1.5 shrink-0">
-              <div className="w-2 h-2 rounded-full bg-red-500/80" />
-              <div className="w-2 h-2 rounded-full bg-yellow-500/80" />
-              <div className="w-2 h-2 rounded-full bg-green-500/80" />
+          {/* Header Bar */}
+          <div className="flex items-center justify-between border-b border-white/5 pb-3">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: themeColor }} />
+              <span className="font-mono text-[10px] uppercase tracking-widest text-white/50">
+                PRODUCTION DEPLOYMENT
+              </span>
             </div>
-            {/* Simulated URL bar */}
-            <div className="w-full max-w-[180px] h-4 rounded-md bg-white/[0.02] border border-white/5 text-[8px] text-white/30 flex items-center justify-center font-mono mx-auto select-none">
-              webrix.dev/{project.name.toLowerCase().replace(/ /g, "-")}
-            </div>
+            <span className="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full font-bold">
+              ACTIVE
+            </span>
           </div>
 
-          {/* Browser Viewport with Portfolio Mockup */}
-          <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/40">
-            <Image 
-              src={project.image || "/project_healthcare.png"} 
-              alt={project.name}
-              fill
-              className="object-cover transition-transform duration-700 hover:scale-102"
-              sizes="(max-w: 768px) 100vw, 50vw"
-            />
+          {/* Metric Highlight */}
+          <div className="space-y-1">
+            <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest block font-bold">
+              VERIFIED IMPACT
+            </span>
+            <div 
+              className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight"
+              style={{ color: themeColor }}
+            >
+              {project.metric}
+            </div>
+            <span className="text-xs text-white/50 font-sans block pt-1">
+              Production SLA &bull; Optimized Architecture
+            </span>
+          </div>
+
+          {/* Technical Specs checklist */}
+          <div className="space-y-2.5 pt-4 border-t border-white/5">
+            {[
+              "High-Speed Serverless API Routes",
+              "Database Indexing & Fast Caching",
+              "100% Responsive Adaptive Layout"
+            ].map((spec, sIdx) => (
+              <div key={sIdx} className="flex items-center gap-2.5 text-xs text-white/70 font-sans">
+                <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: themeColor }} />
+                <span>{spec}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -71,14 +91,14 @@ function StickyProjectCard({ project, idx }) {
           {/* Tag Header */}
           <div className="flex items-center gap-2">
             <span 
-              className="w-1.5 h-1.5 rounded-full animate-pulse"
-              style={{ backgroundColor: project.color || "#60A5FA" }}
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ backgroundColor: themeColor }}
             />
             <span 
               className="text-xs font-mono font-bold tracking-widest uppercase transition-colors duration-300"
-              style={{ color: isHovered ? (project.color || "#60A5FA") : "rgba(255,255,255,0.4)" }}
+              style={{ color: isHovered ? themeColor : "rgba(255,255,255,0.4)" }}
             >
-              {project.industry} &bull; {project.tag}
+              {project.industry} &bull; {project.category.replace(" Development", "")}
             </span>
           </div>
 
@@ -110,22 +130,34 @@ function StickyProjectCard({ project, idx }) {
           </div>
         </div>
 
-        {/* Interactive CTA Link */}
-        <a href={`/portfolio/${project.id}`} className="flex items-center gap-2 pt-2 select-none">
-          <span 
-            className="text-xs font-mono font-bold uppercase tracking-wider transition-colors duration-300"
-            style={{ color: isHovered ? (project.color || "#60A5FA") : "rgba(255,255,255,0.6)" }}
-          >
-            Explore Case Study
-          </span>
-          <ArrowRight 
-            className="w-4 h-4 transition-transform duration-300"
-            style={{ 
-              color: isHovered ? (project.color || "#60A5FA") : "rgba(255,255,255,0.4)",
-              transform: isHovered ? "translateX(4px) rotate(-45deg)" : "none"
-            }}
-          />
-        </a>
+        {/* Interactive Links Row */}
+        <div className="flex items-center gap-4 pt-2">
+          <Link href={`/portfolio/${project.id}`} className="flex items-center gap-2 select-none group/link">
+            <span 
+              className="text-xs font-mono font-bold uppercase tracking-wider transition-colors duration-300"
+              style={{ color: isHovered ? themeColor : "rgba(255,255,255,0.7)" }}
+            >
+              Explore Case Study
+            </span>
+            <ArrowRight 
+              className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1"
+              style={{ color: isHovered ? themeColor : "rgba(255,255,255,0.4)" }}
+            />
+          </Link>
+
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 bg-white/[0.02] text-xs font-mono text-white/60 hover:text-cyan-300 hover:border-cyan-400/40 hover:bg-cyan-400/5 transition-all duration-200"
+            >
+              <Globe className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Live Site</span>
+              <ExternalLink className="w-3 h-3 text-white/40" />
+            </a>
+          )}
+        </div>
 
       </div>
 
@@ -141,9 +173,9 @@ export default function FeaturedProjects() {
     fetch("/api/projects")
       .then(res => res.json())
       .then(data => {
-        if (data.success) {
-          // slice first 3 projects for homepage showcase
-          setProjects(data.projects.slice(0, 3));
+        if (data.success && Array.isArray(data.projects)) {
+          // slice first 4 projects for homepage showcase
+          setProjects(data.projects.slice(0, 4));
         }
         setLoading(false);
       })
@@ -165,7 +197,7 @@ export default function FeaturedProjects() {
           </span>
         </h2>
         <p className="text-base text-white/60 font-sans max-w-xl mx-auto">
-          Explore our recent projects, built with clean code and beautiful designs.
+          Explore our recent projects, built with clean code and high-performance architectures.
         </p>
       </div>
 
@@ -173,7 +205,7 @@ export default function FeaturedProjects() {
       <div className="max-w-[1200px] mx-auto px-6 relative space-y-16">
         {projects.map((proj, idx) => (
           <StickyProjectCard 
-            key={idx} 
+            key={proj.id || idx} 
             project={proj} 
             idx={idx} 
           />
@@ -182,9 +214,11 @@ export default function FeaturedProjects() {
 
       {/* View Portfolio Button */}
       <div className="text-center pt-8">
-        <Button variant="outline" className="px-8 py-3.5 tracking-wider font-semibold rounded-md">
-          View Portfolio
-        </Button>
+        <Link href="/portfolio">
+          <Button variant="outline" className="px-8 py-3.5 tracking-wider font-semibold rounded-md">
+            View All 45+ Projects
+          </Button>
+        </Link>
       </div>
 
     </section>

@@ -1,13 +1,12 @@
 import { NextResponse } from "next/server";
-import { getDb } from "@/lib/db";
+import { getDb, getProjectById } from "@/lib/db";
 import { getAuthUser } from "@/lib/auth";
 
 // Public: Get a single project by ID
 export async function GET(req, { params }) {
   try {
     const { id } = await params;
-    const db = await getDb();
-    const project = await db.collection("projects").findOne({ id });
+    const project = await getProjectById(id);
 
     if (!project) {
       return NextResponse.json(

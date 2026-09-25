@@ -1,13 +1,11 @@
 import { NextResponse } from "next/server";
-import { getDb, seedDbIfEmpty } from "@/lib/db";
+import { getDb, seedDbIfEmpty, getAllProjects } from "@/lib/db";
 import { getAuthUser } from "@/lib/auth";
 
 // Public: Get all projects
 export async function GET() {
   try {
-    await seedDbIfEmpty(); // Auto-seed projects if collection is empty
-    const db = await getDb();
-    const projects = await db.collection("projects").find({}).toArray();
+    const projects = await getAllProjects();
     return NextResponse.json({ success: true, projects }, { status: 200 });
   } catch (error) {
     console.error("GET Projects API Error:", error);

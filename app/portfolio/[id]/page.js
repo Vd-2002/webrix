@@ -1,21 +1,16 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/homepage/CTA";
-import { ArrowLeft, Zap, Cpu, Code, Shield } from "lucide-react";
+import { ArrowLeft, Zap, Cpu, Code, Shield, ExternalLink, Globe } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getProjectById } from "@/lib/db";
 
-// Since it's a dynamic route fetching from MongoDB at runtime, we can enable SSR or dynamic rendering
 export const revalidate = 0; // Fetch fresh data on every request
 
 async function getProject(id) {
   try {
-    // Call the local API endpoint (using absolute URL in SSR or relative if handled by Next routing)
-    // In Next server component, we can import MongoClient and query directly to avoid external fetch overhead!
-    const { getDb } = require("@/lib/db");
-    const db = await getDb();
-    const project = await db.collection("projects").findOne({ id });
-    return project;
+    return await getProjectById(id);
   } catch (error) {
     console.error("Error loading project server-side:", error);
     return null;
@@ -27,9 +22,10 @@ export async function generateMetadata({ params }) {
   const project = await getProject(id);
   if (!project) return {};
 
+  const title = project.name || project.title || "Project";
   return {
-    title: `${project.title} Case Study`,
-    description: project.description || `Case study detailing our engineering work for ${project.title}.`,
+    title: `${title} - Case Study | Webrix`,
+    description: project.desc || project.description || `Case study detailing our engineering work for ${title}.`,
     alternates: {
       canonical: `https://webrix.co.in/portfolio/${id}`,
     },
@@ -45,18 +41,24 @@ export default async function ProjectDetailPage({ params }) {
   }
 
   const themeColor = project.color || "#60A5FA";
+  const projectName = project.name || project.title;
+  const projectDesc = project.fullDesc || project.desc || project.description;
 
   const projectSchema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    "name": project.title,
-    "description": project.description,
+    "name": projectName,
+    "description": project.desc || project.description,
     "creator": {
       "@type": "Organization",
       "name": "Webrix",
       "url": "https://webrix.co.in"
     }
   };
+
+  const paragraphs = typeof projectDesc === "string" 
+    ? projectDesc.split("\n\n").filter(Boolean) 
+    : [projectDesc];
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans transition-colors duration-300 flex flex-col justify-between">
@@ -69,8 +71,8 @@ export default async function ProjectDetailPage({ params }) {
 
       <main className="max-w-[1200px] mx-auto px-6 pt-12 pb-16 sm:pt-[60px] sm:pb-24 space-y-12 sm:space-y-[60px] flex-1 w-full relative z-10">
         
-        {/* Back Link */}
-        <div>
+        {/* Back Link & Live Link Actions */}
+        <div className="flex flex-wrap items-center justify-between gap-4">
           <Link 
             href="/portfolio" 
             className="inline-flex items-center gap-2 text-xs font-mono text-white/50 hover:text-white transition-colors uppercase tracking-wider"
@@ -78,6 +80,19 @@ export default async function ProjectDetailPage({ params }) {
             <ArrowLeft className="w-3.5 h-3.5" />
             Back to Portfolio
           </Link>
+
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 border border-cyan-400/30 bg-cyan-400/5 hover:bg-cyan-400/10 hover:border-cyan-400/60 transition-all duration-200"
+            >
+              <Globe className="w-3.5 h-3.5" />
+              <span>Visit Live Website</span>
+              <ExternalLink className="w-3.5 h-3.5 ml-1" />
+            </a>
+          )}
         </div>
 
         {/* Hero Spec Row */}
@@ -103,7 +118,7 @@ export default async function ProjectDetailPage({ params }) {
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white font-display">
-              {project.name}
+              {projectName}
             </h1>
             <p className="text-sm sm:text-base text-white/60 leading-relaxed font-sans font-light">
               {project.desc}
@@ -137,17 +152,20 @@ export default async function ProjectDetailPage({ params }) {
         {/* In-depth Details & Architecture Spec */}
         <div className="grid lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Left Column: Scope Specifications */}
+          {/* Left Column: Scope Specifications & Full Story */}
           <div className="lg:col-span-7 border border-white/10 bg-[#070712]/40 rounded-3xl p-6 sm:p-10 space-y-8 flex flex-col justify-between">
             <div className="space-y-4">
               <h2 className="text-xl sm:text-2xl font-bold font-display text-white tracking-tight flex items-center gap-2">
                 <Cpu className="w-5 h-5 text-white/30" style={{ color: themeColor }} />
-                Technical Overview
+                Case Study &amp; Technical Scope
               </h2>
-              <p className="text-xs sm:text-sm text-white/50 leading-relaxed font-sans">
-                This project was built to be secure, fast, and easy to scale. We focused on clean code, fast page load speeds, database optimization, and secure user data.
-              </p>
+              <div className="space-y-3 text-xs sm:text-sm text-white/70 leading-relaxed font-sans">
+                {paragraphs.map((pText, pIdx) => (
+                  <p key={pIdx}>{pText}</p>
+                ))}
+              </div>
             </div>
+
 
             <div className="space-y-4 pt-6 border-t border-white/5">
               <span className="text-[9px] font-mono uppercase tracking-widest font-bold text-white/30 block">
